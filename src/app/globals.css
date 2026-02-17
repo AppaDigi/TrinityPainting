@@ -1,26 +1,228 @@
 @import "tailwindcss";
+@plugin "tailwindcss-animate";
+@plugin "@tailwindcss/container-queries";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* =========================
+     Design Tokens (Strict 2026 Standards)
+     Using modern HSL/OKLCH values for wider gamut support
+     Directly in @theme block for automatic utility generation
+     ========================= */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* --- Color System --- */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Surface Colors */
+  --color-surface-50: oklch(0.99 0.005 86.6);
+  /* Paper White */
+  --color-surface-100: oklch(0.97 0.01 86.6);
+  /* Off White */
+  --color-surface-200: oklch(0.92 0.01 86.6);
+  /* Light Gray */
+  --color-surface-800: oklch(0.20 0.02 86.6);
+  /* Dark Gray */
+  --color-surface-900: oklch(0.13 0.02 86.6);
+  /* Rich Black (Warm) */
+
+  /* Brand Colors */
+  --color-brand-gold: oklch(0.79 0.11 86.6);
+  /* Primary Gold */
+  --color-brand-gold-light: oklch(0.92 0.06 86.6);
+  /* Highlights */
+  --color-brand-gold-dark: oklch(0.65 0.12 70.3);
+  /* Shadows/Borders */
+
+  /* Semantic Aliases */
+  --color-background: var(--color-surface-50);
+  --color-foreground: var(--color-surface-900);
+
+  --color-primary: var(--color-surface-900);
+  --color-primary-foreground: var(--color-surface-50);
+
+  --color-secondary: var(--color-surface-100);
+  --color-secondary-foreground: var(--color-surface-900);
+
+  --color-accent: var(--color-brand-gold);
+  --color-accent-foreground: var(--color-surface-900);
+
+  --color-muted: var(--color-surface-100);
+  --color-muted-foreground: oklch(0.55 0.02 86.6);
+
+  --color-border: oklch(0.92 0.01 86.6);
+  --color-input: oklch(0.92 0.01 86.6);
+  --color-ring: var(--color-brand-gold);
+
+  /* Helper Aliases for existing code */
+  --color-gold: var(--color-brand-gold);
+  --color-gold-light: var(--color-brand-gold-light);
+  --color-gold-dark: var(--color-brand-gold-dark);
+  --color-off-white: var(--color-surface-100);
+
+  /* --- Typography System --- */
+
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-outfit);
+
+  /* Fluid Type Scale (clamp based) */
+  --text-fluid-h1: clamp(2.5rem, 5vw + 1rem, 5rem);
+  --text-fluid-h2: clamp(2rem, 4vw + 1rem, 4rem);
+  --text-fluid-h3: clamp(1.5rem, 3vw + 1rem, 2.5rem);
+  --text-fluid-p: clamp(1rem, 0.5vw + 0.8rem, 1.25rem);
+
+  /* --- Spacing System --- */
+
+  /* Fluid Spacing */
+  --spacing-container: clamp(1.5rem, 5vw, 3rem);
+  --spacing-section: clamp(4rem, 10vh, 8rem);
+  --section-spacing: var(--spacing-section);
+  --spacing-flow: clamp(1.5rem, 3vw, 2.5rem);
+
+  /* --- Animation System --- */
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-entrance: entrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee-horizontal: marquee-horizontal var(--duration, 40s) linear infinite;
+  --animate-marquee-vertical: marquee-vertical var(--duration, 40s) linear infinite;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes entrance {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marquee-horizontal {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* =========================
+   Base Styles & Utilities
+   ========================= */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-gold/30 selection:text-primary;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Typography Scaling */
+  h1 {
+    @apply text-[length:var(--text-fluid-h1)] font-serif tracking-tight text-balance leading-none;
+  }
+
+  h2 {
+    @apply text-[length:var(--text-fluid-h2)] font-serif tracking-tight text-balance leading-tight;
+  }
+
+  h3 {
+    @apply text-[length:var(--text-fluid-h3)] font-serif tracking-wide leading-snug;
+  }
+
+  p {
+    @apply leading-relaxed text-muted-foreground;
+  }
+}
+
+@layer utilities {
+  .container-wide {
+    /* Using fluid padding variable */
+    @apply max-w-[1440px] mx-auto px-[var(--spacing-container)];
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-br from-primary via-primary/90 to-primary/70 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-dark via-gold to-gold-light bg-clip-text text-transparent;
+  }
+
+  /* Glassmorphism 2.0 */
+  .glass {
+    @apply bg-white/70 backdrop-blur-2xl border border-white/40 shadow-sm;
+  }
+
+  .glass-dark {
+    @apply bg-primary/80 backdrop-blur-xl border border-white/5 shadow-2xl;
+  }
+
+  /* Noise Overlay */
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+  }
 }

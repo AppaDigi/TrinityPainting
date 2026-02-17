@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Client Boilerplate
 
-## Getting Started
+Reusable starter for client websites built with:
 
-First, run the development server:
+- Next.js `16.1.6`
+- React `19.2.4`
+- TypeScript
+- Tailwind CSS v4
+- ESLint
+
+## Quick Start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev`: Start local dev server.
+- `npm run build`: Production build.
+- `npm run start`: Run production build.
+- `npm run lint`: Lint codebase.
+- `npm run typecheck`: TypeScript check without emit.
+- `npm run check`: Lint + typecheck + build (recommended before merge/deploy).
+- `npm run deps:check`: Show outdated packages.
+- `npm run deps:update`: Update packages within allowed semver ranges.
+- `npm run deps:update:latest`: Upgrade to latest versions (including majors) and reinstall.
 
-## Learn More
+## Automatic Dependency Updates
 
-To learn more about Next.js, take a look at the following resources:
+This repo includes:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `.github/dependabot.yml`: Weekly dependency update PRs for npm and GitHub Actions.
+- `.github/workflows/dependabot-auto-merge.yml`: Auto-merges Dependabot patch/minor PRs (major updates stay manual).
+- `.github/workflows/ci.yml`: Runs `npm run check` on PRs and pushes to `main`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To use auto-updates, push this repo to GitHub with Actions enabled.
 
-## Deploy on Vercel
+## Using This For New Clients
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Create a new repo from this boilerplate.
+2. Update `src/app/page.tsx` and `src/app/layout.tsx` metadata/content for the client.
+3. Add environment variables in `.env.local`.
+4. Run `npm run check`.
+5. Deploy (Vercel, Netlify, or your preferred platform).

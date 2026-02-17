@@ -1,0 +1,32 @@
+{
+  "badge": "Next.js 16 + React 19 starter",
+  "title": "Boilerplate for launching client websites fast",
+  "description": "Duplicate this repo, update content/branding, and ship production-ready sites with a maintained dependency workflow.",
+  "heroImage": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2000",
+  "links": [
+    {
+      "text": "Next.js Docs",
+      "url": "https://nextjs.org/docs",
+      "primary": true
+    },
+    {
+      "text": "Tailwind Docs",
+      "url": "https://tailwindcss.com/docs",
+      "primary": false
+    }
+  ],
+  "features": [
+    {
+      "title": "App Router + TypeScript",
+      "description": "Build pages under src/app with typed components and modern Next.js defaults."
+    },
+    {
+      "title": "Tailwind v4",
+      "description": "Utility-first styling with minimal setup, ideal for rapid client iterations."
+    },
+    {
+      "title": "Update Automation",
+      "description": "Dependabot creates update PRs and patch/minor releases can auto-merge after checks pass."
+    }
+  ]
+}
