@@ -28,6 +28,7 @@ const carouselServices: CarouselService[] = [
   {
     number: "001",
     title: "Interior Painting",
+    slug: "interior-painting",
     description:
       "Transform your living spaces with personalized color schemes and flawless finishes. From cozy bedrooms to open-concept living rooms.",
     icon: PaintBucket,
@@ -36,6 +37,7 @@ const carouselServices: CarouselService[] = [
   {
     number: "002",
     title: "Exterior Painting",
+    slug: "exterior-painting",
     description:
       "Weather-resistant coatings that protect your home and boost curb appeal. Built to endure Minnesota's harshest seasons.",
     icon: HomeIcon,
@@ -44,6 +46,7 @@ const carouselServices: CarouselService[] = [
   {
     number: "003",
     title: "Kitchen & Cabinet Refinishing",
+    slug: "cabinet-refinishing",
     description:
       "Modernize your kitchen without the cost of a full renovation. Our factory-smooth finishes breathe new life into tired cabinets.",
     icon: ChefHat,
@@ -52,6 +55,7 @@ const carouselServices: CarouselService[] = [
   {
     number: "004",
     title: "Commercial Painting",
+    slug: "commercial-painting",
     description:
       "Professional-grade coatings for offices, retail spaces, and commercial properties. Minimal disruption, maximum impact.",
     icon: Building2,
@@ -60,6 +64,7 @@ const carouselServices: CarouselService[] = [
   {
     number: "005",
     title: "Ceiling Painting",
+    slug: "ceiling-painting",
     description:
       "Brighten any room from above. We handle popcorn ceilings, vaulted spaces, and everything in between with precision.",
     icon: Layers,
@@ -68,6 +73,7 @@ const carouselServices: CarouselService[] = [
   {
     number: "006",
     title: "Trim & Frame Painting",
+    slug: "trim-frame-painting",
     description:
       "The finishing touch that elevates every room. Crisp, clean lines on baseboards, crown molding, door frames, and window trim.",
     icon: Frame,

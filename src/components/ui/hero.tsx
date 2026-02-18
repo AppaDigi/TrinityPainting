@@ -111,7 +111,7 @@ export default function Hero({ onOpenQuote }: { onOpenQuote?: () => void }) {
             </div>
 
             {/* Center Content - Headline + CTA Card */}
-            <div className="relative z-10 w-full max-w-5xl px-6 text-center mb-12">
+            <div className="relative z-10 w-full max-w-5xl px-6 mx-auto text-center mb-12">
                 <div className="bg-black/30 backdrop-blur-md p-12 md:p-20 border border-white/10 rounded-[2.5rem] shadow-2xl">
                     <h1 className="font-serif font-medium text-5xl text-white leading-[1.1] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl mb-12">
                         Faith In <span className="text-gold italic font-light">Every</span>

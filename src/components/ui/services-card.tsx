@@ -2,13 +2,16 @@
 
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import { cn } from "@/lib/utils";
-import { type LucideIcon, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { type LucideIcon, ArrowRight, ChevronLeft, ChevronRight, HelpCircle } from "lucide-react";
+import { ICON_MAP } from "@/lib/services";
 
 export interface Service {
     number: string;
     title: string;
+    slug: string;
     description: string;
-    icon: LucideIcon;
+    icon: any;
     image?: string;
 }
 
@@ -18,16 +21,17 @@ interface ServiceCardProps {
 }
 
 function ServiceCard({ service, index }: ServiceCardProps) {
-    const Icon = service.icon;
+    const Icon = ICON_MAP[service.icon as string] || HelpCircle;
 
     return (
-        <div
+        <Link
+            href={`/services/${service.slug}`}
             className={cn(
                 "group relative flex flex-col justify-between",
                 "w-[320px] sm:w-[360px] lg:w-[400px] h-[480px] shrink-0",
                 "rounded-[2rem] overflow-hidden",
                 "bg-surface-100 border border-border",
-                "cursor-pointer select-none",
+                "select-none block",
                 "transition-all duration-500 ease-out",
                 "hover:shadow-2xl hover:shadow-gold/10 hover:-translate-y-2 hover:border-gold/30"
             )}
@@ -81,7 +85,7 @@ function ServiceCard({ service, index }: ServiceCardProps) {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
 
