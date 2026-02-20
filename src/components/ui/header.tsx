@@ -6,10 +6,12 @@ import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export function Header({ onOpenQuote }: { onOpenQuote?: () => void }) {
+export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => void, theme?: 'light' | 'dark' }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [hoveredService, setHoveredService] = useState(false);
+
+    const isLightText = !scrolled && theme === 'dark';
 
     // Scroll effect for glassmorphism
     useEffect(() => {
@@ -46,7 +48,7 @@ export function Header({ onOpenQuote }: { onOpenQuote?: () => void }) {
                         <img src="/logo.webp" alt="Trinity Painting" className="h-10 w-auto transition-transform duration-500 group-hover:scale-105" />
                     </div>
                     <div className="flex flex-col">
-                        <span className={`font-serif font-black text-xl leading-none tracking-tight transition-colors duration-300 ${scrolled ? 'text-primary' : 'text-white'}`}>
+                        <span className={`font-serif font-black text-xl leading-none tracking-tight transition-colors duration-300 ${isLightText ? 'text-white' : 'text-primary'}`}>
                             TRINITY
                         </span>
                         <span className="font-sans text-[0.6rem] font-bold tracking-[0.25em] text-gold uppercase mt-0.5">
@@ -55,7 +57,7 @@ export function Header({ onOpenQuote }: { onOpenQuote?: () => void }) {
                     </div>
                 </Link>
 
-                <nav className={`hidden lg:flex items-center gap-10 font-medium text-xs uppercase tracking-[0.15em] transition-colors duration-300 ${scrolled ? 'text-primary/80' : 'text-white/80'}`}>
+                <nav className={`hidden lg:flex items-center gap-10 font-medium text-xs uppercase tracking-[0.15em] transition-colors duration-300 ${isLightText ? 'text-white/80' : 'text-primary/80'}`}>
                     {/* Services Dropdown */}
                     <div
                         className="relative group"
@@ -95,8 +97,8 @@ export function Header({ onOpenQuote }: { onOpenQuote?: () => void }) {
 
                 <div className="hidden lg:flex items-center gap-6">
                     <div className="flex flex-col items-end text-right">
-                        <span className={`text-[10px] font-bold uppercase tracking-widest transition-colors duration-300 ${scrolled ? 'text-muted-foreground' : 'text-white/60'}`}>Call or Text</span>
-                        <a href="tel:7632252393" className={`font-serif font-bold text-lg leading-none transition-colors ${scrolled ? 'text-primary hover:text-gold' : 'text-white hover:text-gold'}`}>
+                        <span className={`text-[10px] font-bold uppercase tracking-widest transition-colors duration-300 ${isLightText ? 'text-white/60' : 'text-muted-foreground'}`}>Call or Text</span>
+                        <a href="tel:7632252393" className={`font-serif font-bold text-lg leading-none transition-colors ${isLightText ? 'text-white hover:text-gold' : 'text-primary hover:text-gold'}`}>
                             (763) 225-2393
                         </a>
                     </div>
@@ -109,7 +111,7 @@ export function Header({ onOpenQuote }: { onOpenQuote?: () => void }) {
                 </div>
 
                 <button
-                    className={`lg:hidden p-2 transition-colors ${scrolled ? 'text-primary hover:text-gold' : 'text-white hover:text-gold'}`}
+                    className={`lg:hidden p-2 transition-colors ${isLightText ? 'text-white hover:text-gold' : 'text-primary hover:text-gold'}`}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                     {isMenuOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" strokeWidth={1.5} />}
