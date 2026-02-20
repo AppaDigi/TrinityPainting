@@ -29,7 +29,7 @@ export function Header({ onOpenQuote }: { onOpenQuote?: () => void }) {
 
     const navItems = [
         { title: 'Process', href: '#process' },
-        { title: 'Portfolio', href: '#portfolio' },
+        { title: 'Portfolio', href: '/portfolio' },
         { title: 'About', href: '#about' }
     ];
 
