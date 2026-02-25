@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 import { type LucideIcon, ArrowRight, ChevronLeft, ChevronRight, HelpCircle } from "lucide-react";
 import { ICON_MAP } from "@/lib/services";
 
@@ -39,10 +40,12 @@ function ServiceCard({ service, index }: ServiceCardProps) {
             {/* Background Image with Black Overlay */}
             {service.image ? (
                 <div className="absolute inset-0">
-                    <img
+                    <Image
                         src={service.image}
                         alt={service.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                        sizes="(max-width: 768px) 320px, (max-width: 1024px) 360px, 400px"
                     />
                     <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500" />
                 </div>

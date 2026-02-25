@@ -43,8 +43,21 @@ interface ProjectMapProps {
     onProjectClick: (project: CompletedProject) => void;
 }
 
+function FitBounds() {
+    const map = useMap();
+
+    useEffect(() => {
+        if (completedProjects.length === 0) return;
+
+        const bounds = L.latLngBounds(completedProjects.map(p => p.coordinates));
+        map.fitBounds(bounds, { padding: [50, 50], animate: true });
+    }, [map]);
+
+    return null;
+}
+
 export default function ProjectMap({ onProjectClick }: ProjectMapProps) {
-    // Center roughly on East Central Minnesota based on our dummy data
+    // Center roughly on East Central Minnesota as a fallback
     const centerPosition: [number, number] = [45.65, -93.1];
 
     return (
@@ -55,6 +68,7 @@ export default function ProjectMap({ onProjectClick }: ProjectMapProps) {
                 scrollWheelZoom={false}
                 className="w-full h-full z-0"
             >
+                <FitBounds />
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"

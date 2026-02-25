@@ -14,6 +14,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://trinitypaintingmn.com"),
   title: "Trinity Painting & Renewal",
   description: "Faith-Focused Painting & Renewal. Serving East Central Minnesota with excellence since 2018.",
 };

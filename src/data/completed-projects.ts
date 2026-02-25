@@ -77,5 +77,27 @@ export const completedProjects: CompletedProject[] = [
             "/portfolio/retreat-refresh/after/1bf2d79a-353f-4287-99b5-f924811f2444.jpeg"
         ],
         serviceType: "Corporate, Exterior Paint"
+    },
+    {
+        id: "proj-gregs-house",
+        title: "Greg's House",
+        city: "Cambridge",
+        coordinates: [45.5602, -93.2249],
+        description: "A comprehensive interior transformation in Cambridge, MN. Our team meticulously prepared surfaces and applied premium finishes to modernize and brighten the living spaces, significantly enhancing the home's aesthetic and value.",
+        beforeImage: "/portfolio/gregs-house/before/1-Feb 21 2026 03_59pm-7XrW.jpg",
+        afterImage: "/portfolio/gregs-house/after/5-Feb 24 2026 08_07pm-dqtF.jpg",
+        beforeImages: [
+            "/portfolio/gregs-house/before/1-Feb 21 2026 03_59pm-7XrW.jpg",
+            "/portfolio/gregs-house/before/2-Feb 21 2026 03_59pm-ERPi.jpg",
+            "/portfolio/gregs-house/before/3-Feb 21 2026 03_59pm-H2CM.jpg",
+            "/portfolio/gregs-house/before/4-Feb 21 2026 03_59pm-be1j.jpg"
+        ],
+        afterImages: [
+            "/portfolio/gregs-house/after/5-Feb 24 2026 08_07pm-dqtF.jpg",
+            "/portfolio/gregs-house/after/6-Feb 24 2026 08_07pm-8KAh.jpg",
+            "/portfolio/gregs-house/after/7-Feb 24 2026 08_07pm-eKqt.jpg",
+            "/portfolio/gregs-house/after/8-Feb 24 2026 08_07pm-7xGK.jpg"
+        ],
+        serviceType: "Interior Painting"
     }
 ];
