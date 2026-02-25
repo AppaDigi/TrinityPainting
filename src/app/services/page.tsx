@@ -18,10 +18,10 @@ export default function ServicesHubPage() {
             <Header onOpenQuote={() => setIsQuoteModalOpen(true)} theme="light" />
             <div className="noise-overlay" />
 
-            <main className="flex-grow pt-32 pb-24 relative z-10">
+            <main className="flex-grow pt-24 md:pt-32 pb-24 relative z-10">
                 {/* Hero Section */}
                 <section className="container-wide mb-24">
-                    <div className="bg-primary rounded-[3rem] p-12 lg:p-24 relative overflow-hidden border border-white/5 shadow-2xl">
+                    <div className="bg-primary rounded-3xl lg:rounded-[3rem] p-8 md:p-12 lg:p-24 relative overflow-hidden border border-white/5 shadow-2xl">
                         {/* Decoration */}
                         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3" />
 
@@ -68,9 +68,9 @@ export default function ServicesHubPage() {
                         const isEven = index % 2 === 0;
 
                         return (
-                            <div key={service.slug} className={`grid lg:grid-cols-2 gap-16 lg:gap-32 items-center ${!isEven ? 'lg:flex-row-reverse' : ''}`}>
+                            <div key={service.slug} className={`grid lg:grid-cols-2 gap-12 lg:gap-32 items-center ${!isEven ? 'lg:flex-row-reverse' : ''}`}>
                                 <div className={`relative ${!isEven ? 'lg:order-2' : ''}`}>
-                                    <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border border-border group">
+                                    <div className="relative aspect-video sm:aspect-[3/2] lg:aspect-[4/5] rounded-3xl lg:rounded-[2.5rem] overflow-hidden shadow-2xl border border-border group">
                                         <Image
                                             src={service.image}
                                             alt={service.title}
@@ -87,7 +87,7 @@ export default function ServicesHubPage() {
                                     </div>
 
                                     {/* Decoration */}
-                                    <div className={`absolute -z-10 w-full h-full bg-gold/5 rounded-[2.5rem] ${isEven ? 'top-8 left-8' : 'top-8 right-8'}`} />
+                                    <div className={`absolute -z-10 w-full h-full bg-gold/5 rounded-3xl lg:rounded-[2.5rem] ${isEven ? 'top-4 left-4 lg:top-8 lg:left-8' : 'top-4 right-4 lg:top-8 lg:right-8'}`} />
                                 </div>
 
                                 <div className="space-y-8">
@@ -239,8 +239,9 @@ export default function ServicesHubPage() {
                 </section>
 
                 {/* Final CTA */}
-                <section className="container-wide py-32">
-                    <div className="bg-gold rounded-[3rem] p-12 lg:p-24 text-center relative overflow-hidden shadow-2xl">
+                {/* Final CTA */}
+                <section className="container-wide py-16 lg:py-32">
+                    <div className="bg-gold rounded-3xl lg:rounded-[3rem] p-8 md:p-12 lg:p-24 text-center relative overflow-hidden shadow-2xl">
                         <div className="absolute inset-0 bg-primary/5" />
                         <div className="relative z-10 max-w-3xl mx-auto">
                             <h2 className="text-primary mb-8 leading-tight">Ready to Renew Your <br /> <span className="italic text-white">Sacred Space?</span></h2>

@@ -61,7 +61,7 @@ export default function ProjectMap({ onProjectClick }: ProjectMapProps) {
     const centerPosition: [number, number] = [45.65, -93.1];
 
     return (
-        <div className="w-full h-[600px] rounded-[2rem] overflow-hidden shadow-2xl border border-border relative z-10 isolate">
+        <div className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-2xl border border-border relative z-10 isolate">
             <MapContainer
                 center={centerPosition}
                 zoom={9}

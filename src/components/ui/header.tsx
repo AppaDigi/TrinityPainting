@@ -11,7 +11,7 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
     const [scrolled, setScrolled] = useState(false);
     const [hoveredService, setHoveredService] = useState(false);
 
-    const isLightText = !scrolled && theme === 'dark';
+    const isLightText = !scrolled && theme === 'dark' && !isMenuOpen;
 
     // Scroll effect for glassmorphism
     useEffect(() => {
@@ -46,13 +46,15 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 border-b ${scrolled
-                ? "bg-white/95 backdrop-blur-2xl border-primary/5 py-4 shadow-sm"
-                : "bg-transparent border-transparent py-6"
+            className={`fixed top-0 left-0 right-0 z-[110] transition-all duration-300 ${isMenuOpen
+                ? "bg-white py-4 shadow-none border-none"
+                : (scrolled
+                    ? "bg-white/95 backdrop-blur-2xl border-b border-primary/5 py-3 md:py-4 shadow-sm"
+                    : "bg-transparent border-transparent py-4 md:py-6")
                 }`}
         >
-            <div className="container-wide flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-3 group relative z-[110]">
+            <div className="container-wide flex items-center justify-between relative z-[120]">
+                <Link href="/" className="flex items-center gap-3 group">
                     <div className="relative">
                         <img src="/logo.webp" alt="Trinity Painting" className="h-10 w-auto transition-transform duration-500 group-hover:scale-105" />
                     </div>
@@ -115,7 +117,7 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
                     ))}
                 </nav>
 
-                <div className="hidden lg:flex items-center gap-8 relative z-[110]">
+                <div className="hidden lg:flex items-center gap-8">
                     <div className="flex flex-col items-end text-right">
                         <span className={`text-[9px] font-black uppercase tracking-[0.2em] transition-colors duration-300 ${isLightText ? 'text-white/60' : 'text-muted-foreground'}`}>Call or Text</span>
                         <a href="tel:7632252393" className={`font-serif font-bold text-lg leading-none transition-colors ${isLightText ? 'text-white hover:text-gold' : 'text-primary hover:text-gold'}`}>
@@ -131,7 +133,7 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
                 </div>
 
                 <button
-                    className={`lg:hidden relative z-[110] p-2 transition-colors ${isMenuOpen ? 'text-primary' : (isLightText ? 'text-white hover:text-gold' : 'text-primary hover:text-gold')}`}
+                    className={`lg:hidden p-2 mt-2 transition-colors ${isMenuOpen ? 'text-primary' : (isLightText ? 'text-white hover:text-gold' : 'text-primary hover:text-gold')}`}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     aria-label="Toggle Menu"
                 >
@@ -139,92 +141,103 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
                 </button>
             </div>
 
-            {/* Full Screen Mobile Menu */}
+            {/* Full Screen Mobile Menu Overlay */}
             <AnimatePresence>
                 {isMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, x: '100%' }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: '100%' }}
-                        transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                        className="fixed inset-0 z-[105] bg-white flex flex-col lg:hidden"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed inset-0 z-[100] bg-white lg:hidden"
                     >
-                        <div className="flex-grow flex flex-col overflow-y-auto px-8 pt-32 pb-12">
-                            <div className="space-y-12">
-                                {/* Main Nav */}
-                                <div className="flex flex-col gap-6">
-                                    <span className="text-gold font-black text-[10px] uppercase tracking-[0.3em]">Navigation</span>
-                                    <div className="flex flex-col gap-4">
+                        <motion.div
+                            initial={{ x: '100%', opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            exit={{ x: '100%', opacity: 0 }}
+                            transition={{ type: "spring", damping: 30, stiffness: 300, mass: 0.8 }}
+                            className="h-full w-full flex flex-col"
+                        >
+                            {/* Sticky Header Background for the menu area to mask scrolling content */}
+                            <div className="h-24 bg-white shrink-0 relative z-[101]" />
+
+                            <div className="flex-grow flex flex-col overflow-y-auto px-8 pt-4 pb-12">
+                                <div className="space-y-12">
+                                    {/* Main Nav */}
+                                    <div className="flex flex-col gap-6">
+                                        <span className="text-gold font-black text-[10px] uppercase tracking-[0.3em]">Navigation</span>
+                                        <div className="flex flex-col gap-4">
+                                            <Link
+                                                href="/"
+                                                onClick={() => setIsMenuOpen(false)}
+                                                className="text-3xl sm:text-4xl font-serif font-black text-primary hover:text-gold active:text-gold transition-colors uppercase"
+                                            >
+                                                Home
+                                            </Link>
+                                            {navItems.map((item) => (
+                                                <Link
+                                                    key={item.title}
+                                                    href={item.href}
+                                                    onClick={() => setIsMenuOpen(false)}
+                                                    className="text-3xl sm:text-4xl font-serif font-black text-primary hover:text-gold active:text-gold transition-colors uppercase"
+                                                >
+                                                    {item.title}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Services */}
+                                    <div className="flex flex-col gap-6">
                                         <Link
-                                            href="/"
+                                            href="/services"
                                             onClick={() => setIsMenuOpen(false)}
-                                            className="text-4xl font-serif font-black text-primary hover:text-gold transition-colors uppercase"
+                                            className="text-gold font-black text-[10px] uppercase tracking-[0.3em] hover:text-primary transition-colors inline-block"
                                         >
-                                            Home
+                                            Our Services
                                         </Link>
-                                        {navItems.map((item) => (
-                                            <Link
-                                                key={item.title}
-                                                href={item.href}
-                                                onClick={() => setIsMenuOpen(false)}
-                                                className="text-4xl font-serif font-black text-primary hover:text-gold transition-colors uppercase"
-                                            >
-                                                {item.title}
-                                            </Link>
-                                        ))}
+                                        <div className="grid grid-cols-1 gap-4">
+                                            {services.map((service) => (
+                                                <Link
+                                                    key={service.href}
+                                                    href={service.href}
+                                                    onClick={() => setIsMenuOpen(false)}
+                                                    className="group flex items-center justify-between py-2 border-b border-primary/5 text-xl font-serif font-medium text-primary/80 hover:text-primary transition-colors uppercase"
+                                                >
+                                                    {service.title}
+                                                    <ArrowRight className="h-5 w-5 text-gold opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                                                </Link>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
 
-                                {/* Services */}
-                                <div className="flex flex-col gap-6">
-                                    <Link
-                                        href="/services"
-                                        onClick={() => setIsMenuOpen(false)}
-                                        className="text-gold font-black text-[10px] uppercase tracking-[0.3em] hover:text-primary transition-colors inline-block"
+                                {/* Mobile Contact Info */}
+                                <div className="mt-auto pt-12 space-y-8">
+                                    <div className="grid grid-cols-1 gap-6">
+                                        <a href="tel:7632252393" className="flex items-center gap-4 group">
+                                            <div className="h-12 w-12 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition-all">
+                                                <Phone className="h-5 w-5" />
+                                            </div>
+                                            <div>
+                                                <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Call or Text</p>
+                                                <p className="text-xl font-serif font-bold text-primary">(763) 225-2393</p>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <Button
+                                        onClick={() => {
+                                            setIsMenuOpen(false);
+                                            if (onOpenQuote) onOpenQuote();
+                                        }}
+                                        className="w-full h-16 bg-primary text-white rounded-2xl text-sm font-bold uppercase tracking-[0.2em] shadow-xl shadow-primary/20"
                                     >
-                                        Our Services
-                                    </Link>
-                                    <div className="grid grid-cols-1 gap-4">
-                                        {services.map((service) => (
-                                            <Link
-                                                key={service.href}
-                                                href={service.href}
-                                                onClick={() => setIsMenuOpen(false)}
-                                                className="group flex items-center justify-between py-2 border-b border-primary/5 text-xl font-serif font-medium text-primary/80 hover:text-primary transition-colors uppercase"
-                                            >
-                                                {service.title}
-                                                <ArrowRight className="h-5 w-5 text-gold opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                                            </Link>
-                                        ))}
-                                    </div>
+                                        Get A Free Quote
+                                    </Button>
                                 </div>
                             </div>
-
-                            {/* Mobile Contact Info */}
-                            <div className="mt-auto pt-12 space-y-8">
-                                <div className="grid grid-cols-1 gap-6">
-                                    <a href="tel:7632252393" className="flex items-center gap-4 group">
-                                        <div className="h-12 w-12 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition-all">
-                                            <Phone className="h-5 w-5" />
-                                        </div>
-                                        <div>
-                                            <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Call or Text</p>
-                                            <p className="text-xl font-serif font-bold text-primary">(763) 225-2393</p>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <Button
-                                    onClick={() => {
-                                        setIsMenuOpen(false);
-                                        if (onOpenQuote) onOpenQuote();
-                                    }}
-                                    className="w-full h-16 bg-primary text-white rounded-2xl text-sm font-bold uppercase tracking-[0.2em] shadow-xl shadow-primary/20"
-                                >
-                                    Get A Free Quote
-                                </Button>
-                            </div>
-                        </div>
+                        </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>

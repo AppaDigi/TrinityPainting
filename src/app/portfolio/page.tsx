@@ -22,7 +22,7 @@ export default function PortfolioPage() {
             <main className="flex-grow pt-32 pb-24 relative z-10">
                 <div className="container-wide mb-24">
                     {/* Hero Map Container */}
-                    <div className="bg-gold rounded-[3rem] shadow-[0_30px_90px_-15px_rgba(198,168,124,0.3)] p-8 lg:p-12 relative overflow-hidden border border-gold/20">
+                    <div className="bg-gold rounded-3xl lg:rounded-[3rem] shadow-[0_30px_90px_-15px_rgba(198,168,124,0.3)] p-6 sm:p-8 lg:p-12 relative overflow-hidden border border-gold/20">
                         {/* Decorative glow overlay to add texture */}
                         <div className="absolute top-0 left-1/2 w-[800px] h-[800px] bg-white/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
@@ -35,7 +35,7 @@ export default function PortfolioPage() {
                         </div>
 
                         {/* Interactive Map */}
-                        <div className="relative z-10 w-full rounded-[2rem] overflow-hidden shadow-2xl ring-4 ring-white/30 transition-all duration-300 hover:ring-white/50">
+                        <div className="relative z-10 w-full rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-2xl ring-4 ring-white/30 transition-all duration-300 hover:ring-white/50">
                             <ProjectMapDynamic onProjectClick={setSelectedProject} />
                         </div>
                     </div>
@@ -44,11 +44,11 @@ export default function PortfolioPage() {
                 {/* Project List */}
                 <div className="container-wide">
                     <span className="text-primary font-bold text-xs uppercase tracking-[0.25em] mb-12 block border-b border-border pb-4">All Projects</span>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
                         {completedProjects.map((project) => (
                             <div
                                 key={project.id}
-                                className="group cursor-pointer bg-surface-50 rounded-[2.5rem] overflow-hidden border border-border hover:border-gold/50 transition-all duration-500 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] hover:-translate-y-2 flex flex-col"
+                                className="group cursor-pointer bg-surface-50 rounded-3xl lg:rounded-[2.5rem] overflow-hidden border border-border hover:border-gold/50 transition-all duration-500 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] hover:-translate-y-2 flex flex-col"
                                 onClick={() => setSelectedProject(project)}
                             >
                                 <div className="relative aspect-video overflow-hidden border-b border-border/50">
