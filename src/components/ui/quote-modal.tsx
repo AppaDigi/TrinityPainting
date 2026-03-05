@@ -15,16 +15,32 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
     const router = useRouter();
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        const formData = new FormData(e.currentTarget);
+        const data = Object.fromEntries(formData);
 
-        setIsSubmitting(false);
-        onClose();
-        router.push("/thank-you");
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
+            if (res.ok) {
+                setIsSubmitting(false);
+                onClose();
+                router.push("/thank-you");
+            } else {
+                alert("Something went wrong. Please try again or call us.");
+                setIsSubmitting(false);
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Something went wrong. Please try again or call us.");
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -80,6 +96,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                                             <input
                                                 required
                                                 type="text"
+                                                name="fullName"
                                                 className="w-full h-14 pl-12 pr-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-gold focus:ring-4 focus:ring-gold/10 focus:outline-none transition-all font-medium text-primary"
                                                 placeholder="John Doe"
                                             />
@@ -94,6 +111,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                                             <input
                                                 required
                                                 type="tel"
+                                                name="phone"
                                                 className="w-full h-14 pl-12 pr-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-gold focus:ring-4 focus:ring-gold/10 focus:outline-none transition-all font-medium text-primary"
                                                 placeholder="(763) ___ - ____"
                                             />
@@ -110,6 +128,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                                             <input
                                                 required
                                                 type="email"
+                                                name="email"
                                                 className="w-full h-14 pl-12 pr-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-gold focus:ring-4 focus:ring-gold/10 focus:outline-none transition-all font-medium text-primary"
                                                 placeholder="john@example.com"
                                             />
@@ -124,6 +143,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                                             <input
                                                 required
                                                 type="text"
+                                                name="address"
                                                 className="w-full h-14 pl-12 pr-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-gold focus:ring-4 focus:ring-gold/10 focus:outline-none transition-all font-medium text-primary"
                                                 placeholder="Street, City, Zip"
                                             />
@@ -137,7 +157,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                                         <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 ml-1">Primary Service</label>
                                         <div className="relative group">
                                             <PaintBucket className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 group-focus-within:text-gold transition-colors" />
-                                            <select required className="w-full h-14 pl-12 pr-10 rounded-2xl bg-gray-50 border border-gray-100 focus:border-gold focus:ring-4 focus:ring-gold/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer">
+                                            <select required name="service" className="w-full h-14 pl-12 pr-10 rounded-2xl bg-gray-50 border border-gray-100 focus:border-gold focus:ring-4 focus:ring-gold/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer">
                                                 <option value="">Select option...</option>
                                                 <option>Exterior Painting</option>
                                                 <option>Interior Painting</option>
@@ -152,7 +172,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                                         <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 ml-1 text-nowrap">Stewardship Tier <span className="hidden sm:inline">(Sherwin-Williams)</span></label>
                                         <div className="relative group">
                                             <ShieldCheck className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 group-focus-within:text-gold transition-colors" />
-                                            <select required className="w-full h-14 pl-12 pr-10 rounded-2xl bg-gray-50 border border-gray-100 focus:border-gold focus:ring-4 focus:ring-gold/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer text-sm">
+                                            <select required name="tier" className="w-full h-14 pl-12 pr-10 rounded-2xl bg-gray-50 border border-gray-100 focus:border-gold focus:ring-4 focus:ring-gold/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer text-sm">
                                                 <option value="">Select protection level...</option>
                                                 <option>The Best: Emerald / Rain Refresh</option>
                                                 <option>The Better: Duration</option>
@@ -169,7 +189,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                                         <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 ml-1">Property Type</label>
                                         <div className="relative group">
                                             <Home className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 group-focus-within:text-gold transition-colors" />
-                                            <select required className="w-full h-14 pl-12 pr-10 rounded-2xl bg-gray-50 border border-gray-100 focus:border-gold focus:ring-4 focus:ring-gold/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer">
+                                            <select required name="propertyType" className="w-full h-14 pl-12 pr-10 rounded-2xl bg-gray-50 border border-gray-100 focus:border-gold focus:ring-4 focus:ring-gold/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer">
                                                 <option value="">Select option...</option>
                                                 <option>Residential</option>
                                                 <option>Commercial</option>
@@ -182,7 +202,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                                         <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 ml-1">Hero & Heritage Discounts</label>
                                         <div className="relative group">
                                             <CheckCircle2 className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 group-focus-within:text-gold transition-colors" />
-                                            <select className="w-full h-14 pl-12 pr-10 rounded-2xl bg-gray-50 border border-gray-100 focus:border-gold focus:ring-4 focus:ring-gold/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer text-sm">
+                                            <select name="discount" className="w-full h-14 pl-12 pr-10 rounded-2xl bg-gray-50 border border-gray-100 focus:border-gold focus:ring-4 focus:ring-gold/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer text-sm">
                                                 <option>None / Regular Stewardship</option>
                                                 <option>Homeschooling Family</option>
                                                 <option>First Responder / Law</option>
@@ -200,6 +220,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                                         <MessageSquare className="absolute left-4 top-6 h-4 w-4 text-gray-400 group-focus-within:text-gold transition-colors" />
                                         <textarea
                                             rows={3}
+                                            name="goals"
                                             className="w-full p-6 pl-12 rounded-2xl bg-gray-50 border border-gray-100 focus:border-gold focus:ring-4 focus:ring-gold/10 focus:outline-none transition-all font-medium text-primary resize-none"
                                             placeholder="Tell us about your goals (e.g. Maximizing Resale Value, Routine Maintenance), specific repairs, or preferred start dates..."
                                         />
