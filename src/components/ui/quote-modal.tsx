@@ -62,7 +62,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
                         transition={{ type: "spring", duration: 0.5, bounce: 0.3 }}
-                        className="relative w-full max-w-2xl bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-white/10"
+                        className="relative w-full max-w-2xl max-h-[100dvh] sm:max-h-[90vh] bg-white rounded-2xl sm:rounded-[2.5rem] shadow-2xl overflow-y-auto border border-white/10 scrollbar-hide"
                     >
                         {/* Header Image/Pattern Overlay */}
                         <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
@@ -74,8 +74,8 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                             <X className="h-6 w-6" />
                         </button>
 
-                        <div className="relative z-10 p-8 md:p-12">
-                            <div className="mb-10">
+                        <div className="relative z-10 p-6 sm:p-8 md:p-12">
+                            <div className="mb-8 sm:mb-10">
                                 <span className="text-gold font-bold text-[10px] uppercase tracking-[0.3em] mb-3 block">Elevate Your Space</span>
                                 <h2 className="text-primary text-4xl md:text-5xl font-serif font-black tracking-tight leading-none">
                                     Request Your <br />
@@ -87,7 +87,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                             </div>
 
                             <form onSubmit={handleSubmit} className="space-y-6">
-                                <div className="grid md:grid-cols-2 gap-6">
+                                <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                                     {/* Name */}
                                     <div className="space-y-2">
                                         <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 ml-1">Full Name</label>
@@ -119,7 +119,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                                     </div>
                                 </div>
 
-                                <div className="grid md:grid-cols-2 gap-6">
+                                <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                                     {/* Email */}
                                     <div className="space-y-2">
                                         <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 ml-1">Email Address</label>
@@ -151,7 +151,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                                     </div>
                                 </div>
 
-                                <div className="grid md:grid-cols-2 gap-6">
+                                <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                                     {/* Service Type */}
                                     <div className="space-y-2">
                                         <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 ml-1">Primary Service</label>
@@ -183,7 +183,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                                     </div>
                                 </div>
 
-                                <div className="grid md:grid-cols-2 gap-6">
+                                <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                                     {/* Property Type */}
                                     <div className="space-y-2">
                                         <label className="text-[10px] font-bold uppercase tracking-widest text-primary/60 ml-1">Property Type</label>
@@ -219,7 +219,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                                     <div className="relative group">
                                         <MessageSquare className="absolute left-4 top-6 h-4 w-4 text-gray-400 group-focus-within:text-gold transition-colors" />
                                         <textarea
-                                            rows={3}
+                                            rows={2}
                                             name="goals"
                                             className="w-full p-6 pl-12 rounded-2xl bg-gray-50 border border-gray-100 focus:border-gold focus:ring-4 focus:ring-gold/10 focus:outline-none transition-all font-medium text-primary resize-none"
                                             placeholder="Tell us about your goals (e.g. Maximizing Resale Value, Routine Maintenance), specific repairs, or preferred start dates..."
