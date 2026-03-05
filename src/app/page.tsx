@@ -177,10 +177,32 @@ export default function Home() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const router = useRouter();
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const [isSubmittingContact, setIsSubmittingContact] = useState(false);
+
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // In a real app, you'd handle the form data here
-    router.push('/thank-you');
+    setIsSubmittingContact(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        router.push('/thank-you');
+      } else {
+        alert("Something went wrong. Please try again or call us.");
+        setIsSubmittingContact(false);
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again or call us.");
+      setIsSubmittingContact(false);
+    }
   };
 
   return (
@@ -382,22 +404,22 @@ export default function Home() {
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Name</label>
-                      <input required className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="First & Last Name" />
+                      <input required name="fullName" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="First & Last Name" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Phone Number</label>
-                      <input required type="tel" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="(555) 555-5555" />
+                      <input required type="tel" name="phone" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="(555) 555-5555" />
                     </div>
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Email Address</label>
-                      <input required type="email" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="john@example.com" />
+                      <input required type="email" name="email" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="john@example.com" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Project Address</label>
-                      <input required className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="Street, City, Zip" />
+                      <input required name="address" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="Street, City, Zip" />
                     </div>
                   </div>
 
@@ -405,7 +427,7 @@ export default function Home() {
                     <div className="space-y-2">
                       <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Property Type</label>
                       <div className="relative">
-                        <select required className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm">
+                        <select required name="propertyType" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm">
                           <option value="">Select an option...</option>
                           <option>Residential (Single Family, Townhome)</option>
                           <option>Commercial (Storefront, Office, Industrial)</option>
@@ -416,7 +438,7 @@ export default function Home() {
                     <div className="space-y-2">
                       <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Primary Service</label>
                       <div className="relative">
-                        <select required className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm">
+                        <select required name="service" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm">
                           <option value="">Select an option...</option>
                           <option>Exterior Painting</option>
                           <option>Interior Painting</option>
@@ -430,7 +452,7 @@ export default function Home() {
                   <div className="space-y-2">
                     <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Stewardship Tier (American-Made Sherwin-Williams)</label>
                     <div className="relative">
-                      <select required className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm text-sm">
+                      <select required name="tier" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm text-sm">
                         <option value="">Select protection level...</option>
                         <option>The Best: Emerald / Rain Refresh</option>
                         <option>The Better: Duration</option>
@@ -443,7 +465,7 @@ export default function Home() {
                   <div className="space-y-2">
                     <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Hero & Heritage Discounts</label>
                     <div className="relative">
-                      <select className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm text-sm">
+                      <select name="discount" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm text-sm">
                         <option>None / Regular Stewardship</option>
                         <option>Homeschooling Family</option>
                         <option>First Responder / Law Enforcement</option>
@@ -457,13 +479,14 @@ export default function Home() {
                     <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Project Goals & Additional Notes</label>
                     <textarea
                       rows={3}
+                      name="goals"
                       className="w-full p-4 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm resize-none"
                       placeholder="Tell us about your goals (e.g. Maximizing Resale Value, Routine Maintenance) and current conditions..."
                     />
                   </div>
 
-                  <Button className="w-full h-16 text-lg font-bold bg-primary text-white hover:bg-white hover:text-primary transition-all rounded-2xl uppercase tracking-widest mt-4 shadow-xl shadow-primary/20">
-                    Request Formal Estimate
+                  <Button type="submit" disabled={isSubmittingContact} className="w-full h-16 text-lg font-bold bg-primary text-white hover:bg-white hover:text-primary transition-all rounded-2xl uppercase tracking-widest mt-4 shadow-xl shadow-primary/20">
+                    {isSubmittingContact ? "Processing..." : "Request Formal Estimate"}
                   </Button>
                 </form>
               </div>
