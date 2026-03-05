@@ -319,41 +319,7 @@ export default function Home() {
 
         <CoreIdentity />
 
-        {/* ====================
-            TRINITY SEAL (High Contrast)
-            ==================== */}
-        <section className="py-[var(--section-spacing)] bg-primary text-white relative overflow-hidden">
-          <div className="container-wide relative z-10">
-            <div className="grid lg:grid-cols-12 gap-16">
-              <div className="lg:col-span-5 relative">
-                <div className="sticky top-32">
-                  <span className="text-gold font-bold text-xs uppercase tracking-[0.25em] mb-6 block">The Trinity Seal of Integrity</span>
-                  <h2 className="text-5xl md:text-7xl font-serif leading-[0.9] mb-12">
-                    A Covenant of <br />
-                    <span className="text-gray-500 italic">Craftsmanship<br />& Stewardship</span>
-                  </h2>
-                  <p className="text-gray-400 text-lg leading-relaxed max-w-md">
-                    When you see the Trinity Seal, you are receiving more than a standard contractor's guarantee. It is our public commitment to the following three pillars:
-                  </p>
-                </div>
-              </div>
 
-              <div className="lg:col-span-7 grid gap-y-16">
-                {[
-                  { title: "1. Projects Over Profits", desc: "We believe that your home is a stewardship, not just a job site. Our mission is to prioritize the long-term integrity of your property over our own bottom line. If a corner could be cut to save us money but sacrifice your quality, we won't do it. We work until the project is right, period." },
-                  { title: "2. God-Honoring Craftsmanship", desc: "Our work is an act of worship. Following Colossians 3:23, we don't just paint for the homeowner; we paint for the Lord. This means our lines are straighter, our prep work is deeper, and our finish is cleaner because we are accountable to a higher standard than any building inspector." },
-                  { title: "3. The Trinity Seal Guarantee", desc: "We stand behind every brushstroke. If any aspect of our work does not reflect the excellence we've promised, we will return and make it right at no cost to you. Our reputation in the Minnesota community is built on being God-fearing men who do exactly what we say we will do." },
-                ].map((seal, i) => (
-                  <div key={i} className="group border-l border-white/10 pl-8 hover:border-gold transition-colors duration-500">
-                    <span className="block text-6xl font-serif text-white/10 font-bold mb-4 group-hover:text-gold transition-colors duration-500">0{i + 1}</span>
-                    <h3 className="text-3xl font-serif font-medium mb-4 group-hover:text-gold transition-colors">{seal.title}</h3>
-                    <p className="text-gray-400 text-lg font-light leading-relaxed group-hover:text-gray-300 transition-colors">{seal.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ====================
             TESTIMONIALS
