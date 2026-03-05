@@ -11,10 +11,6 @@ import {
     ArrowRight,
     CheckCircle2,
     ChevronRight,
-    Home,
-    ShieldCheck,
-    Star,
-    Info,
     Plus,
     Minus,
     HelpCircle
@@ -27,8 +23,6 @@ import { ImageAutoSlider } from "@/components/ui/image-auto-slider";
 export default function ServiceClient({ service }: { service: Service }) {
     const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-    const Icon = ICON_MAP[service.icon] || HelpCircle;
 
     return (
         <div className="relative min-h-screen w-full flex flex-col font-sans overflow-x-hidden bg-background">

@@ -23,6 +23,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { QuoteModal } from "@/components/ui/quote-modal";
+import { CoreIdentity } from "@/components/ui/core-identity";
 
 const carouselServices: CarouselService[] = [
   {
@@ -84,38 +85,90 @@ const carouselServices: CarouselService[] = [
 const testimonials = [
   {
     author: {
-      name: "Sarah M.",
-      handle: "Cambridge, MN",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+      name: "Home Owner",
+      handle: "Facebook",
     },
-    text: "Dustin and his team did an excellent job removing wallpaper and repainting a large family room. Great communication throughout, fair pricing, and the room looks fantastic!",
+    text: "We hired trinity for some interior painting and the end result was flawless. Thanks again",
     href: "#"
   },
   {
     author: {
-      name: "Mike T.",
-      handle: "Mora, MN",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+      name: "Home Owner",
+      handle: "Google",
     },
-    text: "Dustin removed old wallpaper paste, repaired sheetrock, and painted our ceiling, walls, and doors. The walls look like new! Very pleased from beginning to end.",
+    text: "We hired Dustin to paint a couple of years ago, and he did a great job! We were impressed with how quickly he completed the job and would recommend him to friends and family.",
     href: "#"
   },
   {
     author: {
-      name: "Jennifer K.",
-      handle: "Pine City, MN",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
+      name: "Minneapolis, MN",
+      handle: "Facebook",
+    },
+    text: "Highly recommend! We had our bedroom painted by Dustin and it turned out amazing. Professional, efficient, and very detail-oriented. Everything was kept clean and the finished result looks flawless. We're so happy with how it turned out and would definitely use them again!",
+    href: "#"
+  },
+  {
+    author: {
+      name: "Dustin Akers",
+      handle: "Google",
+    },
+    text: "I have used dustin Nyblom for shop repair after tree fell on it. He does great work also treats you like family and it's his own home. Respectful responsible careing and very informative how the job will be done and keeps you in the loop.",
+    href: "#"
+  },
+  {
+    author: {
+      name: "Allie Nicole",
+      handle: "Google",
+    },
+    text: "We had our bedroom painted in our South Minneapolis home and couldn't be happier with the results. The work was done professionally, efficiently, and with great attention to detail. Communication with Dustin was easy throughout the process, and everything was completed on time. We would absolutely recommend them to anyone looking for quality interior painting and would gladly hire them again.",
+    href: "#"
+  },
+  {
+    author: {
+      name: "Sara McConnell",
+      handle: "REALTOR (Google)",
+    },
+    text: "Dustin and his team did an excellent job removing wallpaper and repainting a large family room for a client of mine. Dustin had great communication throughout the process, was fair with pricing and the family room looks fantastic now! Thanks Dustin and team!",
+    href: "#"
+  },
+  {
+    author: {
+      name: "Saint Paul Home Owner",
+      handle: "Facebook",
+    },
+    text: "Shoutout to Trinity Painting & Renewal Services for the amazing job they did on my home interior! They covered multiple rooms and several walls, completely transforming the feel of my house here in Saint Paul. The owner is one of the friendliest professionals I've dealt with and he really went above and beyond to make the project work for my financial goals. The crew was respectful, and the communication was excellent throughout the entire job. I will definitely be using them again for any future painting needs!",
+    href: "#"
+  },
+  {
+    author: {
+      name: "Pam Caron",
+      handle: "Lino Lakes, MN",
+    },
+    text: "Dustin removed old wallpaper paste on sheet rocked walls. Some sheet rock repair was done, and the walls look like new! Fresh paint on the ceiling, walls and doors. I was very pleased with his work from beginning to end. Would definitely hire him again.",
+    href: "#"
+  },
+  {
+    author: {
+      name: "Nathan Tatro",
+      handle: "Google",
     },
     text: "Very talented and works with much integrity. Keep up the great work team! 🙏🏼✝️",
     href: "#"
   },
   {
     author: {
-      name: "David & Lisa R.",
-      handle: "South Minneapolis",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+      name: "Andrew Barrett",
+      handle: "Google",
     },
-    text: "Professional, efficient, and very detail-oriented. Everything was kept clean and the finished result looks flawless. We're so happy with how it turned out.",
+    text: "Good work, better people 👍🏼",
+    href: "#"
+  },
+  {
+    author: {
+      name: "Calvin Peterson",
+      handle: "Google",
+    },
+    text: "Great owner, honest work!",
     href: "#"
   }
 ];
@@ -147,8 +200,10 @@ export default function Home() {
         <div className="py-12 bg-gold relative z-20 border-y border-gold/20">
           <div className="container-wide">
             <div className="flex flex-wrap justify-center lg:justify-between items-center gap-x-16 gap-y-8 text-xs font-bold uppercase tracking-[0.2em] text-black">
+              <div className="hover:scale-105 transition-transform">
+                <iframe frameBorder="0" style={{ border: 0, height: "90px", width: "200px" }} src="https://seal-minnesota.bbb.org/frame/ruhzbal/bbb-1000078684.png?chk=C86EBB7D65"></iframe>
+              </div>
               {[
-                "BBB Accredited Business",
                 "Fully Licensed & Insured",
                 "Serving Mora & Beyond",
                 "5-Star Rated Service"
@@ -240,6 +295,8 @@ export default function Home() {
           </div>
         </section>
 
+        <CoreIdentity />
+
         {/* ====================
             TRINITY SEAL (High Contrast)
             ==================== */}
@@ -248,28 +305,27 @@ export default function Home() {
             <div className="grid lg:grid-cols-12 gap-16">
               <div className="lg:col-span-5 relative">
                 <div className="sticky top-32">
-                  <span className="text-gold font-bold text-xs uppercase tracking-[0.25em] mb-6 block">The Trinity Seal</span>
+                  <span className="text-gold font-bold text-xs uppercase tracking-[0.25em] mb-6 block">The Trinity Seal of Integrity</span>
                   <h2 className="text-5xl md:text-7xl font-serif leading-[0.9] mb-12">
-                    Our ironclad <br />
-                    <span className="text-gray-500 italic">promise to you.</span>
+                    A Covenant of <br />
+                    <span className="text-gray-500 italic">Craftsmanship<br />& Stewardship</span>
                   </h2>
                   <p className="text-gray-400 text-lg leading-relaxed max-w-md">
-                    We don't just finish the job; we finish it right. Our 4-point promise covers every aspect of your experience.
+                    When you see the Trinity Seal, you are receiving more than a standard contractor's guarantee. It is our public commitment to the following three pillars:
                   </p>
                 </div>
               </div>
 
-              <div className="lg:col-span-7 grid sm:grid-cols-2 gap-x-12 gap-y-16">
+              <div className="lg:col-span-7 grid gap-y-16">
                 {[
-                  { title: "God-Honoring Craftsmanship", desc: "Work that reflects excellence and integrity." },
-                  { title: "People Over Profits", desc: "You receive our full attention, regardless of project size." },
-                  { title: "Transparent Communication", desc: "Just honest pricing and clear timelines. No 'surprise' invoices." },
-                  { title: "Quality That Lasts", desc: "Premium materials like Sherwin-Williams only. We never cut corners on prep work." },
+                  { title: "1. Projects Over Profits", desc: "We believe that your home is a stewardship, not just a job site. Our mission is to prioritize the long-term integrity of your property over our own bottom line. If a corner could be cut to save us money but sacrifice your quality, we won't do it. We work until the project is right, period." },
+                  { title: "2. God-Honoring Craftsmanship", desc: "Our work is an act of worship. Following Colossians 3:23, we don't just paint for the homeowner; we paint for the Lord. This means our lines are straighter, our prep work is deeper, and our finish is cleaner because we are accountable to a higher standard than any building inspector." },
+                  { title: "3. The Trinity Seal Guarantee", desc: "We stand behind every brushstroke. If any aspect of our work does not reflect the excellence we've promised, we will return and make it right at no cost to you. Our reputation in the Minnesota community is built on being God-fearing men who do exactly what we say we will do." },
                 ].map((seal, i) => (
                   <div key={i} className="group border-l border-white/10 pl-8 hover:border-gold transition-colors duration-500">
                     <span className="block text-6xl font-serif text-white/10 font-bold mb-4 group-hover:text-gold transition-colors duration-500">0{i + 1}</span>
-                    <h3 className="text-2xl font-serif font-medium mb-3 group-hover:text-gold transition-colors">{seal.title}</h3>
-                    <p className="text-gray-500 font-light leading-relaxed group-hover:text-gray-300 transition-colors">{seal.desc}</p>
+                    <h3 className="text-3xl font-serif font-medium mb-4 group-hover:text-gold transition-colors">{seal.title}</h3>
+                    <p className="text-gray-400 text-lg font-light leading-relaxed group-hover:text-gray-300 transition-colors">{seal.desc}</p>
                   </div>
                 ))}
               </div>
@@ -281,8 +337,8 @@ export default function Home() {
             TESTIMONIALS
             ==================== */}
         <TestimonialsSection
-          title="Word of Mouth"
-          description="We take pride in our work and it shows in the reviews from our neighbors."
+          title="Realtor ROI & Client Testimonials"
+          description="Local realtors and homeowners agree: A Trinity paint job directly increases your home's value and speeds up the resale process in our market."
           testimonials={testimonials}
           className="bg-primary border-t border-white/5 pb-48"
         />
@@ -325,32 +381,89 @@ export default function Home() {
                 >
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">First Name</label>
-                      <input className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="John" />
+                      <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Name</label>
+                      <input required className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="First & Last Name" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Last Name</label>
-                      <input className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="Doe" />
+                      <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Phone Number</label>
+                      <input required type="tel" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="(555) 555-5555" />
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Email Address</label>
-                    <input className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="john@example.com" />
+
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Email Address</label>
+                      <input required type="email" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="john@example.com" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Project Address</label>
+                      <input required className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="Street, City, Zip" />
+                    </div>
                   </div>
+
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Property Type</label>
+                      <div className="relative">
+                        <select required className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm">
+                          <option value="">Select an option...</option>
+                          <option>Residential (Single Family, Townhome)</option>
+                          <option>Commercial (Storefront, Office, Industrial)</option>
+                        </select>
+                        <ArrowRight className="absolute right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40 rotate-90 pointer-events-none" />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Primary Service</label>
+                      <div className="relative">
+                        <select required className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm">
+                          <option value="">Select an option...</option>
+                          <option>Exterior Painting</option>
+                          <option>Interior Painting</option>
+                          <option>Full Renewal (Both)</option>
+                        </select>
+                        <ArrowRight className="absolute right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40 rotate-90 pointer-events-none" />
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="space-y-2">
-                    <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Service Needed</label>
+                    <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Stewardship Tier (American-Made Sherwin-Williams)</label>
                     <div className="relative">
-                      <select className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm">
-                        <option>Interior Painting</option>
-                        <option>Exterior Painting</option>
-                        <option>Cabinet Refinishing</option>
-                        <option>Full Renovation</option>
+                      <select required className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm text-sm">
+                        <option value="">Select protection level...</option>
+                        <option>The Best: Emerald / Rain Refresh</option>
+                        <option>The Better: Duration</option>
+                        <option>The Good: SuperPaint / Latitude</option>
                       </select>
                       <ArrowRight className="absolute right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40 rotate-90 pointer-events-none" />
                     </div>
                   </div>
+
+                  <div className="space-y-2">
+                    <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Hero & Heritage Discounts</label>
+                    <div className="relative">
+                      <select className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm text-sm">
+                        <option>None / Regular Stewardship</option>
+                        <option>Homeschooling Family</option>
+                        <option>First Responder / Law Enforcement</option>
+                        <option>Military / Veteran</option>
+                      </select>
+                      <ArrowRight className="absolute right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40 rotate-90 pointer-events-none" />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Project Goals & Additional Notes</label>
+                    <textarea
+                      rows={3}
+                      className="w-full p-4 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm resize-none"
+                      placeholder="Tell us about your goals (e.g. Maximizing Resale Value, Routine Maintenance) and current conditions..."
+                    />
+                  </div>
+
                   <Button className="w-full h-16 text-lg font-bold bg-primary text-white hover:bg-white hover:text-primary transition-all rounded-2xl uppercase tracking-widest mt-4 shadow-xl shadow-primary/20">
-                    Submit Request
+                    Request Formal Estimate
                   </Button>
                 </form>
               </div>

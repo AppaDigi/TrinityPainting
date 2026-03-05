@@ -5,10 +5,10 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { completedProjects, type CompletedProject } from "@/data/completed-projects";
-import { MapPin } from "lucide-react";
 import ReactDOMServer from "react-dom/server";
 
 // Fix Leaflet's default icon issue in Next.js
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
     iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
@@ -20,6 +20,7 @@ L.Icon.Default.mergeOptions({
 const createCustomIcon = (project: CompletedProject) => {
     const iconHtml = ReactDOMServer.renderToString(
         <div className="relative w-12 h-12 rounded-full border-4 border-white shadow-xl overflow-hidden cursor-pointer hover:scale-110 transition-transform group">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
                 src={project.afterImage}
                 alt={project.title}

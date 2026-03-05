@@ -37,24 +37,24 @@ export default function PageTemplate({ content }: { content: ContentData }) {
           <p className="max-w-2xl text-lg text-slate-600">
             {content.description}
           </p>
-          
+
           <div className="mt-6 aspect-video w-full overflow-hidden rounded-xl bg-slate-200">
-             <img 
-               src={content.heroImage} 
-               alt="Hero Image" 
-               className="h-full w-full object-cover"
-             />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={content.heroImage}
+              alt="Hero Image"
+              className="h-full w-full object-cover"
+            />
           </div>
 
           <div className="flex flex-wrap gap-3 pt-4">
             {content.links && content.links.map((link, idx) => (
               <a
                 key={idx}
-                className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${
-                  link.primary 
-                    ? "bg-slate-900 text-white hover:bg-slate-700" 
+                className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${link.primary
+                    ? "bg-slate-900 text-white hover:bg-slate-700"
                     : "border border-slate-300 bg-white text-slate-700 hover:border-slate-400"
-                }`}
+                  }`}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"

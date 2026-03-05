@@ -4,7 +4,7 @@ import React, { useRef, useState, useEffect, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
-import { type LucideIcon, ArrowRight, ChevronLeft, ChevronRight, HelpCircle } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, HelpCircle } from "lucide-react";
 import { ICON_MAP } from "@/lib/services";
 
 export interface Service {
@@ -12,16 +12,15 @@ export interface Service {
     title: string;
     slug: string;
     description: string;
-    icon: any;
+    icon: unknown;
     image?: string;
 }
 
 interface ServiceCardProps {
     service: Service;
-    index: number;
 }
 
-function ServiceCard({ service, index }: ServiceCardProps) {
+function ServiceCard({ service }: ServiceCardProps) {
     const Icon = ICON_MAP[service.icon as string] || HelpCircle;
 
     return (
@@ -195,9 +194,9 @@ export function ServiceCarousel({ services, className }: ServiceCarouselProps) {
                     "[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
                 )}
             >
-                {services.map((service, i) => (
+                {services.map((service) => (
                     <div key={service.number} className="snap-start">
-                        <ServiceCard service={service} index={i} />
+                        <ServiceCard service={service} />
                     </div>
                 ))}
             </div>

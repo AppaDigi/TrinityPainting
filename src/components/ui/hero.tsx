@@ -132,13 +132,13 @@ export default function Hero({ onOpenQuote }: { onOpenQuote?: () => void }) {
                                 <ArrowRight className="h-5 w-5" />
                             </span>
                         </Button>
-                        <Link href="#process">
+                        <Link href="#identity">
                             <Button
                                 size="lg"
                                 variant="outline"
                                 className="h-16 px-10 text-sm font-bold text-white border-white/25 hover:bg-white/10 hover:border-white/40 transition-all rounded-none uppercase tracking-widest backdrop-blur-sm"
                             >
-                                Our Process
+                                Our Foundation
                             </Button>
                         </Link>
                     </div>

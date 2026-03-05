@@ -4,7 +4,6 @@ import { Star } from "lucide-react";
 export interface TestimonialAuthor {
     name: string;
     handle: string; // e.g., "Mora, MN"
-    avatar: string;
 }
 
 export interface TestimonialCardProps {
@@ -42,19 +41,16 @@ function TestimonialCard({
                     ))}
                 </div>
                 <p className="text-xl text-gray-200 font-serif leading-relaxed italic line-clamp-4">
-                    "{text}"
+                    &quot;{text}&quot;
                 </p>
             </div>
 
             <div className="flex items-center gap-4 mt-6 pt-6 border-t border-white/10">
-                <div className="h-12 w-12 rounded-full overflow-hidden border border-white/20 ring-2 ring-gold/20">
-                    <img src={author.avatar} alt={author.name} className="h-full w-full object-cover" />
-                </div>
                 <div className="flex flex-col items-start">
                     <p className="font-sans font-bold text-white text-base leading-snug tracking-normal">
                         {author.name}
                     </p>
-                    <p className="text-xs font-bold uppercase tracking-wider text-gold/80">
+                    <p className="text-xs font-bold uppercase tracking-wider text-gold/80 mt-1">
                         {author.handle}
                     </p>
                 </div>

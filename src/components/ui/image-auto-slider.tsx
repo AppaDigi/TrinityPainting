@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
+
 
 interface ImageAutoSliderProps {
     images: string[];
@@ -81,6 +81,7 @@ export const ImageAutoSlider = ({ images, title, subtitle }: ImageAutoSliderProp
                                 key={index}
                                 className="image-item flex-shrink-0 w-64 h-64 md:w-80 md:h-80 lg:w-[450px] lg:h-[350px] rounded-2xl overflow-hidden shadow-2xl border border-white/10"
                             >
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={image}
                                     alt={`Gallery image ${(index % images.length) + 1}`}

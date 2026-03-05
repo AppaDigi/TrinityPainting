@@ -8,7 +8,6 @@ import {
     Twitter,
     Youtube,
     ShieldCheck,
-    Clock,
     ExternalLink
 } from 'lucide-react';
 
