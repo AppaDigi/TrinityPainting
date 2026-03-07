@@ -333,9 +333,9 @@ export default function Home() {
         {/* ====================
             CONTACT / LEAD GEN
             ==================== */}
-        <section id="quote" className="relative pb-32 -mt-32 z-30">
-          <div className="container-wide">
-            <div className="bg-gold rounded-[3rem] shadow-[0_30px_90px_-15px_rgba(198,168,124,0.3)] p-8 lg:p-24 border border-gold/20 relative overflow-hidden">
+        <section id="quote" className="relative pb-20 sm:pb-32 -mt-16 sm:-mt-32 z-30">
+          <div className="container-wide px-4 sm:px-6">
+            <div className="bg-gold rounded-[2rem] sm:rounded-[3rem] shadow-[0_30px_90px_-15px_rgba(198,168,124,0.3)] p-6 sm:p-8 lg:p-24 border border-gold/20 relative overflow-hidden">
               {/* Decoration */}
               <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 pointer-events-none" />
 
@@ -364,93 +364,93 @@ export default function Home() {
 
                 <form
                   onSubmit={handleContactSubmit}
-                  className="space-y-6 bg-white/30 p-8 lg:p-12 rounded-[2.5rem] border border-white/10 backdrop-blur-md"
+                  className="space-y-4 sm:space-y-6 bg-white/30 p-6 sm:p-8 lg:p-12 rounded-3xl sm:rounded-[2.5rem] border border-white/10 backdrop-blur-md"
                 >
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Name</label>
-                      <input required name="fullName" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="First & Last Name" />
+                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+                    <div className="space-y-1 sm:space-y-2">
+                      <label className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-2 sm:pl-3">Name</label>
+                      <input required name="fullName" className="w-full h-12 sm:h-14 px-4 sm:px-6 rounded-xl sm:rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm text-sm sm:text-base" placeholder="First & Last Name" />
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Phone Number</label>
-                      <input required type="tel" name="phone" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="(555) 555-5555" />
-                    </div>
-                  </div>
-
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Email Address</label>
-                      <input required type="email" name="email" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="john@example.com" />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Project Address</label>
-                      <input required name="address" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm" placeholder="Street, City, Zip" />
+                    <div className="space-y-1 sm:space-y-2">
+                      <label className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-2 sm:pl-3">Phone Number</label>
+                      <input required type="tel" name="phone" className="w-full h-12 sm:h-14 px-4 sm:px-6 rounded-xl sm:rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm text-sm sm:text-base" placeholder="(555) 555-5555" />
                     </div>
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Property Type</label>
+                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+                    <div className="space-y-1 sm:space-y-2">
+                      <label className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-2 sm:pl-3">Email Address</label>
+                      <input required type="email" name="email" className="w-full h-12 sm:h-14 px-4 sm:px-6 rounded-xl sm:rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm text-sm sm:text-base" placeholder="john@example.com" />
+                    </div>
+                    <div className="space-y-1 sm:space-y-2">
+                      <label className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-2 sm:pl-3">Project Address</label>
+                      <input required name="address" className="w-full h-12 sm:h-14 px-4 sm:px-6 rounded-xl sm:rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm text-sm sm:text-base" placeholder="Street, City, Zip" />
+                    </div>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+                    <div className="space-y-1 sm:space-y-2">
+                      <label className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-2 sm:pl-3">Property Type</label>
                       <div className="relative">
-                        <select required name="propertyType" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm">
+                        <select required name="propertyType" className="w-full h-12 sm:h-14 px-4 sm:px-6 pr-10 rounded-xl sm:rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm text-sm sm:text-base truncate">
                           <option value="">Select an option...</option>
                           <option>Residential (Single Family, Townhome)</option>
                           <option>Commercial (Storefront, Office, Industrial)</option>
                         </select>
-                        <ArrowRight className="absolute right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40 rotate-90 pointer-events-none" />
+                        <ArrowRight className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40 rotate-90 pointer-events-none" />
                       </div>
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Primary Service</label>
+                    <div className="space-y-1 sm:space-y-2">
+                      <label className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-2 sm:pl-3">Primary Service</label>
                       <div className="relative">
-                        <select required name="service" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm">
+                        <select required name="service" className="w-full h-12 sm:h-14 px-4 sm:px-6 pr-10 rounded-xl sm:rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm text-sm sm:text-base truncate">
                           <option value="">Select an option...</option>
                           <option>Exterior Painting</option>
                           <option>Interior Painting</option>
                           <option>Full Renewal (Both)</option>
                         </select>
-                        <ArrowRight className="absolute right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40 rotate-90 pointer-events-none" />
+                        <ArrowRight className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40 rotate-90 pointer-events-none" />
                       </div>
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Stewardship Tier (American-Made Sherwin-Williams)</label>
+                  <div className="space-y-1 sm:space-y-2">
+                    <label className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-2 sm:pl-3">Stewardship Tier (American-Made Sherwin-Williams)</label>
                     <div className="relative">
-                      <select required name="tier" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm text-sm">
+                      <select required name="tier" className="w-full h-12 sm:h-14 px-4 sm:px-6 pr-10 rounded-xl sm:rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm text-sm sm:text-base truncate">
                         <option value="">Select protection level...</option>
                         <option>The Best: Emerald / Rain Refresh</option>
                         <option>The Better: Duration</option>
                         <option>The Good: SuperPaint / Latitude</option>
                       </select>
-                      <ArrowRight className="absolute right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40 rotate-90 pointer-events-none" />
+                      <ArrowRight className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40 rotate-90 pointer-events-none" />
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Hero & Heritage Discounts</label>
+                  <div className="space-y-1 sm:space-y-2">
+                    <label className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-2 sm:pl-3">Hero & Heritage Discounts</label>
                     <div className="relative">
-                      <select name="discount" className="w-full h-14 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm text-sm">
+                      <select name="discount" className="w-full h-12 sm:h-14 px-4 sm:px-6 pr-10 rounded-xl sm:rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary appearance-none cursor-pointer shadow-sm text-sm sm:text-base truncate">
                         <option>None / Regular Stewardship</option>
                         <option>Homeschooling Family</option>
                         <option>First Responder / Law Enforcement</option>
                         <option>Military / Veteran</option>
                       </select>
-                      <ArrowRight className="absolute right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40 rotate-90 pointer-events-none" />
+                      <ArrowRight className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40 rotate-90 pointer-events-none" />
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <label className="text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-3">Project Goals & Additional Notes</label>
+                  <div className="space-y-1 sm:space-y-2">
+                    <label className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-primary/70 pl-2 sm:pl-3">Project Goals & Additional Notes</label>
                     <textarea
-                      rows={3}
+                      rows={4}
                       name="goals"
-                      className="w-full p-4 px-6 rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm resize-none"
+                      className="w-full p-4 px-4 sm:px-6 rounded-xl sm:rounded-2xl bg-white/80 border border-white/20 focus:border-primary focus:ring-4 focus:ring-primary/10 focus:outline-none transition-all font-medium text-primary shadow-sm resize-none text-sm sm:text-base"
                       placeholder="Tell us about your goals (e.g. Maximizing Resale Value, Routine Maintenance) and current conditions..."
                     />
                   </div>
 
-                  <Button type="submit" disabled={isSubmittingContact} className="w-full h-16 text-lg font-bold bg-primary text-white hover:bg-white hover:text-primary transition-all rounded-2xl uppercase tracking-widest mt-4 shadow-xl shadow-primary/20">
+                  <Button type="submit" disabled={isSubmittingContact} className="w-full h-14 sm:h-16 text-base sm:text-lg font-bold bg-primary text-white hover:bg-white hover:text-primary transition-all rounded-xl sm:rounded-2xl uppercase tracking-widest mt-2 sm:mt-4 shadow-xl shadow-primary/20">
                     {isSubmittingContact ? "Processing..." : "Request Formal Estimate"}
                   </Button>
                 </form>

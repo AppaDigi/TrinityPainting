@@ -135,7 +135,7 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
                 </div>
 
                 <button
-                    className={`lg:hidden p-2 mt-2 transition-colors ${isMenuOpen ? 'text-primary' : (isLightText ? 'text-white hover:text-gold' : 'text-primary hover:text-gold')}`}
+                    className={`lg:hidden p-2 mt-2 transition-colors relative z-[202] ${isMenuOpen ? 'text-primary' : (isLightText ? 'text-white hover:text-gold' : 'text-primary hover:text-gold')}`}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     aria-label="Toggle Menu"
                 >
@@ -151,7 +151,7 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed inset-0 z-[100] bg-white lg:hidden"
+                        className="fixed inset-0 z-[200] bg-white lg:hidden"
                     >
                         <motion.div
                             initial={{ x: '100%', opacity: 0 }}
@@ -161,7 +161,7 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
                             className="h-full w-full flex flex-col"
                         >
                             {/* Sticky Header Background for the menu area to mask scrolling content */}
-                            <div className="h-24 bg-white shrink-0 relative z-[101]" />
+                            <div className="h-24 bg-white shrink-0 relative z-[201]" />
 
                             <div className="flex-grow flex flex-col overflow-y-auto px-8 pt-4 pb-12">
                                 <div className="space-y-12">
