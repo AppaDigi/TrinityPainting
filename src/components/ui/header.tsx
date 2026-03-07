@@ -41,7 +41,7 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
 
     const navItems = [
         { title: 'Portfolio', href: '/portfolio' },
-        { title: 'About', href: '/#about' }
+        { title: 'About', href: '/about' }
     ];
 
     return (
@@ -52,6 +52,7 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
                     ? "bg-white/95 backdrop-blur-2xl border-b border-primary/5 py-3 md:py-4 shadow-sm"
                     : "bg-transparent border-transparent py-4 md:py-6")
                 }`}
+            style={{ transform: 'translateZ(0)' }}
         >
             <div className="container-wide flex items-center justify-between relative z-[120]">
                 <Link href="/" className="flex items-center gap-3 group">

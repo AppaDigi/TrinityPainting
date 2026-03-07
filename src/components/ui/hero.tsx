@@ -97,7 +97,7 @@ function StatsMarquee() {
 
 export default function Hero({ onOpenQuote }: { onOpenQuote?: () => void }) {
     return (
-        <section className="relative flex h-screen min-h-[850px] w-full flex-col items-center justify-center overflow-hidden">
+        <section className="relative flex min-h-screen lg:h-screen lg:min-h-[850px] w-full flex-col items-center justify-center overflow-hidden">
             {/* Background Image */}
             <div className="absolute inset-0">
                 <Image

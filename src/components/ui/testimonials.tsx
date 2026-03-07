@@ -27,9 +27,9 @@ function TestimonialCard({
             className={cn(
                 "flex flex-col justify-between rounded-[2rem]",
                 "bg-white/5 backdrop-blur-md border border-white/10",
-                "p-10 text-start",
+                "p-8 sm:p-10 text-start",
                 "hover:bg-white/10 hover:border-gold/30 hover:scale-[1.02]",
-                "w-[450px] shrink-0 h-[320px]",
+                "w-[320px] sm:w-[450px] shrink-0 h-[380px] sm:h-[320px]",
                 "transition-all duration-500 ease-out",
                 className
             )}

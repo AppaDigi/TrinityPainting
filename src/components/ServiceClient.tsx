@@ -103,7 +103,7 @@ export default function ServiceClient({ service }: { service: Service }) {
                                             </div>
                                             <span className="text-gold/40 font-serif font-black text-4xl leading-none mb-4 block uppercase tracking-tighter">0{i + 1}</span>
                                             <h3 className="text-primary font-serif font-bold text-xl mb-4">{step.title}</h3>
-                                            <p className="text-sm text-muted-foreground leading-relaxed font-medium capitalize">
+                                            <p className="text-sm text-muted-foreground leading-relaxed font-medium">
                                                 {step.description}
                                             </p>
                                         </div>

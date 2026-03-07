@@ -18,7 +18,6 @@ import {
   Layers,
   Frame
 } from "lucide-react";
-import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -283,7 +282,7 @@ export default function Home() {
                 </h2>
                 <div className="space-y-8 text-xl text-muted-foreground font-light leading-relaxed">
                   <p>
-                    At <strong className="text-primary font-medium">Trinity Painting & Renewal</strong>, we believe true luxury lies in peace of mind. It's knowing that the people in your home respect your space as much as you do.
+                    At <strong className="text-primary font-medium">Trinity Painting & Renewal</strong>, we believe true luxury lies in peace of mind. It&apos;s knowing that the people in your home respect your space as much as you do.
                   </p>
                   <p>
                     Guided by faith and a commitment to excellence, we treat every project as an act of stewardship. From the meticulous protection of your furniture to the final walkthrough, our process is designed to be as seamless as the finish we leave behind.
@@ -347,7 +346,7 @@ export default function Home() {
                     Ready to renew <br /> <span className="italic text-white">your space?</span>
                   </h2>
                   <p className="text-xl text-primary/80 mb-12 font-light leading-relaxed">
-                    Fill out the form to request your free, no-obligation estimate. We'll get back to you within 24 hours.
+                    Fill out the form to request your free, no-obligation estimate. We&apos;ll get back to you within 24 hours.
                   </p>
 
                   <div className="flex flex-col gap-6">

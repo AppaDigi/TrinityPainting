@@ -52,7 +52,7 @@ export default function ServicesHubPage() {
                         <h2 className="text-primary mb-12">Stewardship in Every <span className="text-gold italic">Square Inch.</span></h2>
                         <div className="prose prose-lg max-w-none text-muted-foreground font-light leading-relaxed space-y-6">
                             <p>
-                                Selecting a painting contractor is about more than just finding someone who can handle a brush. It's about finding a team that respects your home as a sacred space where life happens. At <strong>Trinity Painting & Renewal</strong>, based in Mora, MN, we approach every project as an act of stewardship. Whether you are looking to revitalize a single bedroom or protect your entire commercial property, our commitment to excellence remains unwavering.
+                                Selecting a painting contractor is about more than just finding someone who can handle a brush. It&apos;s about finding a team that respects your home as a sacred space where life happens. At <strong>Trinity Painting & Renewal</strong>, based in Mora, MN, we approach every project as an act of stewardship. Whether you are looking to revitalize a single bedroom or protect your entire commercial property, our commitment to excellence remains unwavering.
                             </p>
                             <p>
                                 Our services are designed specifically for the unique demands of the Minnesota climate. From the extreme temperature swings that test exterior siding to the cozy interior environments where families gather, we use only the highest contractor-grade materials. By partnering with industry leaders like Sherwin-Williams and Benjamin Moore, we ensure that every color we apply remains vibrant and every finish remains durable for years to come.
@@ -102,12 +102,12 @@ export default function ServicesHubPage() {
                                         {/* Dynamic content expansion for SEO */}
                                         {service.slug === 'interior-painting' && (
                                             <p className="mb-6">
-                                                Interior painting is about more than color; it's about preparation. Our process for Minnesota homeowners involves a rigorous schedule of surface cleaning, drywall repair, and dust-controlled sanding. We understand that a sharp line on a baseboard or a perfectly flat ceiling finish makes the difference between a "paint job" and a complete home renewal. We specialize in low-VOC options to ensure your air quality remains pristine throughout the process.
+                                                Interior painting is about more than color; it&apos;s about preparation. Our process for Minnesota homeowners involves a rigorous schedule of surface cleaning, drywall repair, and dust-controlled sanding. We understand that a sharp line on a baseboard or a perfectly flat ceiling finish makes the difference between a &quot;paint job&quot; and a complete home renewal. We specialize in low-VOC options to ensure your air quality remains pristine throughout the process.
                                             </p>
                                         )}
                                         {service.slug === 'exterior-painting' && (
                                             <p className="mb-6">
-                                                East Central Minnesota weather is unforgiving. From the biting frost of January to the humid sun of July, your siding requires a coating that can breathe and flex. Our exterior painting solutions focus on moisture barriers and long-term adhesion. We don't just spray; we back-roll every surface to ensure the paint penetrates the grain of the wood or the texture of the siding, creating a protective envelope around your home.
+                                                East Central Minnesota weather is unforgiving. From the biting frost of January to the humid sun of July, your siding requires a coating that can breathe and flex. Our exterior painting solutions focus on moisture barriers and long-term adhesion. We don&apos;t just spray; we back-roll every surface to ensure the paint penetrates the grain of the wood or the texture of the siding, creating a protective envelope around your home.
                                             </p>
                                         )}
                                         {service.slug === 'cabinet-refinishing' && (
@@ -122,7 +122,7 @@ export default function ServicesHubPage() {
                                         )}
                                         {service.slug === 'ceiling-painting' && (
                                             <p className="mb-6">
-                                                Ceilings are often the most overlooked surface in a home, yet they have the greatest impact on light distribution. Whether you have vaulted cathedral ceilings or are looking to remove dated popcorn textures, our team has the specialized equipment and safety training to handle high-reach projects with ease. We use "dead-flat" non-reflective finishes to hide surface imperfections and maximize the brightness of your rooms.
+                                                Ceilings are often the most overlooked surface in a home, yet they have the greatest impact on light distribution. Whether you have vaulted cathedral ceilings or are looking to remove dated popcorn textures, our team has the specialized equipment and safety training to handle high-reach projects with ease. We use &quot;dead-flat&quot; non-reflective finishes to hide surface imperfections and maximize the brightness of your rooms.
                                             </p>
                                         )}
                                         {service.slug === 'trim-frame-painting' && (
@@ -203,7 +203,7 @@ export default function ServicesHubPage() {
                                     </div>
                                     <h4 className="text-xl font-serif text-primary">Meticulous Clean-Up</h4>
                                     <p className="text-sm text-muted-foreground leading-relaxed font-light">
-                                        A project isn't finished until the last piece of masking tape is gone and the floor is vacuumed. We pride ourselves on leaving your home cleaner than we found it. Our goal is for you to only see the beautiful new color, not the traces of the work.
+                                        A project isn&apos;t finished until the last piece of masking tape is gone and the floor is vacuumed. We pride ourselves on leaving your home cleaner than we found it. Our goal is for you to only see the beautiful new color, not the traces of the work.
                                     </p>
                                 </div>
                                 <div className="space-y-4">

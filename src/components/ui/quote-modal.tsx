@@ -82,7 +82,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                                     <span className="italic text-gold">Premium Quote</span>
                                 </h2>
                                 <p className="text-muted-foreground mt-4 text-sm font-medium">
-                                    Tell us about your project, and we'll craft a personalized solution tailored to your home's unique character.
+                                    Tell us about your project, and we&apos;ll craft a personalized solution tailored to your home&apos;s unique character.
                                 </p>
                             </div>
 

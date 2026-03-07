@@ -1,4 +1,38 @@
-import { CheckCircle2, ShieldCheck, Flag, Cross, Users, Banknote, Shield } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Flag, Cross, Users, Banknote, Shield, ArrowRight } from "lucide-react";
+import Link from "next/link";
+
+const professionalStandards = [
+    {
+        title: "Verified Minnesota Labor",
+        desc: "We are 100% locally owned and operated. Our crew consists entirely of Verified Minnesota Labor—we hire only legal American citizens. No illegal or foreign labor. We are neighbors serving neighbors, ensuring your investment stays in our local Minnesota economy.",
+        icon: Users
+    },
+    {
+        title: "Sherwin-Williams Exclusively",
+        desc: "We only use American-made Sherwin-Williams coatings. It's the highest standard for our climate and supports the American worker from the paint can to the job site.",
+        icon: ShieldCheck
+    },
+    {
+        title: "Project Over Profit",
+        desc: "Our mission is the quality of your home. If a job isn't right, we fix it—prioritizing craftsmanship over our bottom line.",
+        icon: Shield
+    },
+    {
+        title: "Colossians 3:23 Work Ethic",
+        desc: "We work \"for the Lord, not for men.\" This results in a level of detail and care that corporate crews simply cannot match.",
+        icon: Cross
+    },
+    {
+        title: "Christian Pricing & Direct Communication",
+        desc: "We provide honest, transparent estimates rooted in biblical stewardship. No hidden fees, no \"salesman\" tactics, and zero \"woke\" corporate fluff or jargon.",
+        icon: Banknote
+    },
+    {
+        title: "Owner's American Fleet",
+        desc: "I lead by example, arriving at every estimate and job site in American-built Ford trucks.",
+        icon: Flag
+    }
+];
 
 export function CoreIdentity() {
     return (
@@ -11,38 +45,7 @@ export function CoreIdentity() {
                     <h2 className="text-white mb-12">The Trinity Identity & <br /><span className="italic text-gold-dark">Professional Standards</span></h2>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {[
-                            {
-                                title: "Verified Minnesota Labor",
-                                desc: "We are 100% locally owned and operated. Our crew consists entirely of Verified Minnesota Labor—we hire only legal American citizens. No illegal or foreign labor. We are neighbors serving neighbors, ensuring your investment stays in our local Minnesota economy.",
-                                icon: Users
-                            },
-                            {
-                                title: "Sherwin-Williams Exclusively",
-                                desc: "We only use American-made Sherwin-Williams coatings. It's the highest standard for our climate and supports the American worker from the paint can to the job site.",
-                                icon: ShieldCheck
-                            },
-                            {
-                                title: "Project Over Profit",
-                                desc: "Our mission is the quality of your home. If a job isn't right, we fix it—prioritizing craftsmanship over our bottom line.",
-                                icon: Shield
-                            },
-                            {
-                                title: "Colossians 3:23 Work Ethic",
-                                desc: "We work \"for the Lord, not for men.\" This results in a level of detail and care that corporate crews simply cannot match.",
-                                icon: Cross // replace with standard icon if Cross doesn't exist, lucide has 'Cross'
-                            },
-                            {
-                                title: "Christian Pricing & Direct Communication",
-                                desc: "We provide honest, transparent estimates rooted in biblical stewardship. No hidden fees, no &quot;salesman&quot; tactics, and zero &quot;woke&quot; corporate fluff or jargon.",
-                                icon: Banknote
-                            },
-                            {
-                                title: "Owner's American Fleet",
-                                desc: "I lead by example, arriving at every estimate and job site in American-built Ford trucks.",
-                                icon: Flag
-                            }
-                        ].map((item, i) => (
+                        {professionalStandards.map((item, i) => (
                             <div key={i} className="bg-white p-8 rounded-3xl shadow-sm border border-black/5 hover:border-gold/30 transition-colors">
                                 <div className="h-12 w-12 rounded-full bg-gold/10 flex items-center justify-center text-gold mb-6">
                                     <item.icon className="h-6 w-6" />
@@ -67,27 +70,26 @@ export function CoreIdentity() {
                             </div>
                             <div>
                                 <h4 className="font-bold text-gold text-lg flex items-center gap-2"><CheckCircle2 className="h-5 w-5" /> First Responders & Military</h4>
-                                <p className="text-gray-400 mt-2 text-sm leading-relaxed">Dedicated &quot;Thank You&quot; savings for the Police, Fire, EMS, and Veterans who protect our Minnesota streets and our nation.</p>
+                                <p className="text-gray-400 mt-2 text-sm leading-relaxed">Dedicated {`"Thank You"`} savings for the Police, Fire, EMS, and Veterans who protect our Minnesota streets and our nation.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div>
+                    <div className="flex flex-col justify-center bg-surface-50 p-10 rounded-[3rem] border border-border relative overflow-hidden group">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-gold/10 transition-colors" />
                         <span className="text-gold font-bold text-xs uppercase tracking-[0.25em] mb-4 block">Our Values</span>
-                        <h3 className="text-3xl font-serif text-white mb-8">National Identity & <br />Pro-Christian Politics</h3>
-                        <div className="space-y-8">
-                            <div>
-                                <h4 className="font-bold text-white text-lg">Christian Nationalism & Pro-Christian Politics</h4>
-                                <p className="text-gray-400 mt-2 text-sm leading-relaxed">We believe America is a nation under God. We lead with faith in the public square and believe our laws and local leadership should reflect Christian moral standards.</p>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-white text-lg">Abolitionist & Pro-Life</h4>
-                                <p className="text-gray-400 mt-2 text-sm leading-relaxed">We are unapologetically pro-life and stand for the total abolition of abortion as a core company pillar.</p>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-white text-lg">Pro-ICE, Police, & Military</h4>
-                                <p className="text-gray-400 mt-2 text-sm leading-relaxed">We stand for the rule of law. We support the enforcement of our borders, the mission of ICE, and we stand &quot;Pro-Blue&quot; with our law enforcement and military without apology.</p>
-                            </div>
+                        <h3 className="text-3xl font-serif text-primary mb-6">Faith, Country & <br />Uncompromising Standards</h3>
+                        <p className="text-muted-foreground mb-8 text-sm leading-relaxed max-w-md">
+                            We believe America is a nation under God. Our commitment to your home is rooted in our commitment to our faith and our community.
+                        </p>
+                        <div>
+                            <Link 
+                                href="/about" 
+                                className="inline-flex items-center gap-2 text-primary font-black text-xs uppercase tracking-widest hover:text-gold transition-colors"
+                            >
+                                Learn About Our Values
+                                <ArrowRight className="h-4 w-4" />
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -106,10 +108,10 @@ export function CoreIdentity() {
                         <span className="text-gold font-bold text-xs uppercase tracking-[0.25em] mb-4 block">Policy</span>
                         <h3 className="text-2xl font-serif text-primary mb-4">The Sabbath Rest Policy</h3>
                         <div className="space-y-4 text-muted-foreground text-sm leading-relaxed">
-                            <p className="italic font-serif text-primary">&quot;Honored Rest. Monday Excellence.&quot;</p>
+                            <p className="italic font-serif text-primary">{`"Honored Rest. Monday Excellence."`}</p>
                             <p>At Trinity Painting & Renewal, we believe that faithful labor requires faithful rest. We do not work on Sundays—period. We protect the Sabbath for worship, rest, and time with our families.</p>
                             <ul className="list-disc pl-4 space-y-2">
-                                <li><strong>The Sabbath Mandate:</strong> &quot;Six days you shall labor...&quot; — Exodus 20:9.</li>
+                                <li><strong>The Sabbath Mandate:</strong> {`"Six days you shall labor..."`} — Exodus 20:9.</li>
                                 <li><strong>The Monday Promise:</strong> We rest on Sunday so we can outwork everyone else on Monday.</li>
                                 <li><strong>A Refreshed Crew:</strong> Our boundaries ensure your project is handled by men who are physically and spiritually ready to work.</li>
                             </ul>
@@ -127,7 +129,7 @@ export function CoreIdentity() {
                                 <li><strong>Best:</strong> Emerald / Rain Refresh</li>
                             </ul>
                             <p className="italic text-primary/80 mt-4 border-l-2 border-gold pl-4">
-                                The Standard: We do not offer anything below these three tiers. We believe in protecting the homeowner&apos;s asset; using sub-par, &quot;contractor-grade&quot; materials is a disservice to the property. Applying anything worse would be shameful.
+                                The Standard: We do not offer anything below these three tiers. We believe in protecting the homeowner&apos;s asset; using sub-par, {`"contractor-grade"`} materials is a disservice to the property. Applying anything worse would be shameful.
                             </p>
                         </div>
                     </div>
