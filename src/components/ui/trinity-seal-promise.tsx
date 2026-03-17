@@ -98,10 +98,6 @@ export function TrinitySealPromise() {
           style={{ y: useTransform(scrollYProgress, [0, 1], [0, -200]) }}
           className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gold/5 blur-[150px] rounded-full" 
         />
-        <div 
-          className="absolute inset-0 opacity-5 mix-blend-overlay" 
-          style={{ backgroundImage: "url('/noise.svg')" }}
-        />
       </div>
       
       {/* Decorative Rotating Seal (Desktop) */}
