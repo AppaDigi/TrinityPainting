@@ -23,6 +23,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { QuoteModal } from "@/components/ui/quote-modal";
 import { CoreIdentity } from "@/components/ui/core-identity";
+import { TrinitySealPromise } from "@/components/ui/trinity-seal-promise";
 
 const carouselServices: CarouselService[] = [
   {
@@ -299,6 +300,11 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* ====================
+            TRINITY SEAL PROMISE
+            ==================== */}
+        <TrinitySealPromise />
 
         {/* ====================
             SERVICES CAROUSEL
