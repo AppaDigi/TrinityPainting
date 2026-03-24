@@ -32,14 +32,14 @@ export default function ThankYou() {
                 </h1>
 
                 <p className="text-xl md:text-2xl text-white/70 font-light leading-relaxed mb-12 max-w-2xl mx-auto">
-                    Thank you for choosing <span className="text-gold font-medium">Trinity Painting & Renewal</span>. We've received your project details and a consultant will reach out within <span className="text-white font-medium">24 business hours</span> to schedule your walkthrough.
+                    Thank you for choosing <span className="text-gold font-medium">Trinity Painting & Renewal</span>. We&apos;ve received your project details and a consultant will reach out within <span className="text-white font-medium">24 business hours</span> to schedule your walkthrough.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-8 mb-16 max-w-3xl mx-auto">
                     <div className="bg-white/5 border border-white/10 backdrop-blur-sm p-6 rounded-3xl">
                         <Star className="h-6 w-6 text-gold mx-auto mb-4" />
                         <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-2">Next Steps</h3>
-                        <p className="text-xs text-white/50 leading-relaxed font-medium capitalize">We'll review your details and prepare for our call.</p>
+                        <p className="text-xs text-white/50 leading-relaxed font-medium capitalize">We&apos;ll review your details and prepare for our call.</p>
                     </div>
                     <div className="bg-white/5 border border-white/10 backdrop-blur-sm p-6 rounded-3xl">
                         <Mail className="h-6 w-6 text-gold mx-auto mb-4" />

@@ -14,8 +14,8 @@ export async function saveContent(slug: string, content: ContentData) {
         revalidatePath('/');
         revalidatePath(`/editor/${slug}`);
         return { success: true };
-    } catch (error) {
-        console.error('Failed to save content:', error);
+    } catch (_error) {
+        console.error('Failed to save content:', _error);
         return { success: false, error: 'Failed to save content' };
     }
 }

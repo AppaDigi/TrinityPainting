@@ -1,4 +1,5 @@
 import {
+    LucideIcon,
     PaintBucket,
     ShieldCheck,
     Clock,
@@ -16,7 +17,7 @@ import {
     Gem
 } from "lucide-react";
 
-export const ICON_MAP: Record<string, any> = {
+export const ICON_MAP: Record<string, LucideIcon> = {
     PaintBucket,
     ShieldCheck,
     Clock,
