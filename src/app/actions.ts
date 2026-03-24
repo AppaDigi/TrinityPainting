@@ -26,7 +26,7 @@ export async function getPages() {
         return files
             .filter(file => file.endsWith('.json'))
             .map(file => file.replace('.json', ''));
-    } catch (error) {
+    } catch {
         return [];
     }
 }

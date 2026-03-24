@@ -17,8 +17,8 @@ async function getPages() {
                 slug: file.replace('.json', ''),
                 name: file.replace('.json', '').replace(/^\w/, (c: string) => c.toUpperCase())
             }));
-    } catch (_error) {
-        return <div className="p-8 text-red-500">Error loading services.</div>;
+    } catch {
+        return [];
     }
 }
 
