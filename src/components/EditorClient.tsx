@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useTransition } from 'react';
+import Image from 'next/image';
 import PageTemplate, { ContentData } from './PageTemplate';
 import { saveContent } from '@/app/actions';
 
@@ -136,7 +137,7 @@ export default function EditorClient({ initialContent, slug }: { initialContent:
                                         onClick={() => setContent({ ...content, heroImage: url })}
                                         className={`relative w-full aspect-square rounded-md overflow-hidden border-2 transition-all ${content.heroImage === url ? 'border-orange-500 ring-2 ring-orange-500/20' : 'border-zinc-700 hover:border-zinc-500'}`}
                                     >
-                                        <img src={url} alt="preset" className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" />
+                                        <Image src={url} alt="preset" fill className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" />
                                     </button>
                                 ))}
                             </div>

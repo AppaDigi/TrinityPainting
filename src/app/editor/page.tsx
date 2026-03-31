@@ -17,7 +17,7 @@ async function getPages() {
                 slug: file.replace('.json', ''),
                 name: file.replace('.json', '').replace(/^\w/, (c: string) => c.toUpperCase())
             }));
-    } catch (error) {
+    } catch {
         return [];
     }
 }

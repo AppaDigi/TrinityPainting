@@ -14,8 +14,8 @@ export async function saveContent(slug: string, content: ContentData) {
         revalidatePath('/');
         revalidatePath(`/editor/${slug}`);
         return { success: true };
-    } catch (error) {
-        console.error('Failed to save content:', error);
+    } catch (_error) {
+        console.error('Failed to save content:', _error);
         return { success: false, error: 'Failed to save content' };
     }
 }
@@ -26,7 +26,7 @@ export async function getPages() {
         return files
             .filter(file => file.endsWith('.json'))
             .map(file => file.replace('.json', ''));
-    } catch (error) {
+    } catch {
         return [];
     }
 }
