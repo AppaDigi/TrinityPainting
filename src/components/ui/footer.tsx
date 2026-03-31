@@ -43,6 +43,7 @@ export function Footer() {
                                     rel="noopener noreferrer"
                                     className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-black transition-all duration-300"
                                     title={social.label}
+                                    aria-label={social.label}
                                 >
                                     <social.icon className="h-5 w-5" />
                                 </a>
@@ -121,7 +122,10 @@ export function Footer() {
                 </div>
 
                 <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-600 font-bold uppercase tracking-widest">
-                    <p>&copy; {new Date().getFullYear()} Trinity Painting & Renewal. All rights reserved.</p>
+                    <div className="flex flex-col gap-2 items-center md:items-start">
+                        <p>&copy; {new Date().getFullYear()} Trinity Painting & Renewal. All rights reserved.</p>
+                        <p>Designed & Developed by <a href="https://www.appalachiadigital.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-colors">Appalachia Digital</a></p>
+                    </div>
                     <div className="flex gap-8">
                         <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>

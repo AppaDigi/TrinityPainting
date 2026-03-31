@@ -13,10 +13,20 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
+import { LocalBusinessSchema } from "@/components/SchemaMarkup";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://trinitypaintingmn.com"),
   title: "Trinity Painting & Renewal",
   description: "Faith-Focused Painting & Renewal. Serving East Central Minnesota with excellence since 2018.",
+  alternates: {
+    canonical: "./",
+  },
+  openGraph: {
+      siteName: "Trinity Painting & Renewal",
+      locale: "en_US",
+      type: "website",
+  }
 };
 
 export default function RootLayout({
@@ -29,6 +39,7 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${outfit.variable} antialiased`}
       >
+        <LocalBusinessSchema />
         {children}
       </body>
     </html>

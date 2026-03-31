@@ -4,7 +4,7 @@ import React, { useRef, useState, useEffect, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ChevronLeft, ChevronRight, HelpCircle } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, HelpCircle, type LucideIcon } from "lucide-react";
 import { ICON_MAP } from "@/lib/services";
 
 export interface Service {
@@ -12,7 +12,7 @@ export interface Service {
     title: string;
     slug: string;
     description: string;
-    icon: unknown;
+    icon: string | LucideIcon;
     image?: string;
 }
 
@@ -21,7 +21,9 @@ interface ServiceCardProps {
 }
 
 function ServiceCard({ service }: ServiceCardProps) {
-    const Icon = ICON_MAP[service.icon as string] || HelpCircle;
+    const Icon = typeof service.icon === "string" 
+        ? (ICON_MAP[service.icon] || HelpCircle)
+        : service.icon;
 
     return (
         <Link
@@ -157,6 +159,7 @@ export function ServiceCarousel({ services, className }: ServiceCarouselProps) {
                 <button
                     onClick={() => scroll("left")}
                     disabled={!canScrollLeft}
+                    aria-label="Previous services"
                     className={cn(
                         "h-12 w-12 rounded-full border flex items-center justify-center transition-all duration-300",
                         canScrollLeft
@@ -169,6 +172,7 @@ export function ServiceCarousel({ services, className }: ServiceCarouselProps) {
                 <button
                     onClick={() => scroll("right")}
                     disabled={!canScrollRight}
+                    aria-label="Next services"
                     className={cn(
                         "h-12 w-12 rounded-full border flex items-center justify-center transition-all duration-300",
                         canScrollRight

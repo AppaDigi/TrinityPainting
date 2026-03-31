@@ -99,5 +99,93 @@ export const completedProjects: CompletedProject[] = [
             "/portfolio/gregs-house/after/8-Feb 24 2026 08_07pm-7xGK.jpg"
         ],
         serviceType: "Interior Painting"
+    },
+    {
+        id: "proj-stacys-home",
+        title: "Stacy's Home",
+        city: "Lakeville",
+        coordinates: [44.6497, -93.2427],
+        description: "Surface Restoration & Modernization in Lakeville, MN. This high-needs project involved intensive 'Mechanical Bond' preparation to smooth rough, unsanded walls and repair surface damage. We transitioned the space from a tired gray to a sophisticated, deep slate blue-gray, delivering a high-end, durable masterpiece through superior preparation.",
+        beforeImage: "/portfolio/stacys-home/before/1-Feb 17 2026 10_57pm-a16f.jpg",
+        afterImage: "/portfolio/stacys-home/after/12-Mar 11 2026 11_12pm-gQbw.jpg",
+        beforeImages: [
+            "/portfolio/stacys-home/before/1-Feb 17 2026 10_57pm-a16f.jpg",
+            "/portfolio/stacys-home/before/10-Feb 17 2026 10_58pm-JxDb.jpg",
+            "/portfolio/stacys-home/before/11-Feb 17 2026 10_58pm-STYo.jpg",
+            "/portfolio/stacys-home/before/2-Feb 17 2026 10_57pm-aCQ9.jpg"
+        ],
+        afterImages: [
+            "/portfolio/stacys-home/after/12-Mar 11 2026 11_12pm-gQbw.jpg",
+            "/portfolio/stacys-home/after/13-Mar 11 2026 11_12pm-tkHY.jpg",
+            "/portfolio/stacys-home/after/14-Mar 11 2026 11_12pm-yAvh.jpg",
+            "/portfolio/stacys-home/after/15-Mar 11 2026 11_12pm-FcR3.jpg"
+        ],
+        serviceType: "Interior Restoration"
+    },
+    {
+        id: "proj-sarahs-home",
+        title: "Sarah's Home",
+        city: "St. Michael",
+        coordinates: [45.2105, -93.6644],
+        description: "Whole-Home Interior Renewal in St. Michael & Albertville area. We transformed this property by updating living rooms, kitchens, hallways, and bedrooms—replacing dated brown tones with modern grays and vibrant blues. The final renewal included a bathroom ceiling refresh to brighten every space from the top down.",
+        beforeImage: "/portfolio/sarahs-home/before/1-Feb 12 2026 03_56am-RUf1.jpg",
+        afterImage: "/portfolio/sarahs-home/after/100-Mar 06 2026 08_02pm-gTSD.jpg",
+        beforeImages: [
+            "/portfolio/sarahs-home/before/1-Feb 12 2026 03_56am-RUf1.jpg",
+            "/portfolio/sarahs-home/before/10-Feb 12 2026 03_57am-fkbq.jpg",
+            "/portfolio/sarahs-home/before/11-Feb 12 2026 03_57am-Mew8.jpg",
+            "/portfolio/sarahs-home/before/12-Feb 12 2026 03_57am-L3GC.jpg"
+        ],
+        afterImages: [
+            "/portfolio/sarahs-home/after/100-Mar 06 2026 08_02pm-gTSD.jpg",
+            "/portfolio/sarahs-home/after/101-Mar 06 2026 08_02pm-PjfK.jpg",
+            "/portfolio/sarahs-home/after/102-Mar 06 2026 08_02pm-6pZd.jpg",
+            "/portfolio/sarahs-home/after/103-Mar 06 2026 08_02pm-Yuet.jpg"
+        ],
+        serviceType: "Whole-Home Renewal"
+    },
+    {
+        id: "proj-nancys-home",
+        title: "Nancy's Home",
+        city: "East Bethel",
+        coordinates: [45.3427, -93.2086],
+        description: "In this Cedar/East Bethel home, we transformed a sprawling layout including the entryway, kitchen hallway, and living room from dated 'old-school' green and heavy beige to a vibrant, cohesive sanctuary. Featuring sophisticated Deep Sea Blue accents balanced by light-reflective beige to keep high-traffic spaces feeling open and intentional.",
+        beforeImage: "/portfolio/nancys-home/before/1-Feb 12 2026 04_12am-Azgv.jpg",
+        afterImage: "/portfolio/nancys-home/after/24-Mar 09 2026 08_19pm-HrGY.jpg",
+        beforeImages: [
+            "/portfolio/nancys-home/before/1-Feb 12 2026 04_12am-Azgv.jpg",
+            "/portfolio/nancys-home/before/10-Feb 12 2026 04_12am-uK6w.jpg",
+            "/portfolio/nancys-home/before/11-Feb 12 2026 04_12am-82qU.jpg",
+            "/portfolio/nancys-home/before/12-Mar 09 2026 03_28pm-8g3p.jpg"
+        ],
+        afterImages: [
+            "/portfolio/nancys-home/after/24-Mar 09 2026 08_19pm-HrGY.jpg",
+            "/portfolio/nancys-home/after/25-Mar 09 2026 08_19pm-NwPt.jpg",
+            "/portfolio/nancys-home/after/26-Mar 09 2026 08_19pm-GY1i.jpg",
+            "/portfolio/nancys-home/after/27-Mar 09 2026 08_19pm-PL9D.jpg"
+        ],
+        serviceType: "Interior Painting"
+    },
+    {
+        id: "proj-pams-home",
+        title: "Pam's Home",
+        city: "Lino Lakes",
+        coordinates: [45.1636, -93.0905],
+        description: "Comprehensive interior painting project in Lino Lakes. Dustin removed old wallpaper paste, repaired sheetrock, and restored walls to factory-smooth condition. Fresh paint on ceilings, walls, and doors brought new life and light to every room, treating the property with the respect and integrity a homeowner deserves.",
+        beforeImage: "/portfolio/pams-home/before/1-Dec 22 2025 04_05pm-Ght8.jpg",
+        afterImage: "/portfolio/pams-home/after/5-Dec 23 2025 08_36pm-CjDp.jpg",
+        beforeImages: [
+            "/portfolio/pams-home/before/1-Dec 22 2025 04_05pm-Ght8.jpg",
+            "/portfolio/pams-home/before/2-Dec 22 2025 04_05pm-5aXF.jpg",
+            "/portfolio/pams-home/before/3-Dec 22 2025 04_05pm-TuT5.jpg",
+            "/portfolio/pams-home/before/4-Dec 22 2025 04_05pm-NT8j.jpg"
+        ],
+        afterImages: [
+            "/portfolio/pams-home/after/5-Dec 23 2025 08_36pm-CjDp.jpg",
+            "/portfolio/pams-home/after/6-Dec 23 2025 08_37pm-k2ze.jpg",
+            "/portfolio/pams-home/after/7-Dec 23 2025 08_51pm-fuKE.jpg",
+            "/portfolio/pams-home/after/8-Dec 23 2025 08_51pm-2Bd2.jpg"
+        ],
+        serviceType: "Interior Paint & Repair"
     }
 ];

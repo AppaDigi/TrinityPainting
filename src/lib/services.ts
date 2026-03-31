@@ -13,10 +13,11 @@ import {
     Sparkles,
     Shield,
     Users,
-    Gem
+    Gem,
+    type LucideIcon
 } from "lucide-react";
 
-export const ICON_MAP: Record<string, any> = {
+export const ICON_MAP: Record<string, LucideIcon> = {
     PaintBucket,
     ShieldCheck,
     Clock,

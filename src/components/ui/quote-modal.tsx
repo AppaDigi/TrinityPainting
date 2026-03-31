@@ -69,6 +69,7 @@ export function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
 
                         <button
                             onClick={onClose}
+                            aria-label="Close modal"
                             className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-full bg-gray-50/50 sm:bg-transparent hover:bg-gray-100 text-gray-500 hover:text-primary transition-colors z-20"
                         >
                             <X className="h-6 w-6" />

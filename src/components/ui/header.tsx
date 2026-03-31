@@ -5,6 +5,7 @@ import { Button } from './button';
 import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => void, theme?: 'light' | 'dark' }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,8 +57,7 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
             <div className="container-wide flex items-center justify-between relative z-[120]">
                 <Link href="/" className="flex items-center gap-3 group">
                     <div className="relative">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src="/logo.png" alt="Trinity Painting" className="h-10 w-auto transition-transform duration-500 group-hover:scale-105" />
+                        <Image src="/logo.png" alt="Trinity Painting & Renewal Logo" width={80} height={40} className="h-10 w-auto transition-transform duration-500 group-hover:scale-105" priority />
                     </div>
                     <div className="flex flex-col">
                         <span className={`font-serif font-black text-xl leading-none tracking-tight transition-colors duration-300 ${isMenuOpen ? 'text-primary' : (isLightText ? 'text-white' : 'text-primary')}`}>
