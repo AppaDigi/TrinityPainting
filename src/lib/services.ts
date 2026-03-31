@@ -1,5 +1,4 @@
 import {
-    LucideIcon,
     PaintBucket,
     ShieldCheck,
     Clock,
