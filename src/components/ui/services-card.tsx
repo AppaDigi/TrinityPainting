@@ -14,6 +14,7 @@ export interface Service {
     description: string;
     icon: string | LucideIcon;
     image?: string;
+    href?: string;
 }
 
 interface ServiceCardProps {
@@ -27,7 +28,7 @@ function ServiceCard({ service }: ServiceCardProps) {
 
     return (
         <Link
-            href={`/services/${service.slug}`}
+            href={service.href || `/services/${service.slug}`}
             className={cn(
                 "group relative flex flex-col justify-between",
                 "w-[320px] sm:w-[360px] lg:w-[400px] h-[480px] shrink-0",

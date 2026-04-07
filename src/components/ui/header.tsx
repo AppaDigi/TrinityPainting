@@ -11,6 +11,7 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [hoveredService, setHoveredService] = useState(false);
+    const [hoveredLocation, setHoveredLocation] = useState(false);
 
     const isLightText = !scrolled && theme === 'dark' && !isMenuOpen;
 
@@ -40,9 +41,19 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
         { title: "Trim & Frames", href: "/services/trim-frame-painting" },
     ];
 
+    const locations = [
+        { title: "Minneapolis", href: "/locations/minneapolis-mn" },
+        { title: "Edina", href: "/locations/edina-mn" },
+        { title: "St. Louis Park", href: "/locations/st-louis-park-mn" },
+        { title: "Richfield", href: "/locations/richfield-mn" },
+        { title: "Bloomington", href: "/locations/bloomington-mn" },
+        { title: "Golden Valley", href: "/locations/golden-valley-mn" },
+    ];
+
     const navItems = [
         { title: 'Portfolio', href: '/portfolio' },
-        { title: 'About', href: '/about' }
+        { title: 'About', href: '/about' },
+        { title: 'Resources', href: '/blog' }
     ];
 
     return (
@@ -100,6 +111,42 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
                                         className="block px-6 py-4 text-[10px] font-black text-gold hover:bg-gold/10 rounded-xl transition-all uppercase tracking-widest text-center"
                                     >
                                         View All Services
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Service Areas Dropdown */}
+                    <div
+                        className="relative group"
+                        onMouseEnter={() => setHoveredLocation(true)}
+                        onMouseLeave={() => setHoveredLocation(false)}
+                    >
+                        <Link
+                            href="/locations"
+                            className="flex items-center gap-1 py-4 group-hover:text-gold transition-colors uppercase cursor-pointer"
+                        >
+                            Service Areas
+                        </Link>
+
+                        <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 w-64 transition-all duration-300 ${hoveredLocation ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-2 invisible'}`}>
+                            <div className="bg-white border border-primary/5 rounded-2xl shadow-2xl overflow-hidden p-2 flex flex-col gap-1">
+                                {locations.map((loc) => (
+                                    <Link
+                                        key={loc.href}
+                                        href={loc.href}
+                                        className="block px-6 py-4 text-[10px] font-black text-primary/70 hover:text-primary hover:bg-gold/10 rounded-xl transition-all uppercase tracking-widest"
+                                    >
+                                        {loc.title}
+                                    </Link>
+                                ))}
+                                <div className="border-t border-primary/5 mt-1 pt-1">
+                                    <Link
+                                        href="/locations"
+                                        className="block px-6 py-4 text-[10px] font-black text-gold hover:bg-gold/10 rounded-xl transition-all uppercase tracking-widest text-center"
+                                    >
+                                        View All Areas
                                     </Link>
                                 </div>
                             </div>
@@ -183,6 +230,30 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
                                                     className="text-3xl sm:text-4xl font-serif font-black text-primary hover:text-gold active:text-gold transition-colors uppercase"
                                                 >
                                                     {item.title}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Service Areas */}
+                                    <div className="flex flex-col gap-6">
+                                        <Link
+                                            href="/locations"
+                                            onClick={() => setIsMenuOpen(false)}
+                                            className="text-gold font-black text-[10px] uppercase tracking-[0.3em] hover:text-primary transition-colors inline-block"
+                                        >
+                                            Service Areas
+                                        </Link>
+                                        <div className="grid grid-cols-1 gap-4">
+                                            {locations.map((loc) => (
+                                                <Link
+                                                    key={loc.href}
+                                                    href={loc.href}
+                                                    onClick={() => setIsMenuOpen(false)}
+                                                    className="group flex items-center justify-between py-2 border-b border-primary/5 text-xl font-serif font-medium text-primary/80 hover:text-primary transition-colors uppercase"
+                                                >
+                                                    {loc.title}
+                                                    <ArrowRight className="h-5 w-5 text-gold opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                                                 </Link>
                                             ))}
                                         </div>

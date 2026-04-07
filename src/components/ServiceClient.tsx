@@ -20,7 +20,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Service } from "@/lib/services";
 import { ImageAutoSlider } from "@/components/ui/image-auto-slider";
 
-export default function ServiceClient({ service }: { service: Service }) {
+export default function ServiceClient({ 
+    service, 
+    ctaText = "Request Expert Quote",
+    breadcrumb = [
+        { label: "Home", href: "/" },
+        { label: "Services", href: "#" }
+    ]
+}: { 
+    service: Service;
+    ctaText?: string;
+    breadcrumb?: { label: string; href: string }[];
+}) {
     const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -44,9 +55,16 @@ export default function ServiceClient({ service }: { service: Service }) {
 
                     <div className="container relative z-10 text-center px-6">
                         <div className="flex items-center justify-center gap-2 text-gold/60 text-[10px] uppercase tracking-[0.4em] font-bold mb-6 animate-fade-in">
-                            <Link href="/" className="hover:text-gold transition-colors">Home</Link>
-                            <ChevronRight className="h-3 w-3" />
-                            <span className="text-gold">Services</span>
+                            {breadcrumb.map((item, index) => (
+                                <span key={index} className="flex items-center gap-2">
+                                    {index > 0 && <ChevronRight className="h-3 w-3" />}
+                                    {index === breadcrumb.length - 1 ? (
+                                        <span className="text-gold">{item.label}</span>
+                                    ) : (
+                                        <Link href={item.href} className="hover:text-gold transition-colors">{item.label}</Link>
+                                    )}
+                                </span>
+                            ))}
                         </div>
                         <h1 className="font-serif font-black text-5xl md:text-7xl lg:text-8xl text-white tracking-tight leading-none mb-8">
                             {service.title.split(' ').slice(0, -1).join(' ')} <br className="hidden md:block" />
@@ -60,7 +78,7 @@ export default function ServiceClient({ service }: { service: Service }) {
                             size="lg"
                             className="h-16 px-10 bg-gold text-primary hover:bg-white hover:text-black transition-all rounded-none uppercase tracking-widest font-bold shadow-2xl shadow-gold/20"
                         >
-                            Request Expert Quote
+                            {ctaText}
                             <ArrowRight className="ml-3 h-5 w-5" />
                         </Button>
                     </div>
@@ -180,6 +198,19 @@ export default function ServiceClient({ service }: { service: Service }) {
                                     </div>
                                 ))}
                             </div>
+                        </div>
+                    </section>
+                )}
+                {/* Bottom Content Section (Specialized) */}
+                {service.bottomContent && (
+                    <section className="py-24 bg-primary text-white relative flex justify-center items-center border-t border-white/5">
+                        <div className="container px-6 max-w-4xl text-center relative z-10">
+                            <h3 className="text-2xl md:text-3xl font-serif font-black mb-8 leading-tight">
+                                {service.bottomContent.title}
+                            </h3>
+                            <p className="text-lg md:text-xl text-white/60 font-light leading-relaxed whitespace-pre-line">
+                                {service.bottomContent.content}
+                            </p>
                         </div>
                     </section>
                 )}

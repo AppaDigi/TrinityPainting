@@ -47,11 +47,20 @@ export const LocalBusinessSchema = () => {
             "name": "Trinity Painting & Renewal"
         },
         "areaServed": [
-            "Mora, MN",
-            "Cambridge, MN",
-            "Pine City, MN",
-            "Princeton, MN",
-            "East Central Minnesota"
+            "Minneapolis",
+            "St. Paul",
+            "Blaine",
+            "Coon Rapids",
+            "Brooklyn Park",
+            "Maple Grove",
+            "Plymouth",
+            "Eden Prairie",
+            "Burnsville",
+            "Anoka",
+            "Mora",
+            "Milaca",
+            "Cambridge",
+            "Princeton"
         ]
     };
 
@@ -63,7 +72,7 @@ export const LocalBusinessSchema = () => {
     );
 };
 
-export const ServiceSchema = ({ service }: { service: any }) => {
+export const ServiceSchema = ({ service }: { service: { title: string; shortDescription: string; features: string[] } }) => {
     if (!service) return null;
 
     const schema = {
@@ -95,6 +104,50 @@ export const ServiceSchema = ({ service }: { service: any }) => {
                     "name": feature
                 }
             }))
+        }
+    };
+
+    return (
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+    );
+};
+
+export const ArticleSchema = ({ article }: { 
+    article: { 
+        headline: string; 
+        description: string; 
+        image: string; 
+        datePublished: string; 
+        authorName: string; 
+        publisherName: string;
+        url: string;
+    } 
+}) => {
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": article.headline,
+        "description": article.description,
+        "image": article.image,
+        "datePublished": article.datePublished,
+        "author": {
+            "@type": "Organization",
+            "name": article.authorName
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": article.publisherName,
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://trinitypaintingmn.com/logo.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": article.url
         }
     };
 

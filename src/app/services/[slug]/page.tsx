@@ -19,6 +19,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     if (!service) return { title: "Service Not Found" };
 
+    const ogTitle = slug === "ceiling-painting" 
+        ? "Ceiling Painting & Popcorn Removal — Minneapolis MN" 
+        : service.seoData.title;
+
     return {
         title: service.seoData.title,
         description: service.seoData.description,
@@ -27,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             canonical: `/services/${slug}`,
         },
         openGraph: {
-            title: service.seoData.title,
+            title: ogTitle,
             description: service.seoData.description,
             url: `https://trinitypaintingmn.com/services/${slug}`,
             images: [service.image],
@@ -45,8 +49,25 @@ export default async function ServicePage({ params }: Props) {
         notFound();
     }
 
+    const specializedSchema = slug === "ceiling-painting" ? {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Popcorn Ceiling Removal Minneapolis",
+        "areaServed": "Minneapolis, MN",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Trinity Painting & Renewal"
+        }
+    } : null;
+
     return (
         <>
+            {specializedSchema && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(specializedSchema) }}
+                />
+            )}
             <ServiceSchema service={service} />
             <ServiceClient service={service} />
         </>

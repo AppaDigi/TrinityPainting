@@ -62,6 +62,7 @@ export interface Service {
     process: ProcessStep[];
     benefits: { title: string; content: string; icon: string }[];
     longContent: ServiceSection[];
+    bottomContent?: ServiceSection;
     galleryImages?: string[];
     faqs: ServiceFAQ[];
     seoData: {
@@ -485,7 +486,7 @@ export const services: Service[] = [
     },
     {
         slug: "ceiling-painting",
-        title: "Ceiling Painting & Popcorn Removal",
+        title: "Ceiling Painting & Popcorn Removal in Minneapolis, MN",
         shortDescription: "Brighten any room from above with professional ceiling services.",
         description: "From vaulted spaces to popcorn removal and smooth finishes, we handle the most difficult areas of your home with precision and care.",
         image: "/service-interior.jpeg",
@@ -499,7 +500,7 @@ export const services: Service[] = [
         process: [
             {
                 title: "Complete Floor Protection",
-                description: "Heavy-duty poly and drop cloths to seal off the room and completely cover all flooring and furniture below.",
+                description: "Heavy-duty poly and drop cloths to seal off the room and completely cover all flooring and flooring below.",
                 icon: "Shield"
             },
             {
@@ -533,7 +534,7 @@ export const services: Service[] = [
         longContent: [
             {
                 title: "Professional Ceiling Painting and Acoustic Texture Removal",
-                content: `Homeowners frequently ignore ceilings because painting them is notoriously exhausting, messy, and physically taxing. However, a dingy, yellowed, or heavily textured "popcorn" ceiling will constantly drag down the look of an otherwise beautifully updated room. Trinity Painting & Renewal provides expert ceiling painting and texture removal services throughout Mora, Cambridge, and East Central Minnesota, relieving you of the back-breaking labor and delivering a pristine, bright finish overhead. \n\nWe specialize in handling difficult high-elevation spaces, including vast vaulted ceilings, grand foyers, and stairwells. With our God-honoring craftsmanship, we recognize that the ceiling is the fifth wall of the room. A perfectly cut-in edge between a vivid wall color and a crisp white ceiling serves as the hallmark of a high-end, professional painting achievement.`
+                content: `Homeowners frequently ignore ceilings because painting them is notoriously exhausting, messy, and physically taxing. We serve Minneapolis, St. Paul, and the broader Twin Cities metro, bringing the same attention to detail to every ceiling we touch. However, a dingy, yellowed, or heavily textured "popcorn" ceiling will constantly drag down the look of an otherwise beautifully updated room. Trinity Painting & Renewal provides expert ceiling painting and texture removal services throughout Mora, Cambridge, and East Central Minnesota, relieving you of the back-breaking labor and delivering a pristine, bright finish overhead. \n\nWe specialize in handling difficult high-elevation spaces, including vast vaulted ceilings, grand foyers, and stairwells. With our God-honoring craftsmanship, we recognize that the ceiling is the fifth wall of the room. A perfectly cut-in edge between a vivid wall color and a crisp white ceiling serves as the hallmark of a high-end, professional painting achievement.`
             },
             {
                 title: "The Popcorn Ceiling Removal Process",
@@ -548,6 +549,10 @@ export const services: Service[] = [
                 content: `Unlike walls, ceilings require paint with virtually zero sheen. Any gloss or eggshell finish on a wide ceiling will catch the light from windows and lamps, highlighting every minor drywall inconsistency and raking light across the room. We utilize specific, ultra-flat ceiling paints that dry to a highly absorptive matte finish. This diffuses light evenly, softening the room overhead and establishing a sense of height and expansive space.\n\nDon't risk a ladder accident or the frustration of lap-marks overhead. Let the professionals at Trinity Painting & Renewal illuminate your home from the top down with clear communication, honest Christian pricing, and absolute attention to detail.`
             }
         ],
+        bottomContent: {
+            title: "Popcorn Ceiling Removal Across the Minneapolis Metro",
+            content: `From Uptown to Eden Prairie, Trinity Painting & Renewal has removed hundreds of popcorn ceilings across the Twin Cities. Whether your home is a 1970s rambler in Blaine or a Northeast Minneapolis bungalow, our process is the same: protect every surface, scrape clean, skim coat, prime, and deliver a flawless dead-flat finish.`
+        },
         galleryImages: [
             "/gallery/img4.jpeg",
             "/gallery/img5.jpeg",
@@ -556,7 +561,7 @@ export const services: Service[] = [
         faqs: [
             {
                 question: "Is popcorn ceiling removal messy?",
-                answer: "Yes, incredibly messy. However, we mitigate that entirely by using extensive floor masking, plastic sheeting over walls, and sealing off doorways. You won't have to clean up a thing; we leave the house cleaner than we found it."
+                answer: "Yes, incredibly messy. However, we mitigate that entirely by using extensive floor masking, plastic sheeting over walls, and sealing off doorways. You won&apos;t have to clean up a thing; we leave the house cleaner than we found it."
             },
             {
                 question: "Do you test for asbestos before removing popcorn ceilings?",
@@ -572,9 +577,9 @@ export const services: Service[] = [
             }
         ],
         seoData: {
-            title: "Ceiling Painting & Popcorn Removal Mora MN",
-            description: "Professional ceiling painting in Mora, MN. Specializing in vaulted ceilings, popcorn texture removal, and smooth finish restoration.",
-            keywords: ["Ceiling Painting Mora MN", "Popcorn Removal Mora", "Vaulted Ceiling Painters", "Drywall Repair Ceilings"]
+            title: "Ceiling Painting & Popcorn Removal Minneapolis MN | Trinity Painting",
+            description: "Professional popcorn ceiling removal and ceiling painting in Minneapolis, MN. Flat finish restoration, water stain treatment, vaulted ceilings. Serving the Twin Cities metro. Free estimates.",
+            keywords: ["Ceiling Painting Minneapolis MN", "Popcorn Removal Minneapolis", "Vaulted Ceiling Painters Minneapolis", "Drywall Repair Minneapolis"]
         }
     },
     {

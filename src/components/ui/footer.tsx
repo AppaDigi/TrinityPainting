@@ -60,6 +60,19 @@ export function Footer() {
                         </div>
                     </div>
 
+                    {/* Service Areas */}
+                    <div>
+                        <p className="font-sans font-bold text-sm mb-6 uppercase tracking-wider text-gold">Service Areas</p>
+                        <ul className="space-y-3 text-gray-400 text-sm">
+                            <li><Link href="/locations/minneapolis-mn" className="hover:text-gold transition-colors italic">Minneapolis Painting</Link></li>
+                            <li><Link href="/locations/minneapolis-interior-painting" className="hover:text-gold transition-colors italic text-xs">Interior Painting Minneapolis</Link></li>
+                            <li><Link href="/locations/minneapolis-exterior-painting" className="hover:text-gold transition-colors italic text-xs">Exterior Painting Minneapolis</Link></li>
+                            <li><Link href="/locations/minneapolis-cabinet-painting" className="hover:text-gold transition-colors italic text-xs">Cabinet Painting Minneapolis</Link></li>
+                            <li><Link href="/locations/edina-mn" className="hover:text-gold transition-colors italic">Edina Painting</Link></li>
+                            <li><Link href="/locations/st-louis-park-mn" className="hover:text-gold transition-colors italic">St. Louis Park Painting</Link></li>
+                        </ul>
+                    </div>
+
                     {/* Hours */}
                     <div>
                         <p className="font-sans font-bold text-sm mb-6 uppercase tracking-wider text-gold">Business Hours</p>

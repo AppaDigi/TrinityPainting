@@ -3,6 +3,7 @@
 import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
 import { TestimonialsSection } from "@/components/ui/testimonials";
+import Link from 'next/link';
 import { ServiceCarousel, type Service as CarouselService } from "@/components/ui/services-card";
 import { Button } from "@/components/ui/button";
 import Hero from "@/components/ui/hero";
@@ -297,7 +298,14 @@ export default function HomeClient() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-16">
               <div className="max-w-xl">
                 <span className="text-gold font-bold text-xs uppercase tracking-[0.25em] mb-4 block">What We Do</span>
-                <h2 className="text-primary">Our Services.</h2>
+                <h2 className="text-primary mb-6">Our Services.</h2>
+                <Link 
+                  href="/locations/minneapolis-mn"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-gold/10 border border-gold/20 rounded-full group hover:bg-gold hover:border-gold transition-all duration-300"
+                >
+                  <span className="text-[10px] font-black uppercase tracking-widest text-gold group-hover:text-primary">Now Serving Minneapolis & Twin Cities Metro</span>
+                  <ArrowRight className="h-3 w-3 text-gold group-hover:text-primary transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
             </div>
 
