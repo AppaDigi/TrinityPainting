@@ -6,7 +6,11 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: '*',
                 allow: '/',
-                disallow: ['/editor/', '/api/', '/thank-you'],
+                disallow: ['/api', '/editor', '/thank-you'],
+            },
+            {
+                userAgent: 'Bytespider',
+                disallow: '/',
             },
         ],
         sitemap: 'https://www.trinitypaintingmn.com/sitemap.xml',

@@ -17,9 +17,11 @@ export function BestTimeBlogPostClient() {
         description: "Minnesota exterior painting season runs May-September. Learn why temperature, humidity & daylight hours matter for a lasting finish — from a local MN painting contractor.",
         image: "https://www.trinitypaintingmn.com/images/b5fabe65-e579-4a3e-b551-c53cf31fa467.jpeg",
         datePublished: "2024-03-22T08:00:00Z",
+        dateModified: "2026-04-15T00:00:00Z",
         authorName: "Dustin Nyblom - Trinity Painting & Renewal",
         publisherName: "Trinity Painting & Renewal",
-        url: "https://www.trinitypaintingmn.com/blog/best-time-to-paint-exterior-in-minnesota"
+        url: "https://www.trinitypaintingmn.com/blog/best-time-to-paint-exterior-in-minnesota",
+        schemaType: "BlogPosting" as const,
     };
 
     return (

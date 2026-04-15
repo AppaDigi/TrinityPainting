@@ -121,18 +121,21 @@ export const ArticleSchema = ({ article }: {
         description: string; 
         image: string; 
         datePublished: string; 
+        dateModified?: string;
         authorName: string; 
         publisherName: string;
         url: string;
+        schemaType?: "Article" | "BlogPosting";
     } 
 }) => {
     const schema = {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": article.schemaType ?? "Article",
         "headline": article.headline,
         "description": article.description,
         "image": article.image,
         "datePublished": article.datePublished,
+        ...(article.dateModified ? { "dateModified": article.dateModified } : {}),
         "author": {
             "@type": "Organization",
             "name": article.authorName

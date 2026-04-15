@@ -17,9 +17,11 @@ export function CostBlogPostClient() {
         description: "A comprehensive guide to residential painting costs in Minneapolis, covering interior and exterior pricing factors, local considerations, and how to choose the right contractor.",
         image: "https://www.trinitypaintingmn.com/editorial-home.jpeg",
         datePublished: "2024-03-20T08:00:00Z",
+        dateModified: "2026-04-15T00:00:00Z",
         authorName: "Trinity Painting & Renewal",
         publisherName: "Trinity Painting & Renewal",
-        url: "https://www.trinitypaintingmn.com/blog/how-much-does-it-cost-to-paint-a-house-in-minneapolis"
+        url: "https://www.trinitypaintingmn.com/blog/how-much-does-it-cost-to-paint-a-house-in-minneapolis",
+        schemaType: "BlogPosting" as const,
     };
 
     return (

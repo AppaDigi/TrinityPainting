@@ -1,7 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { ArrowLeft, CheckCircle2, Star, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+    title: "Thank You | Trinity Painting & Renewal",
+    robots: {
+        index: false,
+        follow: false,
+    },
+};
 
 export default function ThankYou() {
     return (

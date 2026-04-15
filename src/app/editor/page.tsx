@@ -1,10 +1,17 @@
 
-'use server';
-
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Editor | Trinity Painting & Renewal',
+    robots: {
+        index: false,
+        follow: false,
+    },
+};
 
 const pagesDir = path.join(process.cwd(), 'src/data/pages');
 
