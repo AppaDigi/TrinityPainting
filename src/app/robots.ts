@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
                 disallow: ['/editor/', '/api/', '/thank-you'],
             },
         ],
-        sitemap: 'https://trinitypaintingmn.com/sitemap.xml',
+        sitemap: 'https://www.trinitypaintingmn.com/sitemap.xml',
     };
 }

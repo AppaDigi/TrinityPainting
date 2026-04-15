@@ -15,7 +15,7 @@ export function CostBlogPostClient() {
     const articleData = {
         headline: "How Much Does It Cost to Paint a House in Minneapolis? (2025 Pricing Guide)",
         description: "A comprehensive guide to residential painting costs in Minneapolis, covering interior and exterior pricing factors, local considerations, and how to choose the right contractor.",
-        image: "https://trinitypaintingmn.com/editorial-home.jpeg",
+        image: "https://www.trinitypaintingmn.com/editorial-home.jpeg",
         datePublished: "2024-03-20T08:00:00Z",
         authorName: "Trinity Painting & Renewal",
         publisherName: "Trinity Painting & Renewal",

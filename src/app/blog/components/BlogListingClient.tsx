@@ -25,7 +25,7 @@ const blogPosts = [
         author: "Trinity Painting",
         readTime: "8 min read",
         slug: "how-much-does-it-cost-to-paint-a-house-in-minneapolis",
-        image: "https://trinitypaintingmn.com/editorial-home.jpeg"
+        image: "https://www.trinitypaintingmn.com/editorial-home.jpeg"
     }
 ];
 

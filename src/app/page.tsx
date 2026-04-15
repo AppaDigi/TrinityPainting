@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HomeClient from "@/components/HomeClient";
+import { LocalBusinessSchema } from "@/components/SchemaMarkup";
 
 export const metadata: Metadata = {
   title: "Trinity Painting & Renewal | Minneapolis & MN Painting Contractor",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Trinity Painting & Renewal | Minneapolis Painting Contractor",
     description: "God-honoring craftsmanship for Minneapolis & Minnesota homeowners. Interior, exterior, cabinet & ceiling painting. Call for a free quote.",
-    url: "https://trinitypaintingmn.com",
+    url: "https://www.trinitypaintingmn.com",
     siteName: "Trinity Painting & Renewal",
     images: [
       {
@@ -27,44 +28,9 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Trinity Painting & Renewal Services",
-    "url": "https://www.trinitypaintingmn.com",
-    "telephone": "763-225-2393",
-    "priceRange": "$$",
-    "openingHours": "Mo-Fr 07:00-18:00",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Mora",
-      "addressRegion": "MN",
-      "addressCountry": "US"
-    },
-    "areaServed": [
-      "Minneapolis",
-      "St. Paul",
-      "Blaine",
-      "Coon Rapids",
-      "Brooklyn Park",
-      "Maple Grove",
-      "Plymouth",
-      "Eden Prairie",
-      "Mora"
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "11"
-    }
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      <LocalBusinessSchema />
       <HomeClient />
     </>
   );

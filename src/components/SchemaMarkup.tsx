@@ -5,9 +5,9 @@ export const LocalBusinessSchema = () => {
         "@context": "https://schema.org",
         "@type": "Painter",
         "name": "Trinity Painting & Renewal",
-        "image": "https://trinitypaintingmn.com/editorial-home.jpeg",
-        "@id": "https://trinitypaintingmn.com",
-        "url": "https://trinitypaintingmn.com",
+        "image": "https://www.trinitypaintingmn.com/editorial-home.jpeg",
+        "@id": "https://www.trinitypaintingmn.com",
+        "url": "https://www.trinitypaintingmn.com",
         "telephone": "763-225-2393",
         "address": {
             "@type": "PostalAddress",
@@ -142,7 +142,7 @@ export const ArticleSchema = ({ article }: {
             "name": article.publisherName,
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://trinitypaintingmn.com/logo.png"
+                "url": "https://www.trinitypaintingmn.com/logo.png"
             }
         },
         "mainEntityOfPage": {

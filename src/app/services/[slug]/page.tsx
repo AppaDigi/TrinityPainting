@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         openGraph: {
             title: ogTitle,
             description: service.seoData.description,
-            url: `https://trinitypaintingmn.com/services/${slug}`,
+            url: `https://www.trinitypaintingmn.com/services/${slug}`,
             images: [service.image],
         },
     };

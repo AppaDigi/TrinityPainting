@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
       title: "Completed Painting Projects Portfolio | Trinity Painting & Renewal",
       description: "Interactive project map and project showcase for Minnesota painting.",
-      url: "https://trinitypaintingmn.com/portfolio",
+      url: "https://www.trinitypaintingmn.com/portfolio",
       images: ["/editorial-home.jpeg"],
   },
 };
