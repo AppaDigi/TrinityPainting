@@ -10,147 +10,18 @@ export const metadata: Metadata = {
 };
 
 const locations = [
-  // Twin Cities South Metro
+  // East Central MN (Home Base)
   {
-    city: 'Minneapolis',
-    href: '/locations/minneapolis-mn',
-    description: 'Serving the heart of the Twin Cities with expert interior, exterior, and cabinet painting.',
-    neighborhoods: ['Uptown', 'Northeast', 'South Minneapolis']
+    city: 'Mora',
+    href: '/locations/mora-mn',
+    description: 'Our founding location, providing premium painting services to East Central Minnesota.',
+    neighborhoods: ['Kanabec County', 'Pine City', 'Cambridge']
   },
   {
-    city: 'Edina',
-    href: '/locations/edina-mn',
-    description: 'Premium painting services for Edina estates, focusing on high-end finishes and protection.',
-    neighborhoods: ['Country Club', 'Morningside', 'Sunnyside']
-  },
-  {
-    city: 'St. Louis Park',
-    href: '/locations/st-louis-park-mn',
-    description: 'Trusted local painters for the SLP community, covering bungalows to modern builds.',
-    neighborhoods: ['Fern Hill', 'Bronx Park', 'Elmwood']
-  },
-  {
-    city: 'Richfield',
-    href: '/locations/richfield-mn',
-    description: 'Modernizing Richfield homes with durable coatings and professional interior refreshes.',
-    neighborhoods: ['Wood Lake', 'Penn Ave', 'Richfield Hub']
-  },
-  {
-    city: 'Bloomington',
-    href: '/locations/bloomington-mn',
-    description: 'Comprehensive residential painting for Bloomington, the largest suburb in the metro.',
-    neighborhoods: ['Normandale', 'Bush Lake', 'River Valley']
-  },
-  {
-    city: 'Golden Valley',
-    href: '/locations/golden-valley-mn',
-    description: 'Aesthetic expertise for Golden Valley gems, enhancing modern and mid-century homes.',
-    neighborhoods: ['GV Center', 'Sweeney Lake', 'GV Commons']
-  },
-  // Anoka County
-  {
-    city: 'Blaine',
-    href: '/locations/blaine-mn',
-    description: 'Interior painting, exterior painting, and popcorn ceiling removal for one of the north metro\'s fastest-growing suburbs.',
-    neighborhoods: ['Anoka County', 'Coon Rapids', 'Andover']
-  },
-  {
-    city: 'Andover',
-    href: '/locations/andover-mn',
-    description: 'Expert painting services for Andover\'s larger single-family homes and established neighborhoods.',
-    neighborhoods: ['Anoka County', 'Ramsey', 'Coon Rapids']
-  },
-  {
-    city: 'Ramsey',
-    href: '/locations/ramsey-mn',
-    description: 'Full-service painting and popcorn ceiling removal for Ramsey\'s riverfront community.',
-    neighborhoods: ['Anoka County', 'Andover', 'St. Francis']
-  },
-  {
-    city: 'Coon Rapids',
-    href: '/locations/coon-rapids-mn',
-    description: 'Interior and exterior painting for one of Anoka County\'s largest and most established cities.',
-    neighborhoods: ['Anoka County', 'Blaine', 'Andover']
-  },
-  {
-    city: 'Anoka',
-    href: '/locations/anoka-mn',
-    description: 'Painting services for Anoka\'s historic county seat, from Victorian-era homes to modern builds.',
-    neighborhoods: ['Anoka County', 'Champlin', 'Coon Rapids']
-  },
-  {
-    city: 'Champlin',
-    href: '/locations/champlin-mn',
-    description: 'Interior painting, exterior painting, and popcorn ceiling removal in Champlin.',
-    neighborhoods: ['Hennepin County', 'Coon Rapids', 'Brooklyn Park']
-  },
-  {
-    city: 'Lino Lakes',
-    href: '/locations/lino-lakes-mn',
-    description: 'Custom home painting and popcorn ceiling removal for Lino Lakes\' lake-dotted suburb.',
-    neighborhoods: ['Anoka County', 'Blaine', 'Forest Lake']
-  },
-  {
-    city: 'Ham Lake',
-    href: '/locations/ham-lake-mn',
-    description: 'Expert painting for Ham Lake\'s larger-lot homes and semi-rural properties.',
-    neighborhoods: ['Anoka County', 'Blaine', 'East Bethel']
-  },
-  {
-    city: 'East Bethel',
-    href: '/locations/east-bethel-mn',
-    description: 'Interior and exterior painting for East Bethel\'s spacious rural community.',
-    neighborhoods: ['Anoka County', 'Ham Lake', 'Blaine']
-  },
-  {
-    city: 'St. Francis',
-    href: '/locations/st-francis-mn',
-    description: 'Painting and popcorn ceiling removal for St. Francis along the Rum River corridor.',
-    neighborhoods: ['Anoka County', 'Ramsey', 'Elk River']
-  },
-  // Sherburne County
-  {
-    city: 'Elk River',
-    href: '/locations/elk-river-mn',
-    description: 'Exterior painting, popcorn ceiling removal, and deck staining for Elk River\'s booming housing market.',
-    neighborhoods: ['Sherburne County', 'Zimmerman', 'Big Lake']
-  },
-  {
-    city: 'Big Lake',
-    href: '/locations/big-lake-mn',
-    description: 'Lake home painting and exterior services for Big Lake and the surrounding area.',
-    neighborhoods: ['Sherburne County', 'Elk River', 'Zimmerman']
-  },
-  {
-    city: 'Zimmerman',
-    href: '/locations/zimmerman-mn',
-    description: 'Interior and exterior painting for Zimmerman, midway between the Twin Cities and St. Cloud.',
-    neighborhoods: ['Sherburne County', 'Elk River', 'St. Francis']
-  },
-  // Washington & Chisago Counties
-  {
-    city: 'Forest Lake',
-    href: '/locations/forest-lake-mn',
-    description: 'Lake home exterior painting, interior painting, and deck staining near Forest Lake.',
-    neighborhoods: ['Washington County', 'Lino Lakes', 'Hugo']
-  },
-  {
-    city: 'North Branch',
-    href: '/locations/north-branch-mn',
-    description: 'Painting services along the I-35 corridor for North Branch and Chisago County.',
-    neighborhoods: ['Chisago County', 'Chisago City', 'Cambridge']
-  },
-  {
-    city: 'Lindstrom',
-    href: '/locations/lindstrom-mn',
-    description: 'Exterior painting and deck staining for Lindstrom\'s Scandinavian lake-area community.',
-    neighborhoods: ['Chisago County', 'Chisago City', 'North Branch']
-  },
-  {
-    city: 'Chisago City',
-    href: '/locations/chisago-city-mn',
-    description: 'Lake home and year-round property painting throughout the Chisago Lakes area.',
-    neighborhoods: ['Chisago County', 'Lindstrom', 'North Branch']
+    city: 'Pine City',
+    href: '/locations/pine-city-mn',
+    description: 'Interior painting, exterior painting, and popcorn ceiling removal in Pine City and Pine County.',
+    neighborhoods: ['Pine County', 'Mora', 'North Branch']
   },
   // Isanti & Mille Lacs Counties
   {
@@ -165,18 +36,147 @@ const locations = [
     description: 'Full-service painting contractor serving Princeton and Mille Lacs County.',
     neighborhoods: ['Mille Lacs County', 'Zimmerman', 'Cambridge']
   },
-  // East Central MN
+  // Chisago & Washington Counties
   {
-    city: 'Mora',
-    href: '/locations/mora-mn',
-    description: 'Our founding location, providing premium painting services to East Central Minnesota.',
-    neighborhoods: ['Kanabec County', 'Pine City', 'Cambridge']
+    city: 'North Branch',
+    href: '/locations/north-branch-mn',
+    description: 'Painting services along the I-35 corridor for North Branch and Chisago County.',
+    neighborhoods: ['Chisago County', 'Chisago City', 'Cambridge']
   },
   {
-    city: 'Pine City',
-    href: '/locations/pine-city-mn',
-    description: 'Interior painting, exterior painting, and popcorn ceiling removal in Pine City and Pine County.',
-    neighborhoods: ['Pine County', 'Mora', 'North Branch']
+    city: 'Chisago City',
+    href: '/locations/chisago-city-mn',
+    description: 'Lake home and year-round property painting throughout the Chisago Lakes area.',
+    neighborhoods: ['Chisago County', 'Lindstrom', 'North Branch']
+  },
+  {
+    city: 'Lindstrom',
+    href: '/locations/lindstrom-mn',
+    description: 'Exterior painting and deck staining for Lindstrom\'s Scandinavian lake-area community.',
+    neighborhoods: ['Chisago County', 'Chisago City', 'North Branch']
+  },
+  {
+    city: 'Forest Lake',
+    href: '/locations/forest-lake-mn',
+    description: 'Lake home exterior painting, interior painting, and deck staining near Forest Lake.',
+    neighborhoods: ['Washington County', 'Lino Lakes', 'Hugo']
+  },
+  // Sherburne County
+  {
+    city: 'Zimmerman',
+    href: '/locations/zimmerman-mn',
+    description: 'Interior and exterior painting for Zimmerman, midway between the Twin Cities and St. Cloud.',
+    neighborhoods: ['Sherburne County', 'Elk River', 'St. Francis']
+  },
+  {
+    city: 'Big Lake',
+    href: '/locations/big-lake-mn',
+    description: 'Lake home painting and exterior services for Big Lake and the surrounding area.',
+    neighborhoods: ['Sherburne County', 'Elk River', 'Zimmerman']
+  },
+  {
+    city: 'Elk River',
+    href: '/locations/elk-river-mn',
+    description: 'Exterior painting, popcorn ceiling removal, and deck staining for Elk River\'s booming housing market.',
+    neighborhoods: ['Sherburne County', 'Zimmerman', 'Big Lake']
+  },
+  // Anoka County
+  {
+    city: 'St. Francis',
+    href: '/locations/st-francis-mn',
+    description: 'Painting and popcorn ceiling removal for St. Francis along the Rum River corridor.',
+    neighborhoods: ['Anoka County', 'Ramsey', 'Elk River']
+  },
+  {
+    city: 'East Bethel',
+    href: '/locations/east-bethel-mn',
+    description: 'Interior and exterior painting for East Bethel\'s spacious rural community.',
+    neighborhoods: ['Anoka County', 'Ham Lake', 'Blaine']
+  },
+  {
+    city: 'Ham Lake',
+    href: '/locations/ham-lake-mn',
+    description: 'Expert painting for Ham Lake\'s larger-lot homes and semi-rural properties.',
+    neighborhoods: ['Anoka County', 'Blaine', 'East Bethel']
+  },
+  {
+    city: 'Lino Lakes',
+    href: '/locations/lino-lakes-mn',
+    description: 'Custom home painting and popcorn ceiling removal for Lino Lakes\' lake-dotted suburb.',
+    neighborhoods: ['Anoka County', 'Blaine', 'Forest Lake']
+  },
+  {
+    city: 'Andover',
+    href: '/locations/andover-mn',
+    description: 'Expert painting services for Andover\'s larger single-family homes and established neighborhoods.',
+    neighborhoods: ['Anoka County', 'Ramsey', 'Coon Rapids']
+  },
+  {
+    city: 'Ramsey',
+    href: '/locations/ramsey-mn',
+    description: 'Full-service painting and popcorn ceiling removal for Ramsey\'s riverfront community.',
+    neighborhoods: ['Anoka County', 'Andover', 'St. Francis']
+  },
+  {
+    city: 'Anoka',
+    href: '/locations/anoka-mn',
+    description: 'Painting services for Anoka\'s historic county seat, from Victorian-era homes to modern builds.',
+    neighborhoods: ['Anoka County', 'Champlin', 'Coon Rapids']
+  },
+  {
+    city: 'Coon Rapids',
+    href: '/locations/coon-rapids-mn',
+    description: 'Interior and exterior painting for one of Anoka County\'s largest and most established cities.',
+    neighborhoods: ['Anoka County', 'Blaine', 'Andover']
+  },
+  {
+    city: 'Champlin',
+    href: '/locations/champlin-mn',
+    description: 'Interior painting, exterior painting, and popcorn ceiling removal in Champlin.',
+    neighborhoods: ['Hennepin County', 'Coon Rapids', 'Brooklyn Park']
+  },
+  {
+    city: 'Blaine',
+    href: '/locations/blaine-mn',
+    description: 'Interior painting, exterior painting, and popcorn ceiling removal for one of the north metro\'s fastest-growing suburbs.',
+    neighborhoods: ['Anoka County', 'Coon Rapids', 'Andover']
+  },
+  // Twin Cities Metro
+  {
+    city: 'Golden Valley',
+    href: '/locations/golden-valley-mn',
+    description: 'Aesthetic expertise for Golden Valley gems, enhancing modern and mid-century homes.',
+    neighborhoods: ['GV Center', 'Sweeney Lake', 'GV Commons']
+  },
+  {
+    city: 'Minneapolis',
+    href: '/locations/minneapolis-mn',
+    description: 'Serving the heart of the Twin Cities with expert interior, exterior, and cabinet painting.',
+    neighborhoods: ['Uptown', 'Northeast', 'South Minneapolis']
+  },
+  {
+    city: 'St. Louis Park',
+    href: '/locations/st-louis-park-mn',
+    description: 'Trusted local painters for the SLP community, covering bungalows to modern builds.',
+    neighborhoods: ['Fern Hill', 'Bronx Park', 'Elmwood']
+  },
+  {
+    city: 'Edina',
+    href: '/locations/edina-mn',
+    description: 'Premium painting services for Edina estates, focusing on high-end finishes and protection.',
+    neighborhoods: ['Country Club', 'Morningside', 'Sunnyside']
+  },
+  {
+    city: 'Richfield',
+    href: '/locations/richfield-mn',
+    description: 'Modernizing Richfield homes with durable coatings and professional interior refreshes.',
+    neighborhoods: ['Wood Lake', 'Penn Ave', 'Richfield Hub']
+  },
+  {
+    city: 'Bloomington',
+    href: '/locations/bloomington-mn',
+    description: 'Comprehensive residential painting for Bloomington, the largest suburb in the metro.',
+    neighborhoods: ['Normandale', 'Bush Lake', 'River Valley']
   },
 ];
 
