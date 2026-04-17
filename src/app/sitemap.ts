@@ -50,6 +50,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/locations/st-louis-park-exterior-painting',
         '/locations/st-louis-park-interior-painting',
         '/locations/st-louis-park-mn',
+        // Anoka County & surrounding area pages
+        '/locations/blaine-mn',
+        '/locations/andover-mn',
+        '/locations/ramsey-mn',
+        '/locations/lino-lakes-mn',
+        '/locations/coon-rapids-mn',
+        '/locations/anoka-mn',
+        '/locations/ham-lake-mn',
+        '/locations/east-bethel-mn',
+        '/locations/champlin-mn',
+        // Sherburne County pages
+        '/locations/elk-river-mn',
+        '/locations/big-lake-mn',
+        '/locations/zimmerman-mn',
+        // Washington County pages
+        '/locations/forest-lake-mn',
+        // Chisago County pages
+        '/locations/north-branch-mn',
+        '/locations/lindstrom-mn',
+        '/locations/chisago-city-mn',
+        // Isanti County pages
+        '/locations/cambridge-mn',
+        // Anoka County - northern
+        '/locations/st-francis-mn',
+        // Mille Lacs County pages
+        '/locations/princeton-mn',
+        // Pine County pages
+        '/locations/pine-city-mn',
     ];
 
     const corePages = coreRoutes.map((route) => ({
