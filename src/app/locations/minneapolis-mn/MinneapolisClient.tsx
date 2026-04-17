@@ -7,12 +7,22 @@ import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
 import { QuoteModal } from "@/components/ui/quote-modal";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ChevronRight, ArrowRight, CheckCircle2, ChevronDown } from "lucide-react";
 import { ServiceCarousel, type Service as CarouselService } from "@/components/ui/services-card";
 import { services } from "@/lib/services";
 
+const minneapolisFaqs = [
+    { q: "How much does interior painting cost in Minneapolis, MN?", a: "Interior painting in Minneapolis typically ranges from $2 to $7 per square foot depending on the neighborhood, home age, and finish level. Historic craftsman homes in South Minneapolis or Northeast may require more prep — plaster repair, lead-safe practices, detailed millwork. We provide free written estimates for all Minneapolis homeowners." },
+    { q: "How much does exterior painting cost in Minneapolis, MN?", a: "Exterior painting in Minneapolis typically runs $4,000 to $15,000+ depending on the home's size, siding type, and condition. Historic stucco and wood-sided homes common throughout Minneapolis require careful prep. We include pressure washing, scraping, caulking, and priming in every exterior estimate." },
+    { q: "Do you remove popcorn ceilings in Minneapolis homes?", a: "Yes — many Minneapolis homes built between the 1950s and 1980s still have original popcorn or acoustic ceiling texture. Pre-1978 homes may contain asbestos, so testing is strongly recommended before any removal. We remove, skim-coat, prime, and paint for a smooth modern finish." },
+    { q: "Do you paint historic craftsman and bungalow homes in Minneapolis?", a: "Yes — craftsman homes and bungalows are a significant part of our Minneapolis work. We're experienced with original millwork, plaster walls, lead-safe painting practices, and the careful prep required to preserve historic character while achieving a fresh modern look." },
+    { q: "Do you paint multi-family properties or condos in Minneapolis?", a: "Yes — we serve multi-family residential properties, condominiums, and small commercial buildings throughout Minneapolis. We can work around tenant schedules and manage larger-scale projects efficiently while maintaining our prep standards on every unit." },
+    { q: "What Minneapolis neighborhoods do you serve?", a: "We serve all Minneapolis neighborhoods including Uptown, South Minneapolis, Northeast, Linden Hills, Kingfield, Tangletown, Kenwood, Seward, Longfellow, North Loop, and more. Free on-site estimates are available throughout the city. Call (763) 200-4121 to schedule." },
+];
+
 export default function MinneapolisClient() {
     const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+    const [openFaq, setOpenFaq] = useState<number | null>(null);
 
     // Filter out the requested services and format them for the ServiceCarousel
     const targetServiceSlugs = [
@@ -202,6 +212,38 @@ export default function MinneapolisClient() {
                                     </Button>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* FAQ Section */}
+                <section className="py-24 bg-surface-50 border-t border-border">
+                    <div className="container px-6 max-w-4xl">
+                        <div className="mb-12">
+                            <span className="text-gold font-black text-xs uppercase tracking-[0.3em] mb-4 block">Common Questions</span>
+                            <h2 className="text-primary text-3xl md:text-4xl font-serif font-black">
+                                Frequently Asked Questions — Painting in Minneapolis, MN
+                            </h2>
+                        </div>
+                        <div className="space-y-3">
+                            {minneapolisFaqs.map((faq, i) => (
+                                <div key={i} className="bg-white rounded-2xl border border-border overflow-hidden">
+                                    <button
+                                        className="w-full flex items-start justify-between gap-4 p-6 text-left"
+                                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                                    >
+                                        <span className="font-bold text-primary text-sm md:text-base leading-snug">{faq.q}</span>
+                                        <ChevronDown
+                                            className={`h-5 w-5 text-gold shrink-0 mt-0.5 transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`}
+                                        />
+                                    </button>
+                                    {openFaq === i && (
+                                        <div className="px-6 pb-6 text-muted-foreground font-light text-sm leading-relaxed border-t border-border pt-4">
+                                            {faq.a}
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>

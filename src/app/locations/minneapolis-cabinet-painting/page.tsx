@@ -35,18 +35,12 @@ export default function MinneapolisCabinetPaintingPage() {
             }
         ],
         faqs: [
-            {
-                question: "How long does cabinet painting take in Minneapolis?",
-                answer: "Most kitchen cabinet projects are completed in 4-6 business days. We typically spend two days onsite for the boxes and the remainder of the time in our specialized spray shop finishing the doors and drawer fronts."
-            },
-            {
-                question: "Do you paint cabinets in place or remove doors?",
-                answer: "We use a hybrid approach. We mask and paint the cabinet frames (boxes) onsite using specialized rollers or HVLP spraying. For the doors and drawers, we remove them and take them to our shop to ensure a perfectly level, dust-free, factory finish."
-            },
-            {
-                question: "What paint do you use for Minneapolis kitchen cabinets?",
-                answer: "We exclusively use Sherwin-Williams Emerald Urethane Trim Enamel. It offers superior durability and a beautiful finish that resists the yellowing and cracking often seen with cheaper products."
-            }
+            { question: "How much does cabinet refinishing cost in Minneapolis, MN?", answer: "Cabinet refinishing in Minneapolis typically runs $1,500 to $5,000 depending on the number of doors, drawer fronts, and linear feet of cabinet boxes. For most Minneapolis kitchens, refinishing costs 10–20% of full cabinet replacement — with similarly dramatic results." },
+            { question: "How long does cabinet painting take in Minneapolis?", answer: "Most kitchen cabinet projects are completed in 7 to 10 days. We spend two days on-site for the boxes and the remainder of the time in our spray shop finishing the doors and drawer fronts to a factory-smooth finish." },
+            { question: "Do you paint cabinets in place or remove doors in Minneapolis?", answer: "We use a hybrid approach. We mask and paint the cabinet frames (boxes) on-site. Doors and drawers are removed and taken to our shop to ensure a perfectly level, dust-free factory finish — then reinstalled once cured." },
+            { question: "What paint do you use for Minneapolis kitchen cabinets?", answer: "We exclusively use Sherwin-Williams Emerald Urethane Trim Enamel — a high-performance coating that provides the leveling and durability of an oil-based product with the low odor of a water-based finish. It resists yellowing, cracking, and scuffing under daily kitchen use." },
+            { question: "Will the grain in my oak cabinets show through the paint in Minneapolis?", answer: "Oak grain is porous and can show through standard paint. We use high-build industrial primers and multiple enamel coats to minimize grain visibility, and offer an optional grain-filling process for a completely glass-smooth finish. We discuss this during your free estimate." },
+            { question: "Do you offer a warranty on cabinet refinishing in Minneapolis, MN?", answer: "Yes — all our cabinet refinishing work is backed by a written workmanship warranty. If anything chips or peels due to workmanship, we'll make it right. We use professional-grade cabinet enamels formulated for durability — not standard wall paint." },
         ],
         bottomContent: {
             title: "Internal Links",

@@ -7,7 +7,7 @@ import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
 import { QuoteModal } from "@/components/ui/quote-modal";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ChevronRight, ArrowRight, CheckCircle2, ChevronDown } from "lucide-react";
 import { ServiceCarousel, type Service as CarouselService } from "@/components/ui/services-card";
 import { services } from "@/lib/services";
 import { LocationContent } from "@/data/location-content";
@@ -17,8 +17,53 @@ interface LocationHubProps {
     slug: string; // e.g., 'edina'
 }
 
+const locationFaqs: Record<string, { q: string; a: string }[]> = {
+    "Edina": [
+        { q: "How much does interior painting cost in Edina, MN?", a: "Interior painting in Edina typically ranges from $3 to $7 per square foot depending on the home's size, finish level, and amount of trim and millwork. Full estate repaints in Country Club or Morningside often run $8,000 to $20,000+. We provide detailed written estimates at no charge." },
+        { q: "How much does exterior painting cost for an Edina home?", a: "Exterior painting in Edina typically runs $5,000 to $15,000+ depending on square footage, siding material, and prep requirements. Larger estate homes can exceed this range. We include pressure washing, scraping, caulking, and priming in every Edina exterior estimate." },
+        { q: "Do Edina homes have popcorn ceilings that need removal?", a: "Yes — many Edina homes built from the 1960s through the 1980s still have original popcorn or acoustic ceiling texture. Homes built before 1980 may contain asbestos, so testing is strongly recommended. We remove, skim-coat, prime, and paint for a smooth modern finish." },
+        { q: "Do you paint or refinish kitchen cabinets in Edina, MN?", a: "Yes — cabinet refinishing is very popular among Edina homeowners who want a luxury kitchen update without a full remodel. We spray-apply hard-wearing enamel in any color for a factory-smooth finish at a fraction of the replacement cost." },
+        { q: "Do you work with HOA guidelines or design standards in Edina?", a: "Yes — we're familiar with the color requirements common in Edina's established neighborhoods and HOA communities. We help you select a compliant palette that still achieves the aesthetic upgrade you want." },
+        { q: "Are you a licensed painting contractor in Edina, MN?", a: "Yes — fully licensed by the State of Minnesota with general liability insurance and workers' compensation on every project. We serve Edina and the south metro. Free on-site estimates available." },
+    ],
+    "St. Louis Park": [
+        { q: "How much does interior painting cost in St. Louis Park, MN?", a: "Interior painting in St. Louis Park typically ranges from $2 to $6 per square foot. For mid-century SLP homes with plaster walls, additional prep — filling cracks, skim-coating, sealing stains — is often needed and is always included in our written estimates." },
+        { q: "How much does exterior painting cost in St. Louis Park, MN?", a: "Exterior painting in St. Louis Park typically runs $3,000 to $9,000 for a standard single-family home. We include pressure washing, scraping, caulking, and priming in every SLP exterior estimate. Free written quotes available." },
+        { q: "Do St. Louis Park homes have popcorn ceilings that need removal?", a: "Yes — many SLP homes from the 1960s through the 1980s still have original popcorn or acoustic ceiling texture. Pre-1980 homes may contain asbestos, so testing is important before removal. We remove, skim-coat, prime, and paint for a clean modern finish." },
+        { q: "Do you paint or refinish cabinets in St. Louis Park, MN?", a: "Yes. Cabinet refinishing is a cost-effective way to update a dated SLP kitchen. We spray-apply a hard-wearing enamel in any color and finish, transforming your existing cabinets into a modern focal point. Most SLP cabinet jobs are completed in 7 to 10 days." },
+        { q: "Do you have experience painting older bungalows and mid-century homes in SLP?", a: "Yes — many St. Louis Park homes were built in the 1950s through 1970s, and we specialize in the prep these properties require. We're experienced with plaster walls, original millwork, and lead-safe practices required for pre-1978 homes." },
+        { q: "Are you a licensed painting contractor in St. Louis Park, MN?", a: "Yes — fully licensed by the State of Minnesota with general liability insurance and workers' compensation on every project. We serve St. Louis Park and the west metro. Free on-site estimates available." },
+    ],
+    "Richfield": [
+        { q: "How much does interior painting cost in Richfield, MN?", a: "Interior painting in Richfield typically ranges from $2 to $6 per square foot. For Richfield's post-war bungalows and ramblers, surface prep — filling cracks, priming bare wood, sealing stains — is often a significant part of the project and is always included in our written estimates." },
+        { q: "How much does exterior painting cost for a Richfield home?", a: "Exterior painting in Richfield typically runs $3,000 to $8,000 for a standard single-family home. We include pressure washing, scraping, caulking, and priming in every Richfield exterior estimate. Free on-site quotes available." },
+        { q: "Do Richfield homes have popcorn ceilings that need removal?", a: "Yes — many Richfield homes built from the 1950s through the 1970s still have original popcorn or acoustic ceiling texture. Homes built before 1978 may contain asbestos, so testing is recommended before removal. We remove, skim-coat, prime, and paint for a smooth updated finish." },
+        { q: "Do you do drywall or plaster repair before painting in Richfield, MN?", a: "Yes. Drywall and plaster repair is standard in our prep process for Richfield homes. We patch nail holes, skim-coat damaged surfaces, and repair water stains before priming and painting. All repair work is included in our written estimates." },
+        { q: "Can you modernize the interior of a post-war bungalow in Richfield?", a: "Yes — updating a mid-century bungalow is one of our specialties. A fresh palette with updated trim colors can dramatically transform the look and feel of a classic Richfield home. We can help you choose colors that work with your existing flooring and fixtures." },
+        { q: "Are you a licensed painting contractor in Richfield, MN?", a: "Yes — fully licensed by the State of Minnesota with general liability insurance and workers' compensation on every project. We serve Richfield and the south metro. Free on-site estimates available." },
+    ],
+    "Bloomington": [
+        { q: "How much does interior painting cost in Bloomington, MN?", a: "Interior painting in Bloomington typically ranges from $2 to $6 per square foot. For Bloomington's larger suburban homes, a whole-home interior repaint may run $5,000 to $12,000+ depending on square footage, ceiling height, and finish level. Written estimates are always provided at no charge." },
+        { q: "How much does exterior painting cost for a Bloomington home?", a: "Exterior painting in Bloomington typically runs $3,500 to $10,000 depending on home size, siding material, and condition. Larger or two-story homes may exceed this range. We include all prep — pressure washing, scraping, caulking, and priming — in every exterior estimate." },
+        { q: "Do Bloomington homes have popcorn ceilings that need removal?", a: "Yes — many Bloomington homes built from the 1960s through the 1980s still have original popcorn or acoustic ceiling texture. Homes built before 1980 may contain asbestos in the texture, so testing is recommended before removal. We remove, skim-coat, prime, and paint for a clean modern finish." },
+        { q: "Do you paint large or two-story homes in Bloomington, MN?", a: "Yes — we're fully equipped for Bloomington's larger suburban homes, including two-story and split-level properties. We bring the right equipment and crew size to handle larger homes efficiently without compromising our prep standards." },
+        { q: "Can you refinish kitchen cabinets in a Bloomington home?", a: "Yes. Cabinet refinishing is a popular update for Bloomington homeowners. We spray-apply a durable hard-wear enamel finish in any color. The result is a fresh, modern kitchen at a fraction of the cost of full replacement. Most projects complete in 7 to 10 days." },
+        { q: "Are you a licensed painting contractor in Bloomington, MN?", a: "Yes — fully licensed by the State of Minnesota with general liability insurance and workers' compensation on every project. We serve Bloomington and the south metro. Free on-site estimates available." },
+    ],
+    "Golden Valley": [
+        { q: "How much does interior painting cost in Golden Valley, MN?", a: "Interior painting in Golden Valley typically ranges from $2 to $7 per square foot depending on the finish level and scope. Many mid-century modern Golden Valley homes have open floor plans that make whole-home repaints efficient. Free written estimates available." },
+        { q: "How much does exterior painting cost for a Golden Valley home?", a: "Exterior painting in Golden Valley typically runs $4,000 to $12,000 depending on home size, siding type, and condition. Many GV homes have unique architectural details requiring careful masking and hand-cutting. We include all prep in our written estimates." },
+        { q: "Can you match paint colors for a mid-century modern home in Golden Valley?", a: "Yes — color consultation is included with every project. For mid-century modern homes in Golden Valley, many homeowners are updating to warm whites, soft greiges, and muted sage tones that complement the original architecture. We bring samples and help you visualize before committing." },
+        { q: "Do you remove popcorn ceilings in Golden Valley homes?", a: "Yes — many Golden Valley homes from the 1960s and 1970s still have original popcorn or acoustic ceiling texture. Homes built before 1978 may contain asbestos, so testing is recommended. We remove, skim-coat, prime, and paint for a smooth modern finish that suits GV's design-forward aesthetic." },
+        { q: "Do you apply high-gloss or specialty trim finishes in Golden Valley, MN?", a: "Yes — high-gloss and semi-gloss trim painting is popular in Golden Valley's architectural homes. We spray-apply high-solid enamels for a factory-smooth finish on door casings, window trim, and built-ins. These finishes look stunning and are far more durable than brush-applied paint." },
+        { q: "Are you a licensed painting contractor in Golden Valley, MN?", a: "Yes — fully licensed by the State of Minnesota with general liability insurance and workers' compensation on every project. We serve Golden Valley and the northwest metro. Free on-site estimates available." },
+    ],
+};
+
 export default function LocationHub({ location, slug }: LocationHubProps) {
     const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+    const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const faqs = locationFaqs[location.city] || [];
 
     // List of core services to show in the carousel
     const targetServiceSlugs = [
@@ -200,6 +245,40 @@ export default function LocationHub({ location, slug }: LocationHubProps) {
                                         </div>
                                     )}
                                 </div>
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {/* FAQ Section */}
+                {faqs.length > 0 && (
+                    <section className="py-24 bg-surface-50 border-t border-border">
+                        <div className="container px-6 max-w-4xl">
+                            <div className="mb-12">
+                                <span className="text-gold font-black text-xs uppercase tracking-[0.3em] mb-4 block">Common Questions</span>
+                                <h2 className="text-primary text-3xl md:text-4xl font-serif font-black">
+                                    Frequently Asked Questions — Painting in {location.city}, MN
+                                </h2>
+                            </div>
+                            <div className="space-y-3">
+                                {faqs.map((faq, i) => (
+                                    <div key={i} className="bg-white rounded-2xl border border-border overflow-hidden">
+                                        <button
+                                            className="w-full flex items-start justify-between gap-4 p-6 text-left"
+                                            onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                                        >
+                                            <span className="font-bold text-primary text-sm md:text-base leading-snug">{faq.q}</span>
+                                            <ChevronDown
+                                                className={`h-5 w-5 text-gold shrink-0 mt-0.5 transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`}
+                                            />
+                                        </button>
+                                        {openFaq === i && (
+                                            <div className="px-6 pb-6 text-muted-foreground font-light text-sm leading-relaxed border-t border-border pt-4">
+                                                {faq.a}
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </section>

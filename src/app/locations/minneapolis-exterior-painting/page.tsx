@@ -41,7 +41,15 @@ export default function MinneapolisExteriorPaintingPage() {
         bottomContent: {
             title: "Trusted Minneapolis Painting Contractor",
             content: `Need interior work as well? Trinity is your go-to [Minneapolis painting contractor](/locations/minneapolis-mn) for whole-home renewals, including cabinetry and ceiling restorations.`
-        }
+        },
+        faqs: [
+            { question: "How much does exterior painting cost in Minneapolis, MN?", answer: "Exterior painting in Minneapolis typically runs $4,000 to $15,000+ depending on the home's size, siding type, and condition. Historic stucco and wood-sided homes common throughout Minneapolis require careful prep. We include pressure washing, scraping, caulking, and priming in every exterior estimate." },
+            { question: "What is the best time of year for exterior painting in Minneapolis?", answer: "In Minneapolis, we paint exteriors from late May through early October when temperatures stay above 50°F and humidity is manageable. We monitor weather closely and schedule projects to avoid moisture-related adhesion issues. Most exterior projects book weeks in advance during peak season." },
+            { question: "Do you pressure wash and prep before exterior painting in Minneapolis?", answer: "Yes — thorough pressure washing is included in every exterior project. We also scrape loose paint, sand rough areas, caulk gaps around windows and trim, and prime bare wood before applying any topcoat. Prep is 70% of what makes a paint job last." },
+            { question: "How long does an exterior paint job last on a Minneapolis home?", answer: "A properly prepped exterior using premium Sherwin-Williams coatings like Duration or Emerald should last 7 to 10 years on a Minneapolis home, even through harsh Minnesota freeze-thaw cycles. We back our work with a written workmanship warranty." },
+            { question: "Do you repair wood rot before painting the exterior in Minneapolis?", answer: "Yes — we perform minor carpentry and wood rot repair as part of our exterior projects. Minneapolis's older housing stock frequently has moisture damage behind siding and around windows. If we find significant structural damage, we'll communicate clearly and can recommend trusted local carpenters." },
+            { question: "What Minneapolis neighborhoods do you serve for exterior painting?", answer: "We serve all Minneapolis neighborhoods — South Minneapolis, Northeast, Uptown, Linden Hills, Kenwood, Seward, Longfellow, Tangletown, and more. We're experienced with the diverse siding types found across the city, from historic stucco to cedar to James Hardie. Free on-site estimates available — call (763) 200-4121." },
+        ],
     };
 
     const serviceSchema = {

@@ -41,7 +41,15 @@ export default function MinneapolisInteriorPaintingPage() {
         bottomContent: {
             title: "Internal Links",
             content: `Need a broader range of services? Visit our main [Minneapolis painting hub](/locations/minneapolis-mn) to see how we tackle exterior projects and whole-home renewals across the Twin Cities.`
-        }
+        },
+        faqs: [
+            { question: "How much does interior painting cost in Minneapolis, MN?", answer: "Interior painting in Minneapolis typically ranges from $2 to $7 per square foot depending on the neighborhood, home age, and finish level. Historic craftsman homes in South Minneapolis or Northeast may require more prep — plaster repair, lead-safe practices, detailed millwork. We provide free written estimates for all Minneapolis homeowners." },
+            { question: "How long does an interior painting project take in Minneapolis?", answer: "Most Minneapolis interior projects take two to five days depending on room count and prep requirements. We schedule around your household routine and provide a detailed timeline with every estimate." },
+            { question: "Do you move furniture before interior painting in Minneapolis?", answer: "Yes — our crews handle light furniture moving and protect floors and furnishings with drop cloths throughout every interior project. We ask that you remove fragile or irreplaceable items before we arrive." },
+            { question: "Do you paint historic homes in Minneapolis with plaster walls?", answer: "Yes — we regularly work in Minneapolis's historic craftsman homes, bungalows, and Tudor-style properties. We're experienced with plaster repair, lead-safe painting practices for pre-1978 homes, and working carefully around original woodwork and millwork." },
+            { question: "Do you offer low-VOC interior paint options in Minneapolis?", answer: "Yes — we use Sherwin-Williams low-VOC and zero-VOC formulas on request, especially popular for nurseries, bedrooms, and households with allergy concerns. These coatings have minimal odor and allow families to return to their spaces quickly." },
+            { question: "What Minneapolis neighborhoods do you serve for interior painting?", answer: "We serve all Minneapolis neighborhoods — Uptown, South Minneapolis, Northeast, Linden Hills, Kingfield, Tangletown, Seward, Longfellow, North Loop, Kenwood, and more. Free on-site estimates available throughout the city. Call (763) 200-4121 to schedule." },
+        ],
     };
 
     const breadcrumbSchema = {
