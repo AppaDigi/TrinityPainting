@@ -42,12 +42,12 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
     ];
 
     const locations = [
-        { title: "Minneapolis", href: "/locations/minneapolis-mn" },
-        { title: "Edina", href: "/locations/edina-mn" },
-        { title: "St. Louis Park", href: "/locations/st-louis-park-mn" },
-        { title: "Richfield", href: "/locations/richfield-mn" },
-        { title: "Bloomington", href: "/locations/bloomington-mn" },
-        { title: "Golden Valley", href: "/locations/golden-valley-mn" },
+        { title: "Mora", href: "/locations/mora-mn" },
+        { title: "Pine City", href: "/locations/pine-city-mn" },
+        { title: "Cambridge", href: "/locations/cambridge-mn" },
+        { title: "North Branch", href: "/locations/north-branch-mn" },
+        { title: "Princeton", href: "/locations/princeton-mn" },
+        { title: "Elk River", href: "/locations/elk-river-mn" },
     ];
 
     const navItems = [
