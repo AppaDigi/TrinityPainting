@@ -141,43 +141,6 @@ const locations = [
     description: 'Interior painting, exterior painting, and popcorn ceiling removal for one of the north metro\'s fastest-growing suburbs.',
     neighborhoods: ['Anoka County', 'Coon Rapids', 'Andover']
   },
-  // Twin Cities Metro
-  {
-    city: 'Golden Valley',
-    href: '/locations/golden-valley-mn',
-    description: 'Aesthetic expertise for Golden Valley gems, enhancing modern and mid-century homes.',
-    neighborhoods: ['GV Center', 'Sweeney Lake', 'GV Commons']
-  },
-  {
-    city: 'Minneapolis',
-    href: '/locations/minneapolis-mn',
-    description: 'Serving the heart of the Twin Cities with expert interior, exterior, and cabinet painting.',
-    neighborhoods: ['Uptown', 'Northeast', 'South Minneapolis']
-  },
-  {
-    city: 'St. Louis Park',
-    href: '/locations/st-louis-park-mn',
-    description: 'Trusted local painters for the SLP community, covering bungalows to modern builds.',
-    neighborhoods: ['Fern Hill', 'Bronx Park', 'Elmwood']
-  },
-  {
-    city: 'Edina',
-    href: '/locations/edina-mn',
-    description: 'Premium painting services for Edina estates, focusing on high-end finishes and protection.',
-    neighborhoods: ['Country Club', 'Morningside', 'Sunnyside']
-  },
-  {
-    city: 'Richfield',
-    href: '/locations/richfield-mn',
-    description: 'Modernizing Richfield homes with durable coatings and professional interior refreshes.',
-    neighborhoods: ['Wood Lake', 'Penn Ave', 'Richfield Hub']
-  },
-  {
-    city: 'Bloomington',
-    href: '/locations/bloomington-mn',
-    description: 'Comprehensive residential painting for Bloomington, the largest suburb in the metro.',
-    neighborhoods: ['Normandale', 'Bush Lake', 'River Valley']
-  },
 ];
 
 export default function LocationsHub() {
