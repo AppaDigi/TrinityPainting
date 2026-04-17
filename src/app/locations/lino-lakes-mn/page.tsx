@@ -13,6 +13,32 @@ const cityData: AnokaCityData = {
     nearbyInServiceArea: "Blaine, Forest Lake, and Hugo",
     metroArea: "north metro Minneapolis",
     coordinates: { lat: "45.1491", lng: "-93.0923" },
+    faqs: [
+        {
+            q: "How much does it cost to paint a custom home in Lino Lakes, MN?",
+            a: "Painting costs for custom homes in Lino Lakes vary based on square footage, ceiling height, architectural details like coffered ceilings or built-ins, and surface condition. Interior painting typically runs $2 to $6 per square foot and exterior $3 to $7 per square foot. We price every project individually with a free on-site estimate.",
+        },
+        {
+            q: "Do you paint lake homes and properties near Lino Lakes, Minnesota?",
+            a: "Yes — we serve lakeside properties throughout Lino Lakes and the surrounding area. Lake homes require moisture-resistant primers and exterior coatings that handle higher humidity and UV exposure near water. We use products rated for these conditions on every lake-adjacent project.",
+        },
+        {
+            q: "Do Lino Lakes homes have popcorn ceilings that need to be removed?",
+            a: "Many Lino Lakes homes built in the 1980s still have original popcorn or acoustic ceiling texture. We remove it safely — with asbestos testing recommended for pre-1980 homes — skim-coat the surface smooth, and apply a fresh coat of ceiling paint. It's a transformative upgrade in any room.",
+        },
+        {
+            q: "What's the best exterior paint for a home in Lino Lakes, MN?",
+            a: "For homes in Lino Lakes, we typically recommend Sherwin-Williams Duration or Emerald Exterior — both formulated for Minnesota's freeze-thaw climate. These coatings expand and contract with temperature changes and resist peeling, fading, and mildew far longer than standard paints.",
+        },
+        {
+            q: "Can you paint kitchen or bathroom cabinets in Lino Lakes, Minnesota?",
+            a: "Yes — cabinet painting is a popular service for Lino Lakes homeowners looking to refresh their kitchen or bathroom. We thoroughly prep, prime, and spray cabinets to a smooth, durable finish in any color. It typically costs 10–20% of full cabinet replacement while delivering a comparable visual result.",
+        },
+        {
+            q: "How do I get a painting estimate in Lino Lakes, MN?",
+            a: "Call or submit a request online. We'll schedule a free on-site visit to your Lino Lakes home, assess the scope, and provide a detailed written estimate — usually within 24 to 48 hours. There's no obligation and no pressure to book.",
+        },
+    ],
 };
 
 export const metadata: Metadata = {

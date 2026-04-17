@@ -13,6 +13,32 @@ const cityData: AnokaCityData = {
     nearbyInServiceArea: "Blaine, Ham Lake, and Anoka",
     metroArea: "north metro Minneapolis",
     coordinates: { lat: "45.3283", lng: "-93.2016" },
+    faqs: [
+        {
+            q: "How much does exterior painting cost for a large-lot home in East Bethel, MN?",
+            a: "Exterior painting for larger homes in East Bethel typically ranges from $4,000 to $12,000 depending on square footage, number of stories, siding type, and how much of the structure needs painting. We include all outbuildings and garages in our written scope and provide free on-site estimates for every East Bethel property.",
+        },
+        {
+            q: "Do you paint rural and semi-rural homes in East Bethel, Minnesota?",
+            a: "Yes — East Bethel's semi-rural character means many homes are larger, sit on bigger lots, and include outbuildings or multi-structure properties. We staff appropriately for these projects and include all structures in our written scope.",
+        },
+        {
+            q: "Is popcorn ceiling removal available in East Bethel, MN?",
+            a: "Yes — many East Bethel homes built in the 1980s and 1990s still have original popcorn or acoustic texture on ceilings. We remove it safely with a tested process, skim-coat the surface smooth, prime, and apply fresh ceiling paint. Asbestos testing is recommended for any pre-1980 home.",
+        },
+        {
+            q: "Do you stain and seal decks in East Bethel, Minnesota?",
+            a: "Absolutely. Decks and fences throughout East Bethel take heavy weathering from Minnesota's extreme temperature swings. We pressure-wash, prep, and apply premium penetrating stain and sealant — including options to restore grayed, weathered wood to a like-new appearance.",
+        },
+        {
+            q: "How long does interior painting take in an East Bethel home?",
+            a: "Interior painting projects in East Bethel typically take two to five days for a full home repaint depending on square footage and surface condition. We maintain a clean job site and protect all areas not being painted with drop cloths and plastic sheeting.",
+        },
+        {
+            q: "What painting services are available in East Bethel and northern Anoka County?",
+            a: "We offer interior painting, exterior painting, popcorn ceiling removal, cabinet painting, drywall repair, and deck staining throughout East Bethel and all of northern Anoka County. Free on-site estimates available — contact us to schedule.",
+        },
+    ],
 };
 
 export const metadata: Metadata = {

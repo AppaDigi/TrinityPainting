@@ -13,6 +13,32 @@ const cityData: AnokaCityData = {
     nearbyInServiceArea: "Blaine, Andover, and East Bethel",
     metroArea: "north metro Minneapolis",
     coordinates: { lat: "45.2503", lng: "-93.2131" },
+    faqs: [
+        {
+            q: "How much does exterior painting cost for a large-lot home in Ham Lake, MN?",
+            a: "Exterior painting for larger homes in Ham Lake typically ranges from $4,000 to $12,000 depending on square footage, number of stories, siding type, and how much of the structure needs painting including outbuildings, fences, or garages. Free, written, no-obligation estimates are provided for every Ham Lake property.",
+        },
+        {
+            q: "Do you paint large custom homes in Ham Lake, Minnesota?",
+            a: "Yes — we regularly paint larger single-family homes and acreage properties throughout Ham Lake. We staff appropriately for larger projects and price them based on actual scope, not rough guesses. Detailed written quotes are always provided before any work begins.",
+        },
+        {
+            q: "Is popcorn ceiling removal available in Ham Lake, MN?",
+            a: "Yes — many Ham Lake homes built in the 1990s and early 2000s still have original textured ceilings. We remove, skim-coat, prime, and paint after removal for a clean, modern finish. For homes built before 1980, asbestos testing is always recommended.",
+        },
+        {
+            q: "Do you stain decks and fences in Ham Lake, Minnesota?",
+            a: "Absolutely — deck and fence staining is popular for Ham Lake's larger-lot properties. We pressure-wash, prep, and apply premium penetrating stains to protect wood surfaces from Minnesota's freeze-thaw cycles, UV exposure, and moisture. We also refinish older, grayed wood to restore its original appearance.",
+        },
+        {
+            q: "How do I find a reliable painting contractor near Ham Lake, MN?",
+            a: "Look for a contractor licensed by the State of Minnesota, fully insured, providing written estimates, and standing behind their work with a warranty. We meet all of those standards and serve Ham Lake and Anoka County homeowners with five-star results. Contact us for a free on-site quote.",
+        },
+        {
+            q: "What interior painting services do you offer in Ham Lake, MN?",
+            a: "We offer complete interior painting throughout Ham Lake including walls, ceilings, trim, doors, and built-ins. We use premium low-VOC paints from Sherwin-Williams, Benjamin Moore, and Behr and include all surface prep — filling holes, caulking gaps, spot priming — in every estimate.",
+        },
+    ],
 };
 
 export const metadata: Metadata = {

@@ -13,6 +13,32 @@ const cityData: AnokaCityData = {
     nearbyInServiceArea: "Zimmerman, Cambridge, and Milaca",
     metroArea: "north central Minnesota",
     coordinates: { lat: "45.5686", lng: "-93.5885" },
+    faqs: [
+        {
+            q: "What does interior painting cost in Princeton, MN?",
+            a: "Interior painting in Princeton typically ranges from $2 to $6 per square foot. For a typical Princeton home, a complete interior repaint generally costs $3,000 to $7,500 depending on square footage, room count, surface condition, and number of coats. Free, written, no-obligation estimates available.",
+        },
+        {
+            q: "How much does exterior painting cost in Princeton, Minnesota?",
+            a: "Exterior painting in Princeton typically runs $3,500 to $10,000 for a standard single-family home depending on siding type, square footage, number of stories, and surface preparation required. We include all prep — pressure washing, caulking, spot priming — in every exterior estimate for Princeton homeowners.",
+        },
+        {
+            q: "Do you remove popcorn ceilings in Princeton, MN?",
+            a: "Yes — popcorn ceiling removal is available throughout Princeton and Mille Lacs County. Many Princeton homes built from the 1970s through the 1990s still have original textured ceilings. We remove, skim-coat, prime, and paint to a smooth modern finish.",
+        },
+        {
+            q: "Do you serve rural properties near Princeton, Minnesota?",
+            a: "Yes — we regularly serve rural properties, acreage homes, and hobby farms throughout Mille Lacs County in addition to in-town Princeton homes. If you're outside of town, give us a call and we'll confirm your location falls within our service area.",
+        },
+        {
+            q: "Can you paint or refinish kitchen cabinets in Princeton, MN?",
+            a: "Absolutely. Cabinet refinishing is available throughout Princeton and is one of the most cost-effective ways to upgrade a kitchen or bathroom. We strip, prep, prime, and spray a smooth, durable finish in any color you choose.",
+        },
+        {
+            q: "Are you a licensed painting contractor serving Princeton and Mille Lacs County?",
+            a: "Yes — we are fully licensed by the State of Minnesota, carry general liability insurance, and maintain workers' compensation on every project. We serve Princeton and all of Mille Lacs County. Free on-site estimates are available with no pressure or obligation.",
+        },
+    ],
 };
 
 export const metadata: Metadata = {

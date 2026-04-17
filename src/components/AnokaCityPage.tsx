@@ -21,6 +21,7 @@ export interface AnokaCityData {
     nearbyInServiceArea: string;
     metroArea: string;
     coordinates: { lat: string; lng: string };
+    faqs: { q: string; a: string }[];
 }
 
 export default function AnokaCityPage({ data }: { data: AnokaCityData }) {
@@ -124,32 +125,7 @@ export default function AnokaCityPage({ data }: { data: AnokaCityData }) {
         },
     ];
 
-    const faqs = [
-        {
-            q: `How much does interior painting cost in ${city}, MN?`,
-            a: `Interior painting in ${city} typically ranges from $2 to $6 per square foot depending on room size, ceiling height, surface condition, and the number of coats required. We provide free, detailed, no-obligation estimates for all ${city} homeowners.`,
-        },
-        {
-            q: `How long does popcorn ceiling removal take in a typical ${city} home?`,
-            a: `Most popcorn ceiling removal projects in ${city} take one to three days depending on the total square footage and whether the texture may contain asbestos. We always recommend asbestos testing for homes built before 1980 before removal begins.`,
-        },
-        {
-            q: `Do you offer free estimates in ${city}, MN?`,
-            a: `Yes — we offer completely free, no-obligation on-site estimates for all painting and popcorn ceiling removal projects in ${city} and throughout ${county}. There is no pressure and no cost to get a quote.`,
-        },
-        {
-            q: `Are you licensed and insured to paint in ${city}, Minnesota?`,
-            a: `Absolutely. We are fully licensed by the State of Minnesota, carry general liability insurance, and maintain workers' compensation coverage — protecting your home and our crew on every ${city} project.`,
-        },
-        {
-            q: `Can you match existing paint colors in my ${city} home?`,
-            a: `Yes. We work with all major paint brands including Sherwin-Williams, Benjamin Moore, and Behr and can color-match existing tones using spectrophotometer tools to ensure a seamless, invisible blend.`,
-        },
-        {
-            q: `Do I need to move furniture before the painters arrive in ${city}?`,
-            a: `We ask that you remove small personal items and breakables. Our crew handles moving larger furniture away from walls, laying drop cloths, and protecting floors and fixtures throughout your ${city} home.`,
-        },
-    ];
+    const faqs = data.faqs;
 
     const popcornBullets = [
         "Safe removal process — asbestos testing available for pre-1980 homes",

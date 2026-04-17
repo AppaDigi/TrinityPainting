@@ -13,6 +13,32 @@ const cityData: AnokaCityData = {
     nearbyInServiceArea: "Coon Rapids, Brooklyn Park, and Anoka",
     metroArea: "north metro Minneapolis",
     coordinates: { lat: "45.1761", lng: "-93.3884" },
+    faqs: [
+        {
+            q: "What does interior painting cost in Champlin, MN?",
+            a: "Interior painting in Champlin typically runs $2 to $6 per square foot. A complete home repaint in Champlin usually costs between $3,500 and $8,000 depending on square footage, room count, ceiling height, and surface condition. We provide free, no-obligation written estimates for every Champlin homeowner.",
+        },
+        {
+            q: "How long does exterior painting take on a Champlin home?",
+            a: "Most exterior painting projects in Champlin take three to five days depending on the home's size, number of stories, siding type, and weather conditions. We never rush the prep stage — proper prep is what separates a paint job that lasts three years from one that lasts fifteen.",
+        },
+        {
+            q: "Do you remove popcorn ceilings in Champlin, Minnesota?",
+            a: "Yes — popcorn ceiling removal is one of our most in-demand services in Champlin and throughout Hennepin County. Homes built in the 1970s and 1980s frequently have original textured ceilings. We remove, skim-coat, prime, and paint for a smooth modern finish.",
+        },
+        {
+            q: "Can you paint or refinish cabinets in a Champlin kitchen?",
+            a: "Absolutely. Cabinet refinishing is a cost-effective way to transform a Champlin kitchen or bathroom without full replacement. We prep, prime, and spray a durable finish in any color — typically at 10–20% of the cost of new cabinets.",
+        },
+        {
+            q: "What is the best exterior paint for Champlin's climate?",
+            a: "For Champlin homes, we recommend high-solids exterior coatings from Sherwin-Williams or Benjamin Moore formulated for cold climates. Products like Sherwin-Williams Duration Exterior and Benjamin Moore Aura Exterior are engineered to withstand Minnesota freeze-thaw cycles and resist peeling and fading.",
+        },
+        {
+            q: "Do you serve all of Champlin and Hennepin County?",
+            a: "Yes — we serve all of Champlin and regularly work throughout the broader north metro Hennepin County area, including Coon Rapids, Brooklyn Park, and Anoka. Free on-site estimates available throughout the area.",
+        },
+    ],
 };
 
 export const metadata: Metadata = {

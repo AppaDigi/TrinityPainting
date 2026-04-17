@@ -13,6 +13,32 @@ const cityData: AnokaCityData = {
     nearbyInServiceArea: "Champlin, Coon Rapids, and Andover",
     metroArea: "north metro Minneapolis",
     coordinates: { lat: "45.1977", lng: "-93.3869" },
+    faqs: [
+        {
+            q: "How much does it cost to paint an older home in Anoka, MN?",
+            a: "Older homes in Anoka — including Victorian-era and mid-century properties near downtown — often require more prep than newer construction: repairing wood siding, removing flaking paint, priming bare surfaces, and caulking gaps. Interior painting typically costs $2 to $6 per square foot and exterior $3 to $8 per square foot depending on condition.",
+        },
+        {
+            q: "Do Anoka homes have asbestos in their popcorn ceilings?",
+            a: "Homes built before 1980 in Anoka — and given the city's age, there are many — may contain asbestos in popcorn or acoustic ceiling texture. We always recommend professional asbestos testing before removal on any pre-1980 home. If asbestos is found, we coordinate certified abatement before our skim-coat work begins.",
+        },
+        {
+            q: "What exterior painting services are available in Anoka, Minnesota?",
+            a: "We offer full exterior painting in Anoka including wood siding, vinyl siding, trim, fascia, soffits, doors, shutters, fences, and garage doors. For Anoka's older wood-sided homes, we include all necessary prep — scraping, sanding, priming — in every exterior estimate.",
+        },
+        {
+            q: "Can you repair and repaint drywall and plaster in my Anoka home?",
+            a: "Yes — drywall and plaster repair is part of nearly every project we complete in older Anoka homes. We fill cracks, patch holes, skim-coat damaged areas, and blend the repairs seamlessly into the surrounding wall texture before applying finish paint.",
+        },
+        {
+            q: "Do you paint commercial properties in Anoka, MN?",
+            a: "Yes — we serve light commercial properties throughout Anoka including offices, storefronts, multi-family buildings, and rental units. We can work around business hours to minimize disruption, and all commercial estimates are free and provided in writing.",
+        },
+        {
+            q: "How do I get a free painting estimate in Anoka, MN?",
+            a: "Call us or submit a request online. We'll schedule a free on-site visit to your Anoka property, assess the scope in detail, and provide a written estimate — typically within 24 to 48 hours. There's no obligation and no pressure.",
+        },
+    ],
 };
 
 export const metadata: Metadata = {
