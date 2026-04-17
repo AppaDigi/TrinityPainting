@@ -142,7 +142,7 @@ export const ArticleSchema = ({ article }: {
             "name": article.publisherName,
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://trinitypaintingmn.com/logo.png"
+                "url": "https://trinitypaintingmn.com/logo.svg"
             }
         },
         "mainEntityOfPage": {

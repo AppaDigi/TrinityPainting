@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { QuoteModal } from "@/components/ui/quote-modal";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { 
     ShieldCheck, 
     Flag, 
@@ -79,6 +80,13 @@ export default function AboutClient() {
                                 >
                                     Work With Us
                                 </Button>
+                                <Link href="/team">
+                                    <Button
+                                        className="h-16 px-10 bg-transparent border border-white/20 text-white hover:bg-white hover:text-primary transition-all rounded-full font-bold uppercase tracking-widest text-xs"
+                                    >
+                                        Meet the Team
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                     </div>
