@@ -144,16 +144,6 @@ export default function Hero({ onOpenQuote }: { onOpenQuote?: () => void }) {
                         </Link>
                     </div>
                     
-                    <div className="mt-10 animate-fade-in">
-                        <Link 
-                            href="/locations/minneapolis-mn" 
-                            className="text-gold/60 hover:text-gold text-[10px] font-bold uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-2 group"
-                        >
-                            <span className="w-4 h-[1px] bg-gold/20 group-hover:w-8 transition-all" />
-                            Now Serving Minneapolis & Metro
-                            <span className="w-4 h-[1px] bg-gold/20 group-hover:w-8 transition-all" />
-                        </Link>
-                    </div>
                 </div>
             </div>
 

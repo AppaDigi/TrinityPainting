@@ -14,10 +14,8 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
-import { LocalBusinessSchema } from "@/components/SchemaMarkup";
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://trinitypaintingmn.com"),
+  metadataBase: new URL("https://www.trinitypaintingmn.com"),
   title: "Trinity Painting & Renewal",
   description: "Faith-Focused Painting & Renewal. Serving East Central Minnesota with excellence since 2018.",
   alternates: {
@@ -45,7 +43,6 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${outfit.variable} antialiased`}
       >
-        <LocalBusinessSchema />
         <Script 
           src="https://www.googletagmanager.com/gtag/js?id=G-KETXRJD31C" 
           strategy="afterInteractive" 

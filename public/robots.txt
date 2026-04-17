@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Allow: /locations/
-Allow: /blog/
-
-Sitemap: https://www.trinitypaintingmn.com/sitemap.xml

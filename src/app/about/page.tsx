@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AboutClient from "@/components/AboutClient";
+import { LocalBusinessSchema } from "@/components/SchemaMarkup";
 
 export const metadata: Metadata = {
   title: "Our Identity | Trinity Painting & Renewal | Faith & Integrity",
@@ -10,11 +11,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Trinity Painting & Renewal | Faith & Integrity",
     description: "Learn about our commitment to biblical stewardship and professional painting excellence.",
-    url: "https://trinitypaintingmn.com/about",
+    url: "https://www.trinitypaintingmn.com/about",
     images: ["/editorial-home.jpeg"],
   },
 };
 
 export default function AboutPage() {
-  return <AboutClient />;
+  return (
+    <>
+      <LocalBusinessSchema />
+      <AboutClient />
+    </>
+  );
 }

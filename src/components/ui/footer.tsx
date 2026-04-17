@@ -64,12 +64,14 @@ export function Footer() {
                     <div>
                         <p className="font-sans font-bold text-sm mb-6 uppercase tracking-wider text-gold">Service Areas</p>
                         <ul className="space-y-3 text-gray-400 text-sm">
-                            <li><Link href="/locations/minneapolis-mn" className="hover:text-gold transition-colors italic">Minneapolis Painting</Link></li>
-                            <li><Link href="/locations/minneapolis-interior-painting" className="hover:text-gold transition-colors italic text-xs">Interior Painting Minneapolis</Link></li>
-                            <li><Link href="/locations/minneapolis-exterior-painting" className="hover:text-gold transition-colors italic text-xs">Exterior Painting Minneapolis</Link></li>
-                            <li><Link href="/locations/minneapolis-cabinet-painting" className="hover:text-gold transition-colors italic text-xs">Cabinet Painting Minneapolis</Link></li>
-                            <li><Link href="/locations/edina-mn" className="hover:text-gold transition-colors italic">Edina Painting</Link></li>
-                            <li><Link href="/locations/st-louis-park-mn" className="hover:text-gold transition-colors italic">St. Louis Park Painting</Link></li>
+                            <li><Link href="/locations/mora-mn" className="hover:text-gold transition-colors italic">Mora Painting</Link></li>
+                            <li><Link href="/locations/pine-city-mn" className="hover:text-gold transition-colors italic">Pine City Painting</Link></li>
+                            <li><Link href="/locations/cambridge-mn" className="hover:text-gold transition-colors italic">Cambridge Painting</Link></li>
+                            <li><Link href="/locations/princeton-mn" className="hover:text-gold transition-colors italic">Princeton Painting</Link></li>
+                            <li><Link href="/locations/north-branch-mn" className="hover:text-gold transition-colors italic">North Branch Painting</Link></li>
+                            <li><Link href="/locations/elk-river-mn" className="hover:text-gold transition-colors italic">Elk River Painting</Link></li>
+                            <li><Link href="/locations/blaine-mn" className="hover:text-gold transition-colors italic">Blaine Painting</Link></li>
+                            <li><Link href="/locations" className="hover:text-gold transition-colors font-bold text-gold/70 uppercase tracking-widest text-xs">See All Service Areas →</Link></li>
                         </ul>
                     </div>
 

@@ -5,9 +5,9 @@ export const LocalBusinessSchema = () => {
         "@context": "https://schema.org",
         "@type": "Painter",
         "name": "Trinity Painting & Renewal",
-        "image": "https://trinitypaintingmn.com/editorial-home.jpeg",
-        "@id": "https://trinitypaintingmn.com",
-        "url": "https://trinitypaintingmn.com",
+        "image": "https://www.trinitypaintingmn.com/editorial-home.jpeg",
+        "@id": "https://www.trinitypaintingmn.com",
+        "url": "https://www.trinitypaintingmn.com",
         "telephone": "763-225-2393",
         "address": {
             "@type": "PostalAddress",
@@ -121,18 +121,21 @@ export const ArticleSchema = ({ article }: {
         description: string; 
         image: string; 
         datePublished: string; 
+        dateModified?: string;
         authorName: string; 
         publisherName: string;
         url: string;
+        schemaType?: "Article" | "BlogPosting";
     } 
 }) => {
     const schema = {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": article.schemaType ?? "Article",
         "headline": article.headline,
         "description": article.description,
         "image": article.image,
         "datePublished": article.datePublished,
+        ...(article.dateModified ? { "dateModified": article.dateModified } : {}),
         "author": {
             "@type": "Organization",
             "name": article.authorName
@@ -142,7 +145,7 @@ export const ArticleSchema = ({ article }: {
             "name": article.publisherName,
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://trinitypaintingmn.com/logo.svg"
+                "url": "https://www.trinitypaintingmn.com/logo.svg"
             }
         },
         "mainEntityOfPage": {
