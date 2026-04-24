@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Outfit } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import { WelcomeModal } from "@/components/ui/welcome-modal";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -57,6 +58,7 @@ export default function RootLayout({
           `}
         </Script>
         {children}
+        <WelcomeModal />
       </body>
     </html>
   );
