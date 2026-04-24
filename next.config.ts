@@ -13,7 +13,7 @@ const contentSecurityPolicy = [
   "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
   "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com https://stats.g.doubleclick.net",
-  "frame-src 'self' https://seal-minnesota.bbb.org",
+  "frame-src 'self' https://seal-minnesota.bbb.org https://www.youtube.com https://www.youtube-nocookie.com",
   "upgrade-insecure-requests",
 ].join("; ");
 

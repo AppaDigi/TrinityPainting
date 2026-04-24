@@ -60,11 +60,12 @@ export function WelcomeModal() {
                         {/* Left: Video */}
                         <div className="w-full md:w-5/12 h-[35vh] md:h-auto min-h-[300px] md:min-h-[500px] bg-black relative">
                             <iframe 
-                                src="https://www.youtube-nocookie.com/embed/W5uuxkOVgDY?autoplay=1&mute=1&loop=1&playlist=W5uuxkOVgDY" 
-                                title="Trinity Painting Welcome"
+                                src="https://www.youtube.com/embed/W5uuxkOVgDY?autoplay=1&mute=1&loop=1&playlist=W5uuxkOVgDY" 
+                                title="owner trinity dustin"
                                 className="absolute inset-0 w-full h-full"
                                 style={{ border: 0 }}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerPolicy="strict-origin-when-cross-origin"
                                 allowFullScreen
                             />
                         </div>
