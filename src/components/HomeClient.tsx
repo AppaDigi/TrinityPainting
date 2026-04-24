@@ -280,12 +280,6 @@ export default function HomeClient() {
                   </p>
                 </div>
 
-                <div className="mt-12 pt-8 border-t border-border flex items-center gap-6">
-                  <div>
-                    <p className="font-serif text-2xl text-primary italic">Dustin & Team</p>
-                    <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mt-1">Founders & Lead Artisans</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
