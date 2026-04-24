@@ -42,7 +42,7 @@ export default function ReviewPage() {
                         className="flex items-center p-5 bg-white/5 border border-white/10 rounded-2xl shadow-xl hover:bg-white/10 hover:border-gold/50 transition-all group backdrop-blur-sm"
                     >
                         <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-inner">
-                            <Image src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" alt="Google" width={24} height={24} className="w-6 h-6 object-contain" />
+                            <img src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" alt="Google" className="w-6 h-6 object-contain" />
                         </div>
                         <div className="ml-5 flex-1">
                             <h3 className="font-bold text-white text-lg">Google Reviews</h3>
