@@ -143,7 +143,7 @@ export default function AnokaCityPage({ data }: { data: AnokaCityData }) {
             <Header onOpenQuote={() => setIsQuoteModalOpen(true)} />
 
             {/* Hero */}
-            <section className="relative h-[65vh] min-h-[550px] flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-[650px] h-[100svh] md:h-[65vh] flex items-center justify-center overflow-hidden pt-[calc(env(safe-area-inset-top)+5rem)] md:pt-[6rem]">
                 <div className="absolute inset-0">
                     <Image
                         src="/editorial-home.jpeg"

@@ -30,7 +30,7 @@ export default function TeamClient() {
             title: "Production Specialist",
             subtitle: "The Right-Hand Man & Cinematic Soul",
             bio: "Brian is a production powerhouse and the literal right-hand man to his son, Jermaine. There is a special kind of trust that comes when a father and son work side-by-side, and Brian brings that \"peace under pressure\" to every project. He manages a blended family of 14 children—a feat of logistics and patience that makes painting a house look like a walk in the park! A massive movie buff, Brian ensures the final result of your project is nothing short of a blockbuster.",
-            image: null
+            image: "/team-photos/brian.png"
         },
         {
             name: "Angel",

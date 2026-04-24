@@ -41,7 +41,7 @@ export default function ServiceClient({
 
             <main className="flex-grow">
                 {/* Hero Section */}
-                <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+                <section className="relative min-h-[650px] h-[100svh] md:h-[60vh] flex items-center justify-center overflow-hidden pt-[calc(env(safe-area-inset-top)+5rem)] md:pt-[6rem]">
                     <div className="absolute inset-0">
                         <Image
                             src={service.image}
