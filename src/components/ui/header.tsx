@@ -62,12 +62,12 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-[110] transition-all duration-300 ${isMenuOpen
-                ? "bg-white py-4 shadow-none border-none"
+                ? "bg-white pt-[calc(env(safe-area-inset-top)+1rem)] pb-4 shadow-none border-none"
                 : (scrolled
                     ? (isHomePage 
-                        ? "bg-black/95 backdrop-blur-2xl border-b border-white/10 py-3 md:py-4 shadow-sm"
-                        : "bg-white/95 backdrop-blur-2xl border-b border-primary/5 py-3 md:py-4 shadow-sm")
-                    : "bg-transparent border-transparent py-4 md:py-6")
+                        ? "bg-black/95 backdrop-blur-2xl border-b border-white/10 pt-[calc(env(safe-area-inset-top)+0.75rem)] pb-3 md:pt-[calc(env(safe-area-inset-top)+1rem)] md:pb-4 shadow-sm"
+                        : "bg-white/95 backdrop-blur-2xl border-b border-primary/5 pt-[calc(env(safe-area-inset-top)+0.75rem)] pb-3 md:pt-[calc(env(safe-area-inset-top)+1rem)] md:pb-4 shadow-sm")
+                    : "bg-transparent border-transparent pt-[calc(env(safe-area-inset-top)+1rem)] pb-4 md:pt-[calc(env(safe-area-inset-top)+1.5rem)] md:pb-6")
                 }`}
         >
             <div className="container-wide flex items-center justify-between relative z-[120]">
@@ -208,10 +208,10 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
                             animate={{ x: 0, opacity: 1 }}
                             exit={{ x: '100%', opacity: 0 }}
                             transition={{ type: "spring", damping: 30, stiffness: 300, mass: 0.8 }}
-                            className="h-full w-full flex flex-col"
+                            className="h-full w-full flex flex-col pt-[calc(env(safe-area-inset-top)+5rem)]"
                         >
                             {/* Sticky Header Background for the menu area to mask scrolling content */}
-                            <div className="h-24 bg-white shrink-0 relative z-[201]" />
+                            <div className="h-6 bg-white shrink-0 relative z-[201]" />
 
                             <div className="flex-grow flex flex-col overflow-y-auto px-8 pt-4 pb-12">
                                 <div className="space-y-12">
