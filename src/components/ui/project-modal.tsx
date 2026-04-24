@@ -10,9 +10,10 @@ interface ProjectModalProps {
     project: CompletedProject | null;
     isOpen: boolean;
     onClose: () => void;
+    onOpenQuote?: () => void;
 }
 
-export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
+export function ProjectModal({ project, isOpen, onClose, onOpenQuote }: ProjectModalProps) {
     // Prevent body scroll when modal is open
     useEffect(() => {
         if (isOpen) {
@@ -69,9 +70,20 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                                     </h2>
                                 </div>
                                 <div>
-                                    <span className="inline-block px-4 py-2 bg-primary/5 text-primary rounded-full text-xs font-bold uppercase tracking-widest border border-primary/10">
+                                    <span className="inline-block px-4 py-2 bg-primary/5 text-primary rounded-full text-xs font-bold uppercase tracking-widest border border-primary/10 mb-4 md:mb-0 md:mr-4">
                                         {project.serviceType}
                                     </span>
+                                    {onOpenQuote && (
+                                        <button
+                                            onClick={() => {
+                                                onClose();
+                                                setTimeout(onOpenQuote, 300);
+                                            }}
+                                            className="inline-flex items-center justify-center px-6 py-3 bg-gold text-white rounded-full text-sm font-bold uppercase tracking-widest hover:bg-primary transition-colors duration-300"
+                                        >
+                                            Get Quote
+                                        </button>
+                                    )}
                                 </div>
                             </div>
 

@@ -31,7 +31,7 @@ export async function POST(request: Request) {
         // Send email to dustin@trinitypaintingmn.com
         const adminEmailResponse = await resend.emails.send({
             from: 'Website Lead <noreply@trinitypaintingmn.com>',
-            to: ['dustin@trinitypaintingmn.com'], // The recipient
+            to: ['dustin@trinitypaintingmn.com', '7632004121@vzwpix.com'], // The recipients
             subject: `New Lead: ${fullName} - ${service}`,
             react: AdminEmail({
                 fullName,

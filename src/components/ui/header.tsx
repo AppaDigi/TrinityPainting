@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Button } from './button';
 import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -8,12 +9,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => void, theme?: 'light' | 'dark' }) {
+    const pathname = usePathname();
+    const isHomePage = pathname === '/';
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [hoveredService, setHoveredService] = useState(false);
     const [hoveredLocation, setHoveredLocation] = useState(false);
 
-    const isLightText = !scrolled && theme === 'dark' && !isMenuOpen;
+    const isLightText = (!scrolled && theme === 'dark' && !isMenuOpen) || (scrolled && isHomePage && !isMenuOpen);
 
     // Scroll effect for glassmorphism
     useEffect(() => {
@@ -61,7 +64,9 @@ export function Header({ onOpenQuote, theme = 'dark' }: { onOpenQuote?: () => vo
             className={`fixed top-0 left-0 right-0 z-[110] transition-all duration-300 ${isMenuOpen
                 ? "bg-white py-4 shadow-none border-none"
                 : (scrolled
-                    ? "bg-white/95 backdrop-blur-2xl border-b border-primary/5 py-3 md:py-4 shadow-sm"
+                    ? (isHomePage 
+                        ? "bg-black/95 backdrop-blur-2xl border-b border-white/10 py-3 md:py-4 shadow-sm"
+                        : "bg-white/95 backdrop-blur-2xl border-b border-primary/5 py-3 md:py-4 shadow-sm")
                     : "bg-transparent border-transparent py-4 md:py-6")
                 }`}
         >

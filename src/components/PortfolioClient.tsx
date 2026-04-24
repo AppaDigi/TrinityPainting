@@ -9,6 +9,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { MapPin, ArrowRight } from "lucide-react";
 import { QuoteModal } from "@/components/ui/quote-modal";
+import { QuoteForm } from "@/components/ui/quote-form";
 
 export default function PortfolioClient() {
     const [selectedProject, setSelectedProject] = useState<CompletedProject | null>(null);
@@ -87,6 +88,21 @@ export default function PortfolioClient() {
                         ))}
                     </div>
                 </div>
+
+                <div className="container-wide mt-24">
+                    <div className="bg-white rounded-3xl lg:rounded-[3rem] shadow-[0_30px_90px_-15px_rgba(0,0,0,0.05)] p-6 sm:p-8 lg:p-12 border border-border relative overflow-hidden">
+                        <div className="max-w-2xl mx-auto text-center mb-12">
+                            <span className="text-gold font-bold text-xs uppercase tracking-[0.25em] mb-4 block">Ready to start?</span>
+                            <h2 className="text-3xl md:text-4xl font-serif text-primary mb-6">Request Your Premium Quote</h2>
+                            <p className="text-lg text-muted-foreground">
+                                Tell us about your project, and we&apos;ll craft a personalized solution tailored to your home&apos;s unique character.
+                            </p>
+                        </div>
+                        <div className="max-w-4xl mx-auto">
+                            <QuoteForm />
+                        </div>
+                    </div>
+                </div>
             </main>
 
             <Footer />
@@ -100,6 +116,7 @@ export default function PortfolioClient() {
                 project={selectedProject}
                 isOpen={!!selectedProject}
                 onClose={() => setSelectedProject(null)}
+                onOpenQuote={() => setIsQuoteModalOpen(true)}
             />
         </div>
     );
