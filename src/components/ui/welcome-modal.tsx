@@ -19,6 +19,7 @@ export function WelcomeModal() {
         if (!hasSeen) {
             const timer = setTimeout(() => {
                 setIsOpen(true);
+                localStorage.setItem('hasSeenWelcomeModal', 'true');
             }, 1000);
             return () => clearTimeout(timer);
         }
